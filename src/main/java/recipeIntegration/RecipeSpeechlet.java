@@ -25,9 +25,7 @@ public class RecipeSpeechlet implements Speechlet{
 	
 	private static final Logger log = LoggerFactory.getLogger(RecipeSpeechlet.class);
 
-    /**
-     * The key to get the item from the intent.
-     */
+
     private static final String ITEM_SLOT = "Ingredient";//THIS NEEDS TO BE FULL OF ALL INGREDIENTS
     
     @Override
@@ -43,18 +41,16 @@ public class RecipeSpeechlet implements Speechlet{
             throws SpeechletException {
         log.info("onLaunch requestId={}, sessionId={}", request.getRequestId(),
                 session.getSessionId());
-       
+    
 
         String speechOutput =
                 "Welcome to Cooking Helper. You can ask a question like, "
                         + "what's the first step? or how much butter do I need? ... Now, what can I help you with?";
-        // If the user either does not reply to the welcome message or says
-        // something that is not understood, they will be prompted again with this text.
-        System.out.println("you did this right so far");
+       
 
         String repromptText = "For instructions on what you can say, please say help me.";
 
-        // Here we are prompting the user for input
+  
         return newAskResponse(speechOutput, repromptText);
     }
 
