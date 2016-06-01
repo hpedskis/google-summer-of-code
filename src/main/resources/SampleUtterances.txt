@@ -1,0 +1,19 @@
+GetIngredientOverview what are the ingredients
+GetIngredientOverview read me the ingredients
+GetIngredientOverview what do I need to make cookies
+GetIngredientOverview what do I need to make this recipe
+
+GetIngredientInformation do I need {ingredient}
+GetIngredientInformation does this need {ingredient}
+GetIngredientInformation how much {ingredient} do I need
+GetIngredientInformation what quantity {ingredient} do I need
+
+GetStepList how do I make cookies
+GetStepList how do I make this recipe
+GetStepList what are the steps to make this recipe
+GetStepList what are the steps to make cookies
+GetStepList what are the directions
+GetStepList what are the directions to make this recipe
+
+GetSpecificStep what is step {number}
+
