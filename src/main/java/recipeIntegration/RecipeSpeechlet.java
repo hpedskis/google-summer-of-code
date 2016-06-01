@@ -21,12 +21,9 @@ import com.amazon.speech.ui.PlainTextOutputSpeech;
 import com.amazon.speech.ui.Reprompt;
 
 public class RecipeSpeechlet implements Speechlet{
-	
-	
 	private static final Logger log = LoggerFactory.getLogger(RecipeSpeechlet.class);
-
-
-    private static final String ITEM_SLOT = "Ingredient";//THIS NEEDS TO BE FULL OF ALL INGREDIENTS
+    private static final String LIST_OF_INGREDIENTS = "ingredient";//THIS NEEDS TO BE FULL OF ALL INGREDIENTS
+    private static final String AMAZON_NUMBER = "number";
     
     @Override
     public void onSessionStarted(final SessionStartedRequest request, final Session session)
@@ -63,18 +60,23 @@ public class RecipeSpeechlet implements Speechlet{
         Intent intent = request.getIntent();
         String intentName = (intent != null) ? intent.getName() : null;
         Recipe CurrentRecipe;
+        
+        CurrentRecipe = RecipeSetup.RecipeBuilder();
        
+        /*/
         try {
 			CurrentRecipe = RecipeSetup.RecipeBuilder();
 		} catch (FileNotFoundException e) {
 			 throw new SpeechletException("I didn't find that recipe");
 		}
+		/*/
 
         if ("GetIngredientOverview".equals(intentName)) { 
 
             return getIngredientOverview(CurrentRecipe, intent);
         } 
         else if ("GetIngredientInformation".equals(intentName)){
+        	//return getIngredientInformation(CurrentRecipe, intent);
         	return getIngredientInformation(CurrentRecipe, intent);
         }
         else if ("GetStepList".equals(intentName)){
@@ -83,7 +85,7 @@ public class RecipeSpeechlet implements Speechlet{
         }
        
         else if ("GetSpecificStep".equals(intentName)){
-        	throw new NotImplementedException("This hasn't been set up yet");
+        	return getSpecificStep(CurrentRecipe, intent);
         	
         }
         
@@ -115,30 +117,61 @@ public class RecipeSpeechlet implements Speechlet{
 
     }
 
-    private SpeechletResponse getIngredientInformation(Recipe CurrentRecipe, Intent intent) {
-        Slot IngredientSlot = intent.getSlot(ITEM_SLOT); 
-        if (IngredientSlot != null && IngredientSlot.getValue() != null) { //yes, you found ingredient
-            String IngredientName = IngredientSlot.getValue();
-            
-            if (IngredientName != null) {
-            	String IngredientQuantity = CurrentRecipe.findIngredientQuantity(IngredientName);
-                PlainTextOutputSpeech outputSpeech = new PlainTextOutputSpeech();
-                outputSpeech.setText("Yes, you need " + IngredientQuantity);
+    
+    private SpeechletResponse getIngredientInfoTEST(Recipe CurrentRecipe, String ingredient){
+    	ArrayList<String> Ingredient_Test = new ArrayList<String>(); //{"flour", "salt", "baking powder", "butter", "brown sugar", "sugar", "egg", "vanilla extract", "chocolate chips"};
+    	Ingredient_Test.add("flour");
+    	Ingredient_Test.add("salt");
+    	Ingredient_Test.add("baking powder");
+    	Ingredient_Test.add("butter");
+    	Ingredient_Test.add("brown sugar");
+    	Ingredient_Test.add("sugar");
+    	Ingredient_Test.add("egg");
+    	Ingredient_Test.add("vanilla extract");
+    	Ingredient_Test.add("chocolate chips");
+    	
+    	int IngredientLocation = Ingredient_Test.indexOf(ingredient);
+    	if (IngredientLocation == -1){
+    		System.out.println("that ingredient wasn't found");
+    	}
+    	else{
+    		String IngredientName = Ingredient_Test.get(IngredientLocation);
+    		System.out.println("ingredient found " + IngredientName);
+    		Ingredient ingredientObj = CurrentRecipe.getIngredient(IngredientName);
+    		System.out.println("ingredient OBJ found " + ingredientObj.getName());
+    		
+    	}
+    	
+        PlainTextOutputSpeech outputSpeech = new PlainTextOutputSpeech();
+        outputSpeech.setText("Yes, you need it ");
 
-                return SpeechletResponse.newTellResponse(outputSpeech);
-                
-            } else {
+        return SpeechletResponse.newTellResponse(outputSpeech);
+    }
+    private SpeechletResponse getIngredientInformation(Recipe CurrentRecipe, Intent intent) {
+        Slot IngredientSlot = intent.getSlot(LIST_OF_INGREDIENTS); 
         
-                String speechOutput =
-                        "You don't need " + IngredientSlot 
-                                + ". What else can I help with?";
-                String repromptSpeech = "What else can I help with?";
-                return newAskResponse(speechOutput, repromptSpeech);
+        PlainTextOutputSpeech outputSpeech = new PlainTextOutputSpeech();
+    	String outputText = "";
+        
+        if (IngredientSlot != null && IngredientSlot.getValue() != null) { //yes, you found ingredient
+            String IngredientName = IngredientSlot.getValue(); //this should hold the ingredient VALUE
+            
+            Ingredient ingredient = CurrentRecipe.getIngredient(IngredientName); //this should hold butter Ingredient
+            
+            if (ingredient != null) { //it found specific ingredient  
+            	String IngredientQuantity = ingredient.getQuantity();
+                outputText = ("You need " + IngredientQuantity);
+                
+            } 
+            else {
+                outputText = ("You don't need " + IngredientName);
             }
         } else {
             // There was no item in the intent so return the help prompt.
             return getHelp();
         }
+        outputSpeech.setText(outputText);
+        return SpeechletResponse.newTellResponse(outputSpeech);
     }
     
     private SpeechletResponse getStepOverview (Recipe CurrentRecipe, Intent intent){
@@ -148,13 +181,41 @@ public class RecipeSpeechlet implements Speechlet{
     	String outputText = "";
     	for (int i =0; i < NumberofSteps; i++){
     		Step CurrentStepObject = ListOfSteps.get(i);
-    		outputText += ("Step " + (i + 1) + "is " + CurrentStepObject.getInstruction() + ". ");
-    		
+    		outputText += ("Step " + (i + 1) + " is " + CurrentStepObject.getInstruction() + ". ");
+    		System.out.println("Step " + (i + 1) + " is " + CurrentStepObject.getInstruction() + ". ");
     		
     	}
         outputSpeech.setText(outputText);
         return SpeechletResponse.newTellResponse(outputSpeech);
     }
+    
+    private SpeechletResponse getSpecificStep(Recipe CurrentRecipe, Intent intent){
+    	
+    	Slot NumberofStep = intent.getSlot(AMAZON_NUMBER);
+    	ArrayList<Step> ListofSteps = CurrentRecipe.getStepList();
+    	
+    	PlainTextOutputSpeech outputSpeech = new PlainTextOutputSpeech();
+    	String outputText = "";
+    	
+    	if (NumberofStep != null && NumberofStep.getValue() != null) { //found slot and found name value
+    		String NumberName = NumberofStep.getValue(); //save string name
+    		int StepNumber = Integer.parseInt(NumberName); //convert to number
+    		if (StepNumber > CurrentRecipe.getStepListSize()){
+    			outputText = ("That step is out of range. There are only " + CurrentRecipe.getStepListSize() + " steps.");
+    		}
+    		else{
+    			Step requestedStep = ListofSteps.get(StepNumber - 1); //proper index for the requested step
+    			outputText = ("Step " + StepNumber + " is " + requestedStep.getInstruction());
+    			
+    		}	
+    	}
+    	else{
+    		outputText = ("I'm sorry, I couldn't find that step number. There are only " + CurrentRecipe.getStepListSize() + " steps.");	
+    	}
+    	outputSpeech.setText(outputText);
+        return SpeechletResponse.newTellResponse(outputSpeech);
+    }
+    
     
     private SpeechletResponse getIngredientOverview(Recipe CurrentRecipe, Intent intent){
     	int NumberofIngredients = CurrentRecipe.getIngredientListSize();
@@ -163,7 +224,8 @@ public class RecipeSpeechlet implements Speechlet{
     	String outputText = "";
     	for (int i =0; i < NumberofIngredients; i++){
     		Ingredient CurrentIngredientObject = ListofIngredients.get(i);
-    		outputText += ("Ingredient " + (i+1) + "is " + CurrentIngredientObject.getName() + ". ");
+    		outputText += ("Ingredient " + (i+1) + " is " + CurrentIngredientObject.getName() + ". ");
+    		System.out.println("Ingredient " + (i+1) + " is " + CurrentIngredientObject.getName() + ". "); 
     		
     		
     	}

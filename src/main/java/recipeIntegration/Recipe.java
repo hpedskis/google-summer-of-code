@@ -12,18 +12,6 @@ class Recipe {
 		this.StepList = StepList;
 	}
 
-	
-	//once name has been found, find quantity for each ingredient
-	public String findIngredientQuantity(String IngredientName){
-		for (int i =0; i< IngredientList.size(); i++){
-			if (IngredientList.get(i).getName().equals(IngredientName)){
-				String IngredientQuantity = IngredientList.get(i).getQuantity();
-				return IngredientQuantity;
-			}
-		}
-		return "Could not find the quantity for " + IngredientName;
-	}
-
 
 	public ArrayList<Ingredient> getIngredientList() {
 		return IngredientList;
@@ -50,5 +38,16 @@ class Recipe {
 	
 	public String getName(){
 		return name;
+	}
+	
+	public Ingredient getIngredient(String ingredientName){
+	Ingredient theCorrectIngredient = null;
+		for (int i =0; i< IngredientList.size(); i++){
+			if (IngredientList.get(i).getName().contains(ingredientName)){
+				theCorrectIngredient = IngredientList.get(i);
+				return theCorrectIngredient;
+			}
+		}
+		return theCorrectIngredient;
 	}
 }
