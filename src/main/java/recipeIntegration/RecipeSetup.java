@@ -1,9 +1,19 @@
 package recipeIntegration;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
 import java.util.Scanner;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 
 
 
@@ -14,35 +24,77 @@ class RecipeSetup{
 			
 			ArrayList<Ingredient> INGREDIENT_LIST = new ArrayList<Ingredient>();
 			ArrayList<Step> STEP_LIST = new ArrayList<Step>();
+			//all steps to create the map for each recipe.
 			/*/
-			File Cookies = new File ("src/main/java/recipeIntegration/ChocChip.txt");
-			Scanner reader = new Scanner(Cookies);
-			@SuppressWarnings("unused")
-			String firstLine = reader.nextLine();//holds "INGREDIENTS" string from top of txt file
-			boolean inDirections = false;
-			while (reader.hasNextLine() && !inDirections) {
-				String Ingredient = reader.nextLine(); 
-				//System.out.println("currently, Ingredient String is holding " + Ingredient);
-				if(Ingredient.equalsIgnoreCase("PREPARATION")){
-					inDirections = true;
-					//System.out.println("inDirections changed to true, next while loop should operate");
-					break;//if the txt file has moved into preparation
-				}
-				else{
-				formatIngredients(Ingredient, INGREDIENT_LIST);
-				}
-				
-			}
-			reader.useDelimiter("\\.");
-			while (reader.hasNextLine() && inDirections){
-				String Direction = reader.next();
-				//System.out.println("currently, Direction String is holding " + Direction);
-				formatDirections(Direction, Counter++, STEP_LIST);
-			}
 			
+			Map<String,String> RecipeInformation = new HashMap<String,String>();
+		 	File TestOutput = new File("src/main/java/ChocChip.txt");
+         	BufferedWriter f = new BufferedWriter (new FileWriter (TestOutput));
+			
+			final Document doc = Jsoup.connect("http://allrecipes.com/recipes/").get(); //main recipe database
+			for (Element result : doc.select("div.grid a")){ //for each category from main database
+				final String CategoryUrl = result.attr("href"); //URL for each category
+				
+				Document RecipeDoc; //new link set up for recipe in each category
+            	if(!(CategoryUrl.contains("http"))){ //test for HTTP
+            	 CategoryUrl = ("http://allrecipes.com/" + CategoryUrl)
+            	}
+            	for (int pageNumber = 1; pageNumber< 31; pageNumber ++){
+            		RecipeDoc = Jsoup.connect(CategoryUrl + pageNumber).get(); //should fetch each page number's recipes
+            		for (Element RecipeResult : RecipeDoc.select("article.grid-col--fixed-tiles")){ //each recipe on page
+            			final String RecipeUrl = RecipeResult.attr("href");
+            			if (!(RecipeUrl.contains("/recipe/"))){
+            			//System.out.println("skipping");
+            			continue;
+            			}
+            			
+            			Document subDoc;
+                		if(!(RecipeURL.contains("http"))){
+                	 		subDoc = Jsoup.connect("http://allrecipes.com/" + RecipeURL).get();
+                		}
+                
+                		else{
+                	 		subDoc = Jsoup.connect(RecipeURL).get();
+                		}
+                
+        				//grab and print title from each recipe
+        				Elements title = subDoc.select("h1.recipe-summary__h1");
+        				String stringTitle = title.text();
+        		
+        				RecipeInformation.put(stringTitle, RecipeURL);
+            		}
+			/*/
+			//end of map creation
+			
+			
+			//logic for reading from text file, formated... 
+			//recipe title
+			//recipe URL
+			/*/
+			File RecipeFile = new File ("src/ChocChip.txt");
+			Scanner reader = new Scanner(RecipeFile);
+			While(reader.hasNextLine()){
+				String RecipeTitle = reader.nextLine();
+				Document InRecipe = Jsoup.connect(reader.nextLine()).get(); //complete URL for each recipe
+				for (Element IngredientResult : InRecipe.select("li.checkList__line")){
+        			String ingredient = result.text();
+        			ingredient = ingredient.replace("ADVERTISEMENT", "");
+        			ingredient = ingredient.replace("Add all ingredients to list", "");
+        			formatIngredients(ingredient, INGREDIENT_LIST);
+        		}
+        		int count = 0; //NOT SURE IF THIS WILL WORK. SHOULD I DO SOMETHING ELSE?
+        		for (Element DirectionResult : subDoc.select("div.directions--section__steps ol")){
+        			String direction = result.text();
+        			ingredient = ingredient.replace("ADVERTISEMENT", "");
+        			formatDirections(direction, count++, STEP_LIST)
+       
+        		}
+			}
 			reader.close();
 			/*/
-			//hard coded chocolate chip recipe for tesing
+			
+			
+			//hard coded chocolate chip recipe for testing
 			Ingredient Ingredient1 = new Ingredient ("1 cup plus 2 tablespoons all-purpose flour", "1 cup plus 2 tablespoons all-purpose flour");
 			INGREDIENT_LIST.add(Ingredient1);
 			Ingredient Ingredient2 = new Ingredient("3/4 teaspoon kosher salt","3/4 teaspoon kosher salt");
@@ -98,8 +150,7 @@ class RecipeSetup{
 					//TODO figure out a way to split up quantity and name, then create an ingredient object
 				}
 				
-			}
-			
+			}	
 			public static void formatDirections(String Directions, int Place, ArrayList<Step> StepList){
 				if (!(Directions.length() < 3)){ //if it isn't empty or just blank with a period
 					Step NewStep = new Step(Place, Directions); //create a new step object 
@@ -107,12 +158,7 @@ class RecipeSetup{
 				}
 				
 			}
-			
-			
-			
-
-
-		
+				
 		
 		
 		

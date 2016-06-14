@@ -25,6 +25,8 @@ public class RecipeSpeechlet implements Speechlet{
     private static final String LIST_OF_INGREDIENTS = "ingredient";//THIS NEEDS TO BE FULL OF ALL INGREDIENTS
     private static final String AMAZON_NUMBER = "number";
     
+    //private static final String LIST_OF_RECIPES = "recipe";
+    
     @Override
     public void onSessionStarted(final SessionStartedRequest request, final Session session)
             throws SpeechletException {
@@ -76,7 +78,6 @@ public class RecipeSpeechlet implements Speechlet{
             return getIngredientOverview(CurrentRecipe, intent);
         } 
         else if ("GetIngredientInformation".equals(intentName)){
-        	//return getIngredientInformation(CurrentRecipe, intent);
         	return getIngredientInformation(CurrentRecipe, intent);
         }
         else if ("GetStepList".equals(intentName)){

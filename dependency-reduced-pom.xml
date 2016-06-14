@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>GSoC_HannahP</groupId>
+  <artifactId>recipe-integration-skill</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <build>
+    <resources>
+      <resource>
+        <directory>src/recipeIntegration</directory>
+        <includes>
+          <include>**/*.txt</include>
+        </includes>
+      </resource>
+    </resources>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.3</version>
+          <configuration>
+            <source>1.7</source>
+            <target>1.7</target>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>exec-maven-plugin</artifactId>
+          <version>1.2.1</version>
+          <configuration>
+            <systemProperties>
+              <systemProperty>
+                <key>javax.net.ssl.keyStore</key>
+                <value>/insert/your/path/java-keystore.jks</value>
+              </systemProperty>
+              <systemProperty>
+                <key>javax.net.ssl.keyStorePassword</key>
+                <value>insert_your_password</value>
+              </systemProperty>
+              <systemProperty>
+                <key>com.amazon.speech.speechlet.servlet.disableRequestSignatureCheck</key>
+                <value>${disableRequestSignatureCheck}</value>
+              </systemProperty>
+              <systemProperty>
+                <key>com.amazon.speech.speechlet.servlet.supportedApplicationIds</key>
+                <value>${supportedApplicationIds}</value>
+              </systemProperty>
+              <systemProperty>
+                <key>com.amazon.speech.speechlet.servlet.timestampTolerance</key>
+                <value>${timestampTolerance}</value>
+              </systemProperty>
+            </systemProperties>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+  <properties />
+</project>
+
