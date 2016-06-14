@@ -36,18 +36,18 @@ class MainForTestin{
 		
 		SpeechletResponse LaunchOnIntent = newRecipe.onIntent(newIntent, newSession);
 	
-	 	File T1 = new File("/Users/hpedskis/Desktop/Recipe_Outputs/Breakfast.txt");
-	 	File T2 = new File("/Users/hpedskis/Desktop/Recipe_Outputs/Chicken.txt");
-	 	File T3 = new File("/Users/hpedskis/Desktop/Recipe_Outputs/Dessert.txt");
-	 	File T4 = new File("/Users/hpedskis/Desktop/Recipe_Outputs/Healthy.txt");
-	 	File T5 = new File("/Users/hpedskis/Desktop/Recipe_Outputs/Holidays.txt");
-	 	File T6 = new File("/Users/hpedskis/Desktop/Recipe_Outputs/Magazine.txt");
-	 	File T7 = new File("/Users/hpedskis/Desktop/Recipe_Outputs/Main.txt");
-	 	File T8 = new File("/Users/hpedskis/Desktop/Recipe_Outputs/Quick.txt");
-	 	File T9 = new File("/Users/hpedskis/Desktop/Recipe_Outputs/Slow.txt");
-	 	File T10 = new File("/Users/hpedskis/Desktop/Recipe_Outputs/Trusted.txt");
-	 	File T11= new File("/Users/hpedskis/Desktop/Recipe_Outputs/Vegetarian.txt");
-	 	File T12 = new File("/Users/hpedskis/Desktop/Recipe_Outputs/Appetizers.txt");
+	 	File T1 = new File("src/Breakfast.txt");
+	 	File T2 = new File("src/Chicken.txt");
+	 	File T3 = new File("src/Dessert.txt");
+	 	File T4 = new File("src/Healthy.txt");
+	 	File T5 = new File("src/Holidays.txt");
+	 	File T6 = new File("src/Magazine.txt");
+	 	File T7 = new File("src/Main.txt");
+	 	File T8 = new File("src/Quick.txt");
+	 	File T9 = new File("src/Slow.txt");
+	 	File T10 = new File("src/Trusted.txt");
+	 	File T11= new File("src/Vegetarian.txt");
+	 	File T12 = new File("src/Appetizers.txt");
      	
 	 	
 	 	Multi t1 = new Multi("http://allrecipes.com/recipes/78/breakfast-and-brunch/?page=", T1);
