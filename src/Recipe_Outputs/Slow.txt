@@ -64,8 +64,6 @@ Slow Cooker Pulled Pork Roast
 /recipe/217821/slow-cooker-pulled-pork-roast/
 Slow Cooker Garlic Mashed Potatoes
 /recipe/73269/slow-cooker-garlic-mashed-potatoes/
-Hamburger Soup II
-/recipe/12955/hamburger-soup-ii/
 The Best Slow Cooker Cream Corn
 /recipe/95252/the-best-slow-cooker-cream-corn/
 Healthier Buffalo Chicken Dip
@@ -118,8 +116,6 @@ Slow Cooker Ham
 /recipe/80525/slow-cooker-ham/
 Harvey Ham Sandwiches
 /recipe/80986/harvey-ham-sandwiches/
-Slow Cooker Chicken Mole
-/recipe/217186/slow-cooker-chicken-mole/
 Sweet Pork Slow Cooker Chili
 /recipe/155328/sweet-pork-slow-cooker-chili/
 Super Easy Slow Cooker Chicken
@@ -142,8 +138,6 @@ Sweet and Tangy Slow Cooker Bar-B-Q Pork
 /recipe/85584/sweet-and-tangy-slow-cooker-bar-b-q-pork/
 Cajun Roast Beef
 /recipe/149780/cajun-roast-beef/
-Hungarian Goulash II
-/recipe/19956/hungarian-goulash-ii/
 Hearty Beef Stew
 /recipe/26425/hearty-beef-stew/
 Unbelievably Easy Slow Cooker Black Forest Cake
@@ -200,8 +194,6 @@ Whole Chicken Slow Cooker Recipe
 /recipe/235713/whole-chicken-slow-cooker-recipe/
 Slow Cooked Ham and Potato Chowder
 /recipe/221208/slow-cooked-ham-and-potato-chowder/
-Beer Beef Stew II
-/recipe/81236/beer-beef-stew-ii/
 Slow Cooker Venison Sloppy Joes
 /recipe/23064/slow-cooker-venison-sloppy-joes/
 Slow Cooker Barbecue Beans
@@ -226,8 +218,6 @@ Splendicious Slow Cooker Spaghetti Sauce
 /recipe/216335/splendicious-slow-cooker-spaghetti-sauce/
 Slow Cooker Chicken Continental
 /recipe/22827/slow-cooker-chicken-continental/
-Slow Cooker Lemon Garlic Chicken II
-/recipe/18032/slow-cooker-lemon-garlic-chicken-ii/
 Asian Style Country Ribs
 /recipe/191199/asian-style-country-ribs/
 Skyline Chili I
@@ -282,6 +272,8 @@ Slow Cooker Mediterranean Stew
 /recipe/21302/slow-cooker-mediterranean-stew/
 Slow Cooker Thai Pork with Rice
 /recipe/72717/slow-cooker-thai-pork-with-rice/
+Waikiki-Style Meatballs
+/recipe/218365/waikiki-style-meatballs/
 Slow Cooker Mac and Cheese
 /recipe/237311/slow-cooker-mac-and-cheese/
 Slow Cooker Chicken Parisienne
@@ -346,8 +338,6 @@ Slow Cooker Cinnamon Apple Steel Cut Oats
 /recipe/228928/slow-cooker-cinnamon-apple-steel-cut-oats/
 Grandma B's Bean Soup
 /recipe/72253/grandma-bs-bean-soup/
-Cheese Dip II
-/recipe/26730/cheese-dip-ii/
 Deli Style Brisket
 /recipe/14677/deli-style-brisket/
 Easiest BBQ Pork Chops
@@ -362,8 +352,6 @@ Easy Corned Beef and Cabbage
 /recipe/222592/easy-corned-beef-and-cabbage/
 Stuffing for Slow Cooker
 /recipe/15753/stuffing-for-slow-cooker/
-Slow Cooker Lasagna II
-/recipe/112538/slow-cooker-lasagna-ii/
 Cola Beans
 /recipe/73362/cola-beans/
 Cabbage Patch Stew
@@ -372,8 +360,6 @@ Slow Cooker Veggie-Beef Soup with Okra
 /recipe/79814/slow-cooker-veggie-beef-soup-with-okra/
 Easy Slow Cooker Apple Pork Roast
 /recipe/213270/easy-slow-cooker-apple-pork-roast/
-Hawaiian Hot Dog Surprise
-/recipe/44525/hawaiian-hot-dog-surprise/
 It's Chili by George!!
 /recipe/14985/its-chili-by-george/
 Bloody Mary Chicken
@@ -384,8 +370,6 @@ Easy Slow Cooker Chicken
 /recipe/8631/easy-slow-cooker-chicken/
 Slow Cooker Lentils and Sausage
 /recipe/25426/slow-cooker-lentils-and-sausage/
-Beef Stew II
-/recipe/13241/beef-stew-ii/
 Outrageous Warm Chicken Nacho Dip
 /recipe/157940/outrageous-warm-chicken-nacho-dip/
 Slow Cooker Carnitas from Old El Paso®
@@ -400,8 +384,6 @@ Best Beef Dip Ever
 /recipe/50235/best-beef-dip-ever/
 Slow Cooker Baked Beans
 /recipe/222258/slow-cooker-baked-beans/
-Slow Cooker Beef Stew III
-/recipe/16303/slow-cooker-beef-stew-iii/
 Smoked Paprika Goulash for the Slow Cooker
 /recipe/182157/smoked-paprika-goulash-for-the-slow-cooker/
 Cheesy Taco Dip
@@ -472,8 +454,6 @@ Kevin's Sausage Dip
 /recipe/16865/kevins-sausage-dip/
 Slow Cooker Zucchini Soup
 /recipe/232096/slow-cooker-zucchini-soup/
-Chicken and Rice Soup II
-/recipe/13269/chicken-and-rice-soup-ii/
 Slow Cooker Chicken Dressing
 /recipe/22322/slow-cooker-chicken-dressing/
 Slow Cooker Pozole
@@ -492,8 +472,6 @@ Mushroom Slow Cooker Roast Beef
 /recipe/178498/mushroom-slow-cooker-roast-beef/
 Stephanie's Freezer Spaghetti Sauce
 /recipe/12054/stephanies-freezer-spaghetti-sauce/
-Slow Cooker Beef Stroganoff II
-/recipe/18044/slow-cooker-beef-stroganoff-ii/
 Slow Cooker Italian Beef for Sandwiches
 /recipe/16427/slow-cooker-italian-beef-for-sandwiches/
 Swiss Steak Stew
@@ -556,8 +534,6 @@ Slow Cooker Tapioca Pudding
 /recipe/130923/slow-cooker-tapioca-pudding/
 Slow Cooked Barbecue Beer Beef
 /recipe/216703/slow-cooked-barbecue-beer-beef/
-Frijoles II
-/recipe/45368/frijoles-ii/
 Apple and Brown Sugar Corned Beef
 /recipe/216933/apple-and-brown-sugar-corned-beef/
 Fragrant Lemon Chicken
@@ -678,8 +654,6 @@ Slow Cooker Cranberry Roast
 /recipe/81525/slow-cooker-cranberry-roast/
 Island Kielbasa in a Slow Cooker
 /recipe/20057/island-kielbasa-in-a-slow-cooker/
-Taco Soup VIII
-/recipe/23856/taco-soup-viii/
 Beef Barley Vegetable Soup
 /recipe/13023/beef-barley-vegetable-soup/
 Slow Cooker Barbecue Goose Sandwich
@@ -736,10 +710,6 @@ Mother's Pot Roast
 /recipe/14648/mothers-pot-roast/
 Slow Cooker Beef and Mushrooms
 /recipe/105247/slow-cooker-beef-and-mushrooms/
-Slow Cooker Pepper Steak II
-/recipe/80742/slow-cooker-pepper-steak-ii/
-Slow Cooker Pork Chops II
-/recipe/87805/slow-cooker-pork-chops-ii/
 Mile High Green Chili
 /recipe/218772/mile-high-green-chili/
 Slow Cooker Sweet and Tangy Chicken
@@ -764,8 +734,6 @@ Slow Cooker Pork
 /recipe/20817/slow-cooker-pork/
 Baked Slow Cooker Chicken
 /recipe/8647/baked-slow-cooker-chicken/
-Sweet and Sour Meatballs III
-/recipe/25527/sweet-and-sour-meatballs-iii/
 Homemade Ketchup
 /recipe/232397/homemade-ketchup/
 Chicken Enchilada Slow Cooker Soup
@@ -822,8 +790,6 @@ Great-Aunt Nina's Noodles and Chicken
 /recipe/93240/great-aunt-ninas-noodles-and-chicken/
 Take The Night Off Slow Cooker Pineapple Chicken
 /recipe/232409/take-the-night-off-slow-cooker-pineapple-chicken/
-Cabbage Rolls II
-/recipe/20045/cabbage-rolls-ii/
 Spicy Chicken Thai Noodle Soup
 /recipe/23875/spicy-chicken-thai-noodle-soup/
 Slower Cooker Meatloaf
@@ -836,8 +802,6 @@ Slow Cooker Coconut Curry Chicken
 /recipe/222178/slow-cooker-coconut-curry-chicken/
 Easy Pork and Sauerkraut
 /recipe/24537/easy-pork-and-sauerkraut/
-Luscious Lima Bean Soup II
-/recipe/77232/luscious-lima-bean-soup-ii/
 Slow Cooker Pheasant with Mushrooms and Olives
 /recipe/165163/slow-cooker-pheasant-with-mushrooms-and-olives/
 Slow Cooker Cassoulet
@@ -898,8 +862,6 @@ Quick Chick!
 /recipe/28196/quick-chick/
 Slow Cooker Cheesy Chicken and Tortillas
 /recipe/212616/slow-cooker-cheesy-chicken-and-tortillas/
-Hot Chicken Sandwiches II
-/recipe/52585/hot-chicken-sandwiches-ii/
 Slow Cooker Beef Barley Soup
 /recipe/16454/slow-cooker-beef-barley-soup/
 Pork Chops for the Slow Cooker
@@ -956,8 +918,6 @@ Slow Cooker London Broil
 /recipe/14684/slow-cooker-london-broil/
 Meatiest Vegetarian Chili From Your Slow Cooker
 /recipe/132394/meatiest-vegetarian-chili-from-your-slow-cooker/
-Slow Cooker Hawaiian Chicken
-/recipe/239319/slow-cooker-hawaiian-chicken/
 Chocolate Pudding Cake IV
 /recipe/26000/chocolate-pudding-cake-iv/
 Slow Cooker Split Pea Soup with Bacon and Hash Browns
@@ -984,8 +944,6 @@ Slow Cooker Cocktail Smokies
 /recipe/213073/slow-cooker-cocktail-smokies/
 Slow Cooker Potato Soup
 /recipe/22154/slow-cooker-potato-soup/
-Amazing Hawaiian Chicken Chili
-/recipe/186016/amazing-hawaiian-chicken-chili/
 Slow-Cooker Chicken Tortilla Soup
 /recipe/89539/slow-cooker-chicken-tortilla-soup/
 Tangy Slow Cooker Pork Roast
@@ -1018,8 +976,6 @@ Sweet and Hot Apple Slow Cooker Pork
 /recipe/209079/sweet-and-hot-apple-slow-cooker-pork/
 Sensational Steak Sandwich
 /recipe/87111/sensational-steak-sandwich/
-Easy Slow Cooker Chicken Tikka Masala
-/recipe/240337/easy-slow-cooker-chicken-tikka-masala/
 Alison's Slow Cooker Vegetable Beef Soup
 /recipe/26354/alisons-slow-cooker-vegetable-beef-soup/
 Wild Rice Casserole I
@@ -1052,8 +1008,6 @@ Karen's Slow Cooker Chicken Fajitas
 /recipe/232197/karens-slow-cooker-chicken-fajitas/
 Chili Cumin Stuffed Chicken Breasts
 /recipe/84656/chili-cumin-stuffed-chicken-breasts/
-Slow Cooker Beef Stew II
-/recipe/16402/slow-cooker-beef-stew-ii/
 Barbecued Beef
 /recipe/14646/barbecued-beef/
 Mexican Pot Roast
@@ -1150,8 +1104,6 @@ Slow Cooker Enchiladas
 /recipe/84482/slow-cooker-enchiladas/
 Easiest Slow Cooker French Dip
 /recipe/99904/easiest-slow-cooker-french-dip/
-Slow Cooker Macaroni and Cheese II
-/recipe/23833/slow-cooker-macaroni-and-cheese-ii/
 Spicy Slow-Cooked Chili
 /recipe/223390/spicy-slow-cooked-chili/
 Pork Chile Rojo (Pulled Pork with Red Chile Sauce)
@@ -1174,8 +1126,6 @@ Creole Chicken I
 /recipe/8716/creole-chicken-i/
 Easy Slow Cooker Chicken and Dumplings
 /recipe/240587/easy-slow-cooker-chicken-and-dumplings/
-Sauerkraut Soup II
-/recipe/13315/sauerkraut-soup-ii/
 Slow Cooker Pork Roast
 /recipe/235924/slow-cooker-pork-roast/
 V-Eight Vegetable Beef Soup
@@ -1188,5 +1138,3 @@ Slow Cooker Chili
 /recipe/16933/slow-cooker-chili/
 Anna's Amazing Easy Pleasy Meatballs over Buttered Noodles
 /recipe/88341/annas-amazing-easy-pleasy-meatballs-over-buttered-noodles/
-Slow Cooker Chili II
-/recipe/48449/slow-cooker-chili-ii/

@@ -51,6 +51,9 @@ public class Multi  extends Thread{
     			//System.out.println("skipping");
     			continue;
     			}
+    			else if (RecipeUrl.contains("ii") || RecipeUrl.contains("iii")){
+    				continue;
+    			}
     			Document subDoc = null;
     			try{
     				if(!(RecipeUrl.contains("http"))){

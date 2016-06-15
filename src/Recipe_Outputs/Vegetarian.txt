@@ -1,5 +1,3 @@
-Eggplant Parmesan II
-/recipe/25321/eggplant-parmesan-ii/
 Andrea's Pasta Fagioli
 /recipe/25690/andreas-pasta-fagioli/
 Butternut Squash Pizzas with Rosemary
@@ -22,8 +20,6 @@ Vegan Black Bean Soup
 /recipe/25333/vegan-black-bean-soup/
 Kale, Quinoa, and Avocado Salad with Lemon Dijon Vinaigrette
 /recipe/230050/kale-quinoa-and-avocado-salad-with-lemon-dijon-vinaigrette/
-Creamed Spinach II
-/recipe/25249/creamed-spinach-ii/
 Broccoli Casserole
 /recipe/18217/broccoli-casserole/
 Baked Mashed Potatoes
@@ -32,8 +28,6 @@ Easy Fried Eggplant
 /recipe/22448/easy-fried-eggplant/
 Quinoa Tabbouleh
 /recipe/25922/quinoa-tabbouleh/
-Stuffed Shells III
-/recipe/21532/stuffed-shells-iii/
 Indian Dahl with Spinach
 /recipe/21459/indian-dahl-with-spinach/
 Greek Lentil Soup (Fakes)
@@ -58,8 +52,6 @@ Quick Black Beans and Rice
 /recipe/13999/quick-black-beans-and-rice/
 Spicy Tortilla Roll-Ups
 /recipe/15359/spicy-tortilla-roll-ups/
-Spanish Rice II
-/recipe/24329/spanish-rice-ii/
 Vegan Red Lentil Soup
 /recipe/70330/vegan-red-lentil-soup/
 Pierogi (Polish Dumplings)
@@ -78,6 +70,8 @@ Roasted Garlic Mashed Potatoes
 /recipe/24775/roasted-garlic-mashed-potatoes/
 Orange Glazed Carrots
 /recipe/24773/orange-glazed-carrots/
+Ratatouille Bake
+/recipe/200877/ratatouille-bake/
 Roasted Vegetables
 /recipe/9377/roasted-vegetables/
 Garden Veggie Pizza Squares
@@ -96,6 +90,8 @@ Mango Salsa
 /recipe/48032/mango-salsa/
 Eggplant Parmesan I
 /recipe/13981/eggplant-parmesan-i/
+Baked Whole Cauliflower
+/recipe/49262/baked-whole-cauliflower/
 Thai Curry Tofu
 /recipe/73737/thai-curry-tofu/
 Cottage Cheese Roast
@@ -134,16 +130,14 @@ Sukhothai Pad Thai
 /recipe/19306/sukhothai-pad-thai/
 Perfect Sushi Rice
 /recipe/99211/perfect-sushi-rice/
-Spinach Lasagna III
-/recipe/22729/spinach-lasagna-iii/
 Strawberry Avocado Salad
 /recipe/86241/strawberry-avocado-salad/
 Caramelized Brussels Sprouts with Pistachios
 /recipe/16015/caramelized-brussels-sprouts-with-pistachios/
 Extra Easy Hummus
 /recipe/20797/extra-easy-hummus/
-Spaghetti Sauce II
-/recipe/11802/spaghetti-sauce-ii/
+Baingan Bharta (Eggplant Curry)
+/recipe/47564/baingan-bharta-eggplant-curry/
 Vegetable Chowder
 /recipe/12899/vegetable-chowder/
 Spinach and Sun-Dried Tomato Pasta
@@ -160,8 +154,8 @@ Disney's Ratatouille
 /recipe/222006/disneys-ratatouille/
 Tomato and Garlic Pasta
 /recipe/11691/tomato-and-garlic-pasta/
-Grilled Zucchini II
-/recipe/19921/grilled-zucchini-ii/
+Garlic Bread Fantastique
+/recipe/27055/garlic-bread-fantastique/
 Quick Yeast Rolls
 /recipe/13827/quick-yeast-rolls/
 Rich and Creamy Tomato Basil Soup
@@ -236,8 +230,6 @@ Sesame Noodles
 /recipe/90044/sesame-noodles/
 No-Cream Pasta Primavera
 /recipe/86515/no-cream-pasta-primavera/
-Bread and Butter Pickles II
-/recipe/21166/bread-and-butter-pickles-ii/
 Asparagus with Parmesan Crust
 /recipe/34946/asparagus-with-parmesan-crust/
 Fresh Salsa I
@@ -264,6 +256,8 @@ Portobello Sandwiches
 /recipe/16408/portobello-sandwiches/
 Zucchini Cornbread Casserole
 /recipe/20920/zucchini-cornbread-casserole/
+Strawberry and Feta Salad
+/recipe/62686/strawberry-and-feta-salad/
 Carrot Souffle
 /recipe/21463/carrot-souffle/
 Caribbean Sweet Potato Salad
@@ -278,12 +272,12 @@ Churros
 /recipe/24700/churros/
 Hearty Vegetable Lasagna
 /recipe/11786/hearty-vegetable-lasagna/
+Mom's Baked Macaroni and Cheese
+/recipe/19427/moms-baked-macaroni-and-cheese/
 Cafeteria Carrot Souffle
 /recipe/22659/cafeteria-carrot-souffle/
 Delicious Apple Sauce
 /recipe/20645/delicious-apple-sauce/
-Easy Cheese Ball II
-/recipe/14927/easy-cheese-ball-ii/
 Classic Macaroni Salad
 /recipe/81108/classic-macaroni-salad/
 Oven Roasted Potatoes
@@ -300,10 +294,10 @@ Garden Pasta Salad
 /recipe/11883/garden-pasta-salad/
 Cherry Crisp
 /recipe/23421/cherry-crisp/
-Scalloped Potatoes II
-/recipe/14120/scalloped-potatoes-ii/
 Country Style Fried Potatoes
 /recipe/20749/country-style-fried-potatoes/
+Aunt Millie's Broccoli Casserole
+/recipe/16939/aunt-millies-broccoli-casserole/
 Mashed Sweet Potatoes
 /recipe/21220/mashed-sweet-potatoes/
 Ukrainian Red Borscht Soup
@@ -362,16 +356,12 @@ Quick and Easy Alfredo Sauce
 /recipe/19402/quick-and-easy-alfredo-sauce/
 Apple Walnut Salad with Cranberry Vinaigrette
 /recipe/14458/apple-walnut-salad-with-cranberry-vinaigrette/
-Apple Crisp III
-/recipe/23081/apple-crisp-iii/
 Vegetarian Sweet and Sour Meatballs
 /recipe/57124/vegetarian-sweet-and-sour-meatballs/
 Roasted and Curried Butternut Squash Soup
 /recipe/22956/roasted-and-curried-butternut-squash-soup/
 Corn Fritters
 /recipe/18040/corn-fritters/
-Banana Pudding III
-/recipe/21313/banana-pudding-iii/
 Macaroni and Cheese V
 /recipe/19422/macaroni-and-cheese-v/
 Spinach Enchiladas Verde
@@ -400,6 +390,8 @@ Garlic Green Beans
 /recipe/18288/garlic-green-beans/
 Easy Mashed Potato and Roasted Vegetable Enchiladas
 /recipe/16457/easy-mashed-potato-and-roasted-vegetable-enchiladas/
+Baked Tofu Bites
+/recipe/86313/baked-tofu-bites/
 Pizza On The Grill I
 /recipe/14522/pizza-on-the-grill-i/
 Lemon Pepper Green Beans
@@ -414,8 +406,6 @@ Chuck's Favorite Mac and Cheese
 /recipe/19368/chucks-favorite-mac-and-cheese/
 Baba Ghanoush
 /recipe/14859/baba-ghanoush/
-Marinated Mushrooms II
-/recipe/24595/marinated-mushrooms-ii/
 Quinoa with Chickpeas and Tomatoes
 /recipe/111515/quinoa-with-chickpeas-and-tomatoes/
 Green Beans with Bread Crumbs
@@ -430,6 +420,8 @@ Cheesy Baked Eggplant
 /recipe/70447/cheesy-baked-eggplant/
 Cherry Tomato Salad
 /recipe/14180/cherry-tomato-salad/
+Butter Bean Burgers
+/recipe/21643/butter-bean-burgers/
 Bean Quesadillas
 /recipe/14144/bean-quesadillas/
 Vegetarian Chickpea Sandwich Filling
@@ -472,8 +464,6 @@ Peach-a-Berry Pie
 /recipe/88278/peach-a-berry-pie/
 Insanely Easy Vegetarian Chili
 /recipe/22919/insanely-easy-vegetarian-chili/
-Tzatziki Sauce II
-/recipe/20830/tzatziki-sauce-ii/
 Suzy's Mashed Red Potatoes
 /recipe/22986/suzys-mashed-red-potatoes/
 Seven Layer Tex Mex Dip
@@ -518,8 +508,6 @@ Garlic Spinach
 /recipe/218288/garlic-spinach/
 Buttery Cooked Carrots
 /recipe/18256/buttery-cooked-carrots/
-Grandma's Noodles II
-/recipe/11776/grandmas-noodles-ii/
 Easy Roasted Red Pepper Hummus
 /recipe/15436/easy-roasted-red-pepper-hummus/
 Basic Microwave Risotto
@@ -534,6 +522,8 @@ Grandma Jeanette's Amazing German Red Cabbage
 /recipe/139977/grandma-jeanettes-amazing-german-red-cabbage/
 Caramelized Spicy Pumpkin Seeds
 /recipe/152418/caramelized-spicy-pumpkin-seeds/
+Moroccan-Style Stuffed Acorn Squash
+/recipe/50096/moroccan-style-stuffed-acorn-squash/
 California Coleslaw
 /recipe/20762/california-coleslaw/
 Zucchini Risotto
@@ -632,20 +622,14 @@ Quick Gnocchi
 /recipe/11760/quick-gnocchi/
 Spinach and Orzo Salad
 /recipe/26301/spinach-and-orzo-salad/
-Tater Tot Casserole II
-/recipe/17437/tater-tot-casserole-ii/
 Best Fried Green Tomatoes
 /recipe/16760/best-fried-green-tomatoes/
-Mac and Cheese II
-/recipe/12016/mac-and-cheese-ii/
 Tomato Spinach and Basil Soup
 /recipe/21178/tomato-spinach-and-basil-soup/
 Cookie Balls
 /recipe/24043/cookie-balls/
 Unsloppy Joes
 /recipe/13893/unsloppy-joes/
-Dill Dip III
-/recipe/14831/dill-dip-iii/
 Vegan Brownies
 /recipe/68436/vegan-brownies/
 Make-Ahead Vegetarian Moroccan Stew
@@ -656,8 +640,6 @@ Eggplant Sandwiches
 /recipe/29942/eggplant-sandwiches/
 Nanny's Spaghetti Sauce
 /recipe/15176/nannys-spaghetti-sauce/
-Creme Brulee II
-/recipe/19029/creme-brulee-ii/
 Mexican Layered Dip
 /recipe/15340/mexican-layered-dip/
 Hot Artichoke Spinach Dip
@@ -666,8 +648,6 @@ Fresh Asparagus Soup
 /recipe/17960/fresh-asparagus-soup/
 Chef John's Meatless Meatballs
 /recipe/232908/chef-johns-meatless-meatballs/
-Black Bean and Corn Salad II
-/recipe/13933/black-bean-and-corn-salad-ii/
 Feta Cheese Foldovers
 /recipe/13509/feta-cheese-foldovers/
 Baked Falafel
@@ -678,8 +658,6 @@ Aloo Phujia
 /recipe/14035/aloo-phujia/
 Ricotta Gnocchi
 /recipe/126942/ricotta-gnocchi/
-Hot Artichoke and Spinach Dip II
-/recipe/26819/hot-artichoke-and-spinach-dip-ii/
 Potato Chips
 /recipe/66646/potato-chips/
 Vegetarian Stuffed Peppers
@@ -690,8 +668,6 @@ Mouth-Watering Stuffed Mushrooms
 /recipe/15184/mouth-watering-stuffed-mushrooms/
 Cucumber Sunomono
 /recipe/14050/cucumber-sunomono/
-Blue Cheese Dip II
-/recipe/24901/blue-cheese-dip-ii/
 Spiced Slow Cooker Applesauce
 /recipe/149218/spiced-slow-cooker-applesauce/
 Vegetarian Four Cheese Lasagna
@@ -756,8 +732,6 @@ Pumpkin Butter
 /recipe/13632/pumpkin-butter/
 Microwave Corn on the Cob
 /recipe/51025/microwave-corn-on-the-cob/
-Hummus III
-/recipe/14830/hummus-iii/
 Vegan Pancakes
 /recipe/191885/vegan-pancakes/
 Alfredo Mostaccioli
@@ -778,14 +752,14 @@ Vegan Cupcakes
 /recipe/155534/vegan-cupcakes/
 Mexican Rice I
 /recipe/18313/mexican-rice-i/
+Angie's Dad's Best Cabbage Coleslaw
+/recipe/40204/angies-dads-best-cabbage-coleslaw/
 Best Guacamole
 /recipe/14837/best-guacamole/
 Cream Peas
 /recipe/18274/cream-peas/
 Awesome Bow Tie Pasta
 /recipe/19907/awesome-bow-tie-pasta/
-Sweet and Sour Sauce II
-/recipe/24246/sweet-and-sour-sauce-ii/
 Oranged Cranberry Sauce
 /recipe/13506/oranged-cranberry-sauce/
 Holiday Cranberry Sauce
@@ -800,12 +774,14 @@ Baked Sweet Potato Sticks
 /recipe/13517/baked-sweet-potato-sticks/
 Basic Pasta
 /recipe/11899/basic-pasta/
-Baked French Fries II
-/recipe/31519/baked-french-fries-ii/
+St. Louis Toasted Ravioli
+/recipe/16907/st-louis-toasted-ravioli/
 Awesome Broccoli Casserole
 /recipe/18220/awesome-broccoli-casserole/
 Best Formula Three-Cheese Fondue
 /recipe/45657/best-formula-three-cheese-fondue/
+Jalapeno Poppers I
+/recipe/26835/jalapeno-poppers-i/
 Peanut Noodles
 /recipe/13974/peanut-noodles/
 Make Ahead French Toast
@@ -816,6 +792,8 @@ Artichoke Dip I
 /recipe/20859/artichoke-dip-i/
 Fruit Dip VI
 /recipe/22911/fruit-dip-vi/
+African Peanut Soup
+/recipe/73090/african-peanut-soup/
 Easy Masoor Daal
 /recipe/22765/easy-masoor-daal/
 Mexican Rice
@@ -830,12 +808,8 @@ Arrabbiata Sauce
 /recipe/11839/arrabbiata-sauce/
 Bread Machine Garlic Bread
 /recipe/16667/bread-machine-garlic-bread/
-Seven Layer Dip II
-/recipe/23176/seven-layer-dip-ii/
 Cheese Ravioli with Fresh Tomato and Artichoke Sauce
 /recipe/11723/cheese-ravioli-with-fresh-tomato-and-artichoke-sauce/
-Sweet Potato Casserole II
-/recipe/18057/sweet-potato-casserole-ii/
 Eggnog I
 /recipe/9351/eggnog-i/
 Mexican Cream Cheese Rollups
@@ -904,8 +878,6 @@ Hot Apple Cider
 /recipe/9501/hot-apple-cider/
 Black Bean and Corn Salad I
 /recipe/13932/black-bean-and-corn-salad-i/
-Penne a la Vodka II
-/recipe/19919/penne-a-la-vodka-ii/
 Spinach Cheese Manicotti
 /recipe/46887/spinach-cheese-manicotti/
 Zucchini and Potato Bake
@@ -924,10 +896,14 @@ Best Green Bean Casserole
 /recipe/18379/best-green-bean-casserole/
 Zucchini Parmesan
 /recipe/21021/zucchini-parmesan/
+Spinach and Leek White Bean Soup
+/recipe/76137/spinach-and-leek-white-bean-soup/
 Butternut Squash Bake
 /recipe/188690/butternut-squash-bake/
 Homemade Black Bean Veggie Burgers
 /recipe/85452/homemade-black-bean-veggie-burgers/
+Veggie Pizza
+/recipe/15022/veggie-pizza/
 Polish Cabbage Noodles
 /recipe/11678/polish-cabbage-noodles/
 Kettle Corn
@@ -948,16 +924,12 @@ Asian Ginger Dressing
 /recipe/49923/asian-ginger-dressing/
 Cheryl's Spinach Cheesy Pasta Casserole
 /recipe/54143/cheryls-spinach-cheesy-pasta-casserole/
-Salsa II
-/recipe/24243/salsa-ii/
 Skillet Zucchini
 /recipe/90030/skillet-zucchini/
 Portobello Mushroom Burgers
 /recipe/14497/portobello-mushroom-burgers/
 Maple Dill Carrots
 /recipe/87694/maple-dill-carrots/
-Chocolate Gravy II
-/recipe/24578/chocolate-gravy-ii/
 Vegetarian Bibimbap
 /recipe/228241/vegetarian-bibimbap/
 Easy Hummus
@@ -1014,10 +986,10 @@ Gazpacho
 /recipe/19770/gazpacho/
 Pesto
 /recipe/13937/pesto/
+Scalloped Corn
+/recipe/9204/scalloped-corn/
 Seven Layer Tortilla Pie
 /recipe/13890/seven-layer-tortilla-pie/
-Best Ever Chocolate Chip Cookies II
-/recipe/19232/best-ever-chocolate-chip-cookies-ii/
 Superfast Asparagus
 /recipe/161685/superfast-asparagus/
 Scalloped Corn and Broccoli
@@ -1034,14 +1006,10 @@ Delicious Black Bean Burritos
 /recipe/14041/delicious-black-bean-burritos/
 Cowboy Mashed Potatoes
 /recipe/18275/cowboy-mashed-potatoes/
-Spinach Lasagna II
-/recipe/11900/spinach-lasagna-ii/
 Tomato Zucchini Casserole
 /recipe/87563/tomato-zucchini-casserole/
 Toasted Garlic Bread
 /recipe/21060/toasted-garlic-bread/
-Three Cheese Manicotti II
-/recipe/86446/three-cheese-manicotti-ii/
 Broccoli Quiche with Mashed Potato Crust
 /recipe/21329/broccoli-quiche-with-mashed-potato-crust/
 Summer Corn Salad
@@ -1050,6 +1018,8 @@ Cheesy Zucchini Casserole I
 /recipe/20867/cheesy-zucchini-casserole-i/
 Simple Garlic and Basil Pesto
 /recipe/76697/simple-garlic-and-basil-pesto/
+Microwave Peanut Brittle
+/recipe/19888/microwave-peanut-brittle/
 Barley Bake
 /recipe/43789/barley-bake/
 Roasted Beets 'n' Sweets
@@ -1094,6 +1064,8 @@ Artichoke & Spinach Dip Restaurant Style
 /recipe/33474/artichoke-spinach-dip-restaurant-style/
 Baked Potato
 /recipe/16505/baked-potato/
+Spinach and Tortellini Salad
+/recipe/14440/spinach-and-tortellini-salad/
 Barbecue Tofu Sandwiches
 /recipe/14047/barbecue-tofu-sandwiches/
 Spinach Brownies
@@ -1116,8 +1088,6 @@ Hot Bean Dip
 /recipe/22163/hot-bean-dip/
 Slow Cooker Creamed Corn
 /recipe/25894/slow-cooker-creamed-corn/
-Tabbouleh III
-/recipe/14438/tabbouleh-iii/
 Purple Monstrosity Fruit Smoothie
 /recipe/16490/purple-monstrosity-fruit-smoothie/
 Awesome Broccoli-Cheese Casserole

@@ -18,8 +18,6 @@ Chicken and Broccoli Alfredo
 /recipe/151618/chicken-and-broccoli-alfredo/
 Chicken Lo Mein
 /recipe/17092/chicken-lo-mein/
-Oven Fried Chicken II
-/recipe/8841/oven-fried-chicken-ii/
 Cheater Pot Pie
 /recipe/18370/cheater-pot-pie/
 Chicken Marsala Florentine
@@ -48,8 +46,6 @@ Baked Chicken with Peaches
 /recipe/19880/baked-chicken-with-peaches/
 Phenomenal Chicken and Pasta in Creamy Pesto Sauce
 /recipe/86738/phenomenal-chicken-and-pasta-in-creamy-pesto-sauce/
-Catherine's Spicy Chicken Soup
-/recipe/23874/catherines-spicy-chicken-soup/
 Easy Cajun Jambalaya
 /recipe/31833/easy-cajun-jambalaya/
 Bourbon Pecan Chicken
@@ -62,8 +58,6 @@ Pesto Cheesy Chicken Rolls
 /recipe/57319/pesto-cheesy-chicken-rolls/
 Spicy Garlic Lime Chicken
 /recipe/44868/spicy-garlic-lime-chicken/
-Slow Cooker Buffalo Chicken Sandwiches
-/recipe/176132/slow-cooker-buffalo-chicken-sandwiches/
 Kathy's Delicious Whole Slow Cooker Chicken
 /recipe/72133/kathys-delicious-whole-slow-cooker-chicken/
 Blackened Chicken
@@ -104,8 +98,6 @@ Chicken Puffs
 /recipe/26738/chicken-puffs/
 The Best Chicken Salad Ever
 /recipe/14399/the-best-chicken-salad-ever/
-Chicken Scampi II
-/recipe/8761/chicken-scampi-ii/
 Curried Honey Mustard Chicken
 /recipe/8857/curried-honey-mustard-chicken/
 Curried Coconut Chicken
@@ -118,8 +110,6 @@ Cream of Chicken with Wild Rice Soup
 /recipe/15021/cream-of-chicken-with-wild-rice-soup/
 Salsa Chicken Burrito Filling
 /recipe/22970/salsa-chicken-burrito-filling/
-Chicken Fried Chicken
-/recipe/16573/chicken-fried-chicken/
 Roast Sticky Chicken-Rotisserie Style
 /recipe/45954/roast-sticky-chicken-rotisserie-style/
 Pretty Chicken Marinade
@@ -138,16 +128,12 @@ Boiled Chicken
 /recipe/20455/boiled-chicken/
 Chicken and Bowtie Pasta with Asiago Cream Sauce
 /recipe/58490/chicken-and-bowtie-pasta-with-asiago-cream-sauce/
-Tomato Chicken Parmesan
-/recipe/9044/tomato-chicken-parmesan/
 Slow Cooker Italian Chicken Alfredo
 /recipe/213636/slow-cooker-italian-chicken-alfredo/
 Cajun Chicken Pasta
 /recipe/8778/cajun-chicken-pasta/
 Chicken and Sausage with Bowties
 /recipe/8681/chicken-and-sausage-with-bowties/
-Unbelievable Chicken
-/recipe/30522/unbelievable-chicken/
 My Mom's Parmesan Chicken
 /recipe/8529/my-moms-parmesan-chicken/
 Fast Chicken Soup Base
@@ -162,10 +148,6 @@ Dijon-Tarragon Cream Chicken
 /recipe/77156/dijon-tarragon-cream-chicken/
 Slow Cooker Chicken with Mushroom Wine Sauce
 /recipe/25363/slow-cooker-chicken-with-mushroom-wine-sauce/
-Chinese Chicken Salad III
-/recipe/14319/chinese-chicken-salad-iii/
-Chicken Enchilada Casserole II
-/recipe/8945/chicken-enchilada-casserole-ii/
 Balsamic Chicken and Fresh Mozzarella
 /recipe/83296/balsamic-chicken-and-fresh-mozzarella/
 Pollo Fajitas
@@ -184,10 +166,10 @@ Sour Cream Chicken Enchiladas
 /recipe/16701/sour-cream-chicken-enchiladas/
 Quick Chicken Divan
 /recipe/8533/quick-chicken-divan/
-Chicken Piccata II
-/recipe/8853/chicken-piccata-ii/
 Cheddar Chicken
 /recipe/8776/cheddar-chicken/
+Italian Chicken Marinade
+/recipe/8948/italian-chicken-marinade/
 Grilled Asian Chicken
 /recipe/8919/grilled-asian-chicken/
 Chicken Chimichangas with Green Sauce
@@ -216,8 +198,6 @@ Chicken Wing Dip
 /recipe/90544/chicken-wing-dip/
 Southwestern Egg Rolls
 /recipe/25502/southwestern-egg-rolls/
-Slow Cooker Lemon Garlic Chicken II
-/recipe/18032/slow-cooker-lemon-garlic-chicken-ii/
 Baked Apricot Chicken
 /recipe/8840/baked-apricot-chicken/
 Smothered Chicken Breasts
@@ -234,8 +214,6 @@ Best Chicken Ever
 /recipe/8907/best-chicken-ever/
 Soul Smothered Chicken
 /recipe/83302/soul-smothered-chicken/
-Chicken Tortilla Soup II
-/recipe/13367/chicken-tortilla-soup-ii/
 Chicken Danielle
 /recipe/23850/chicken-danielle/
 Bev's Orange Chicken
@@ -254,8 +232,6 @@ Trinidad Stewed Chicken
 /recipe/83421/trinidad-stewed-chicken/
 Aussie Chicken
 /recipe/18775/aussie-chicken/
-General Tsao's Chicken II
-/recipe/91499/general-tsaos-chicken-ii/
 Acapulco Chicken
 /recipe/19123/acapulco-chicken/
 Chicken Piccata with Artichoke Hearts
@@ -264,16 +240,12 @@ April's Chicken Fried Rice
 /recipe/23632/aprils-chicken-fried-rice/
 Chicken Tacos
 /recipe/37906/chicken-tacos/
-King Ranch Chicken Casserole III
-/recipe/8721/king-ranch-chicken-casserole-iii/
 Indian Tomato Chicken
 /recipe/17449/indian-tomato-chicken/
 Beer Butt Chicken
 /recipe/14531/beer-butt-chicken/
 Slow Cooker Chicken Parisienne
 /recipe/24786/slow-cooker-chicken-parisienne/
-Bacon Chicken II
-/recipe/16581/bacon-chicken-ii/
 Shoyu Chicken
 /recipe/202463/shoyu-chicken/
 Balsamic Marinated Chicken Breasts
@@ -300,8 +272,6 @@ Slow Cooker Chicken Creole
 /recipe/25184/slow-cooker-chicken-creole/
 Quick and Easy Chicken Noodle Soup
 /recipe/26460/quick-and-easy-chicken-noodle-soup/
-Chicken Tortilla Soup III
-/recipe/15553/chicken-tortilla-soup-iii/
 Triple Dipped Fried Chicken
 /recipe/89268/triple-dipped-fried-chicken/
 Slow Cooker Adobo Chicken
@@ -330,8 +300,6 @@ Chicken with Chipotle
 /recipe/95091/chicken-with-chipotle/
 Chicken and Cheese Stuffed Jumbo Shells
 /recipe/19418/chicken-and-cheese-stuffed-jumbo-shells/
-Six Can Chicken Tortilla Soup
-/recipe/19766/six-can-chicken-tortilla-soup/
 Chili-Lime Chicken Kabobs
 /recipe/19934/chili-lime-chicken-kabobs/
 Grilled Lemon Chicken
@@ -340,8 +308,6 @@ Cheese and Broccoli Chicken Soup
 /recipe/12992/cheese-and-broccoli-chicken-soup/
 Fruity Curry Chicken Salad
 /recipe/8932/fruity-curry-chicken-salad/
-Jalapeno Chicken II
-/recipe/34066/jalapeno-chicken-ii/
 Chicken with Garlic, Basil, and Parsley
 /recipe/89321/chicken-with-garlic-basil-and-parsley/
 Sandy's Casserole
@@ -448,14 +414,10 @@ Easy Chicken Casserole
 /recipe/8594/easy-chicken-casserole/
 Authentic Enchiladas Verdes
 /recipe/59900/authentic-enchiladas-verdes/
-Chicken Pot Pie VIII
-/recipe/26318/chicken-pot-pie-viii/
 Sweet Hot Mustard Chicken Thighs
 /recipe/233170/sweet-hot-mustard-chicken-thighs/
 Chicken Marsala
 /recipe/8887/chicken-marsala/
-Chicken Pot Pie III
-/recipe/12659/chicken-pot-pie-iii/
 Baked Lemon Chicken with Mushroom Sauce
 /recipe/8714/baked-lemon-chicken-with-mushroom-sauce/
 Baked Buffalo Wings
@@ -480,8 +442,6 @@ Cheesy Chicken Meatballs
 /recipe/203203/cheesy-chicken-meatballs/
 Greek Style Garlic Chicken Breast
 /recipe/54202/greek-style-garlic-chicken-breast/
-Chinese Chicken Fried Rice II
-/recipe/16954/chinese-chicken-fried-rice-ii/
 Mediterranean Stuffed Chicken
 /recipe/8766/mediterranean-stuffed-chicken/
 Savory Crescent Chicken
@@ -492,22 +452,16 @@ Asian Glazed Chicken Thighs
 /recipe/216943/asian-glazed-chicken-thighs/
 Asparagus, Chicken and Penne Pasta
 /recipe/22629/asparagus-chicken-and-penne-pasta/
-Jambalaya II
-/recipe/24409/jambalaya-ii/
 Deep South Fried Chicken
 /recipe/8717/deep-south-fried-chicken/
 Mushroom and Swiss Chicken
 /recipe/17016/mushroom-and-swiss-chicken/
 Asparagus and Mozzarella Stuffed Chicken Breasts
 /recipe/213647/asparagus-and-mozzarella-stuffed-chicken-breasts/
-Chicken Cordon Bleu II
-/recipe/8669/chicken-cordon-bleu-ii/
 Savory Chicken Breasts
 /recipe/15063/savory-chicken-breasts/
 Unbelievably Awesome Barbeque Chicken Pizza
 /recipe/74375/unbelievably-awesome-barbeque-chicken-pizza/
-Swiss Chicken Casserole II
-/recipe/8640/swiss-chicken-casserole-ii/
 Braised Balsamic Chicken
 /recipe/8665/braised-balsamic-chicken/
 Mexican Chicken Corn Chowder
@@ -516,8 +470,6 @@ Famous Chicken Francaise
 /recipe/15181/famous-chicken-francaise/
 "Pantry Raid" Chicken Enchilada Casserole
 /recipe/222014/pantry-raid-chicken-enchilada-casserole/
-Sweet and Sour Chicken II
-/recipe/17707/sweet-and-sour-chicken-ii/
 Mom's Fabulous Chicken Pot Pie with Biscuit Crust
 /recipe/216758/moms-fabulous-chicken-pot-pie-with-biscuit-crust/
 Molly's Chicken
@@ -534,14 +486,10 @@ Easy and Delicious Chicken
 /recipe/8749/easy-and-delicious-chicken/
 Slow Cooker Chicken Marrakesh
 /recipe/218769/slow-cooker-chicken-marrakesh/
-Colleen's Slow Cooker Jambalaya
-/recipe/73634/colleens-slow-cooker-jambalaya/
 Angel Hair Pasta Chicken
 /recipe/20744/angel-hair-pasta-chicken/
 Slow Cook Thai Chicken
 /recipe/76778/slow-cook-thai-chicken/
-Easy Garlic Broiled Chicken
-/recipe/80827/easy-garlic-broiled-chicken/
 Pineapple Chicken Tenders
 /recipe/14526/pineapple-chicken-tenders/
 Chicken Pot Pie IV
@@ -558,10 +506,6 @@ Emergency Chicken
 /recipe/228774/emergency-chicken/
 Chicken Enchilada Dip
 /recipe/24643/chicken-enchilada-dip/
-Zucchini Pasta II
-/recipe/74345/zucchini-pasta-ii/
-Chicken and Dumplings III
-/recipe/8940/chicken-and-dumplings-iii/
 Cottage Cheese Chicken Enchiladas
 /recipe/16731/cottage-cheese-chicken-enchiladas/
 Easy Garlic Chicken
@@ -586,12 +530,12 @@ Crispy Fried Chicken
 /recipe/8805/crispy-fried-chicken/
 Chicken Crunch
 /recipe/8625/chicken-crunch/
+Easy Chicken Enchiladas
+/recipe/47374/easy-chicken-enchiladas/
 Ten Minute Szechuan Chicken
 /recipe/49014/ten-minute-szechuan-chicken/
 Romantic Chicken with Artichokes and Mushrooms
 /recipe/20704/romantic-chicken-with-artichokes-and-mushrooms/
-Chicken Pot Pie II
-/recipe/8808/chicken-pot-pie-ii/
 Best Ever Chicken Casserole
 /recipe/8798/best-ever-chicken-casserole/
 Kung Pao Chicken
@@ -600,8 +544,6 @@ Lasagna Alfredo
 /recipe/19400/lasagna-alfredo/
 Indonesian Satay
 /recipe/36875/indonesian-satay/
-Tortilla Soup II
-/recipe/13022/tortilla-soup-ii/
 Spicy Chicken Thai Soup
 /recipe/219936/spicy-chicken-thai-soup/
 Sweet and Sour Drumettes
@@ -616,12 +558,8 @@ Slow Cooker Chicken Pot Pie Stew
 /recipe/180118/slow-cooker-chicken-pot-pie-stew/
 Sweet and Spicy Stir Fry with Chicken and Broccoli
 /recipe/70585/sweet-and-spicy-stir-fry-with-chicken-and-broccoli/
-Parmesan Chicken II
-/recipe/8636/parmesan-chicken-ii/
 Pan-Seared Chicken Breasts with Shallots
 /recipe/76895/pan-seared-chicken-breasts-with-shallots/
-Asian Orange Chicken
-/recipe/61024/asian-orange-chicken/
 Chicken Stir-Fry
 /recipe/223382/chicken-stir-fry/
 Spinach Stuffed Chicken Breast
@@ -680,24 +618,16 @@ Chicken Tortilla Soup I
 /recipe/13351/chicken-tortilla-soup-i/
 Pesto Pasta with Chicken
 /recipe/46982/pesto-pasta-with-chicken/
-Chicken Tortilla Soup V
-/recipe/15840/chicken-tortilla-soup-v/
 Fabulous Fajitas
 /recipe/8650/fabulous-fajitas/
 Angela's Easy Breaded Chicken
 /recipe/15030/angelas-easy-breaded-chicken/
-White Cheese Chicken Lasagna
-/recipe/8758/white-cheese-chicken-lasagna/
 Campbell's® Easy Chicken and Cheese Enchiladas
 /recipe/177781/campbells-easy-chicken-and-cheese-enchiladas/
 Chicken and Mushroom Saute
 /recipe/8683/chicken-and-mushroom-saute/
-Sweet and Sour Chicken III
-/recipe/17747/sweet-and-sour-chicken-iii/
 Grilled Chicken with Rosemary and Bacon
 /recipe/217981/grilled-chicken-with-rosemary-and-bacon/
-Chicken Enchilada Soup III
-/recipe/26382/chicken-enchilada-soup-iii/
 Broccoli Chicken Casserole I
 /recipe/8965/broccoli-chicken-casserole-i/
 Buffalo Chicken Wings I
@@ -740,8 +670,6 @@ Mediterranean Lemon Chicken
 /recipe/8596/mediterranean-lemon-chicken/
 Roast Chicken with Rosemary
 /recipe/15427/roast-chicken-with-rosemary/
-Indian Chicken Curry II
-/recipe/46822/indian-chicken-curry-ii/
 BBQ Chicken Pizza
 /recipe/24878/bbq-chicken-pizza/
 Chicken Breast Stuffed with Spinach Blue Cheese and Bacon
@@ -770,10 +698,6 @@ Brown Rice and Black Bean Casserole
 /recipe/75445/brown-rice-and-black-bean-casserole/
 Chicken Enchiladas I
 /recipe/8691/chicken-enchiladas-i/
-Chicken Korma II
-/recipe/68473/chicken-korma-ii/
-Baked Slow Cooker Chicken
-/recipe/8647/baked-slow-cooker-chicken/
 Chicken Katsu
 /recipe/72068/chicken-katsu/
 Creamy Chipotle Chicken
@@ -798,8 +722,6 @@ Garlic Chicken with Orzo Noodles
 /recipe/84109/garlic-chicken-with-orzo-noodles/
 Whit's Chicken Enchiladas
 /recipe/76012/whits-chicken-enchiladas/
-Chicken Supreme III
-/recipe/8693/chicken-supreme-iii/
 Becki's Oven Barbecue Chicken
 /recipe/9035/beckis-oven-barbecue-chicken/
 Bruschetta Chicken Bake
@@ -838,8 +760,6 @@ Indian Chicken Curry (Murgh Kari)
 /recipe/212721/indian-chicken-curry-murgh-kari/
 Chicken, Asparagus, and Mushroom Skillet
 /recipe/213654/chicken-asparagus-and-mushroom-skillet/
-Caramelized Baked Chicken
-/recipe/8614/caramelized-baked-chicken/
 Quick and Easy Pancit
 /recipe/47015/quick-and-easy-pancit/
 Basil Chicken over Angel Hair
@@ -858,10 +778,6 @@ Creamy White Chili
 /recipe/229949/creamy-white-chili/
 Grilled Chicken with Herbs
 /recipe/15641/grilled-chicken-with-herbs/
-Chicken Breasts Pierre
-/recipe/16707/chicken-breasts-pierre/
-The Best Ever Chicken Nuggets
-/recipe/161469/the-best-ever-chicken-nuggets/
 Oven Baked Jambalaya
 /recipe/38060/oven-baked-jambalaya/
 Buffalo Style Chicken Pizza
@@ -930,14 +846,10 @@ Firecracker Fried Chicken Drumsticks
 /recipe/25492/firecracker-fried-chicken-drumsticks/
 Sunshine Chicken
 /recipe/8723/sunshine-chicken/
-Chicken Spaghetti II
-/recipe/8976/chicken-spaghetti-ii/
 Chicken Souvlaki with Tzatziki Sauce
 /recipe/231644/chicken-souvlaki-with-tzatziki-sauce/
 Zesty Slow Cooker Chicken Barbecue
 /recipe/65896/zesty-slow-cooker-chicken-barbecue/
-Chicken Cordon Bleu I
-/recipe/8495/chicken-cordon-bleu-i/
 Amy's Garlic Egg Chicken
 /recipe/19886/amys-garlic-egg-chicken/
 Chicken Breasts with Herb Basting Sauce
@@ -980,8 +892,6 @@ Coq au Vin alla Italiana
 /recipe/8980/coq-au-vin-alla-italiana/
 Mild Cheesy Chicken Enchiladas
 /recipe/15604/mild-cheesy-chicken-enchiladas/
-BBQ Chicken Pizza II
-/recipe/32086/bbq-chicken-pizza-ii/
 Easy Chicken Tetrazzini
 /recipe/11780/easy-chicken-tetrazzini/
 Chicken Parmesan
@@ -1008,12 +918,8 @@ BBQ Chicken Pizza I
 /recipe/32148/bbq-chicken-pizza-i/
 Pad Thai
 /recipe/42968/pad-thai/
-Honey Baked Chicken II
-/recipe/8734/honey-baked-chicken-ii/
 Chicken Makhani (Indian Butter Chicken)
 /recipe/45957/chicken-makhani-indian-butter-chicken/
-Chicken Fettuccini Alfredo
-/recipe/25303/chicken-fettuccini-alfredo/
 Adobo Chicken with Ginger
 /recipe/28363/adobo-chicken-with-ginger/
 Quick Chicken Piccata
@@ -1048,8 +954,6 @@ Garlic Cheese Chicken Rollups
 /recipe/15448/garlic-cheese-chicken-rollups/
 Simple Lemon Herb Chicken
 /recipe/9011/simple-lemon-herb-chicken/
-Chicken Enchiladas II
-/recipe/8694/chicken-enchiladas-ii/
 Chicken Pot Pie VI
 /recipe/16794/chicken-pot-pie-vi/
 Greek Penne and Chicken
@@ -1116,8 +1020,6 @@ Thai Green Curry Chicken
 /recipe/141833/thai-green-curry-chicken/
 Marinated Ranch Broiled Chicken
 /recipe/17711/marinated-ranch-broiled-chicken/
-Chicken Milano
-/recipe/19304/chicken-milano/
 Chicken in a Pot
 /recipe/16611/chicken-in-a-pot/
 Chicken with Quinoa and Veggies
@@ -1134,12 +1036,8 @@ California Chicken
 /recipe/8613/california-chicken/
 Moroccan Chicken
 /recipe/18182/moroccan-chicken/
-Chicken Noodle Casserole I
-/recipe/11864/chicken-noodle-casserole-i/
 Enchiladas Suizas
 /recipe/35440/enchiladas-suizas/
-Oven Fried Chicken III
-/recipe/8963/oven-fried-chicken-iii/
 Chicken Tetrazzini for a Crowd
 /recipe/15036/chicken-tetrazzini-for-a-crowd/
 Parmesan and Basil Chicken Salad
@@ -1160,8 +1058,6 @@ Pesto Chicken
 /recipe/214188/pesto-chicken/
 The Best Chicken Soup Ever
 /recipe/26472/the-best-chicken-soup-ever/
-Hawaiian Chicken Kabobs
-/recipe/20415/hawaiian-chicken-kabobs/
 Chicken Suiza Cornbread Bake
 /recipe/38094/chicken-suiza-cornbread-bake/
 Mexican Casserole

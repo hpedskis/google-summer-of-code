@@ -26,10 +26,6 @@ Banana Waffles
 /recipe/21271/banana-waffles/
 Peanut Butter and Banana French Toast
 /recipe/21484/peanut-butter-and-banana-french-toast/
-Potato Pancakes II
-/recipe/18028/potato-pancakes-ii/
-Boston Brown Bread III
-/recipe/70814/boston-brown-bread-iii/
 Momma's Potatoes
 /recipe/18213/mommas-potatoes/
 Megan's Granola
@@ -38,12 +34,8 @@ Eggnog French Toast
 /recipe/100490/eggnog-french-toast/
 Mango-Peach Smoothie
 /recipe/66224/mango-peach-smoothie/
-Buttermilk Pancakes II
-/recipe/24530/buttermilk-pancakes-ii/
 Banana Bread
 /recipe/6687/banana-bread/
-Chilaquiles II
-/recipe/45729/chilaquiles-ii/
 Cranberry Apple Bread
 /recipe/22468/cranberry-apple-bread/
 Egg in a Hole
@@ -80,8 +72,6 @@ Wonderful Gluten Free White Bread
 /recipe/229878/wonderful-gluten-free-white-bread/
 Lola's Horchata
 /recipe/141828/lolas-horchata/
-Overnight French Toast II
-/recipe/24130/overnight-french-toast-ii/
 Quick and Easy Monkey Bread
 /recipe/7110/quick-and-easy-monkey-bread/
 Chocolate Chip Orange Zucchini Bread
@@ -96,8 +86,6 @@ Mini Frittatas
 /recipe/13994/mini-frittatas/
 Breakfast Sausage Casserole
 /recipe/172671/breakfast-sausage-casserole/
-Zucchini Pineapple Bread II
-/recipe/7188/zucchini-pineapple-bread-ii/
 Homemade Cereal
 /recipe/44162/homemade-cereal/
 Persimmon Bread I
@@ -224,8 +212,6 @@ Ricotta Cheese Pancakes
 /recipe/74968/ricotta-cheese-pancakes/
 Spicy Sausage Quiche
 /recipe/51407/spicy-sausage-quiche/
-Banana Blast II
-/recipe/18921/banana-blast-ii/
 Good-Morning Banana Nut Cereal
 /recipe/215692/good-morning-banana-nut-cereal/
 Egg and Sausage Casserole
@@ -268,8 +254,6 @@ Crunchy Pumpkin Pie Granola
 /recipe/127186/crunchy-pumpkin-pie-granola/
 Country Sausage Gravy
 /recipe/21513/country-sausage-gravy/
-Oatmeal Pancakes II
-/recipe/21384/oatmeal-pancakes-ii/
 Zucchini Bread
 /recipe/6724/zucchini-bread/
 Fried Egg Sandwich
@@ -282,8 +266,6 @@ Gingerbread Waffles with Hot Chocolate Sauce
 /recipe/21018/gingerbread-waffles-with-hot-chocolate-sauce/
 Kielbasa and Potato Bake
 /recipe/21314/kielbasa-and-potato-bake/
-Zucchini Bread VII
-/recipe/24013/zucchini-bread-vii/
 Bagel and Cheese Bake
 /recipe/38553/bagel-and-cheese-bake/
 Breakfast Pizza I
@@ -292,8 +274,6 @@ Baked Ham and Cheese Party Sandwiches
 /recipe/216756/baked-ham-and-cheese-party-sandwiches/
 Sausage Gravy
 /recipe/21657/sausage-gravy/
-Baked Oatmeal II
-/recipe/51013/baked-oatmeal-ii/
 Quick and Easy Eggs Benedict
 /recipe/70628/quick-and-easy-eggs-benedict/
 Grandma's English Muffin Bread
@@ -346,8 +326,6 @@ Bacon Gravy for Biscuits
 /recipe/161819/bacon-gravy-for-biscuits/
 Brunch Omelet Torte
 /recipe/24139/brunch-omelet-torte/
-Pear Bread II
-/recipe/24019/pear-bread-ii/
 Mimi's Zucchini Pie
 /recipe/104928/mimis-zucchini-pie/
 Scrambled Egg Muffins
@@ -406,8 +384,6 @@ Fluffy Canadian Pancakes
 /recipe/42688/fluffy-canadian-pancakes/
 German Puff Pancakes
 /recipe/214791/german-puff-pancakes/
-Monkey Bread II
-/recipe/6864/monkey-bread-ii/
 Breakfast Biscuits
 /recipe/24212/breakfast-biscuits/
 Yummy Veggie Omelet
@@ -418,6 +394,8 @@ Fast and Easy Pancakes
 /recipe/20918/fast-and-easy-pancakes/
 Nicole's Winter Carrot Zucchini Bread
 /recipe/161788/nicoles-winter-carrot-zucchini-bread/
+Brown Sugar Banana Nut Bread I
+/recipe/22722/brown-sugar-banana-nut-bread-i/
 Broccoli and Cheese Brunch Casserole
 /recipe/20700/broccoli-and-cheese-brunch-casserole/
 Black Bean Breakfast Bowl
@@ -504,14 +482,10 @@ Pumpkin Smoothie
 /recipe/142434/pumpkin-smoothie/
 Oatmeal Chocolate Chip Pancakes
 /recipe/33160/oatmeal-chocolate-chip-pancakes/
-Zucchini Bread III
-/recipe/6792/zucchini-bread-iii/
 Omelet in a Bag
 /recipe/85107/omelet-in-a-bag/
 Banana Crepes
 /recipe/25216/banana-crepes/
-Cinnamon Raisin Bread II
-/recipe/24420/cinnamon-raisin-bread-ii/
 Christmas Brunch Casserole
 /recipe/15047/christmas-brunch-casserole/
 Blueberry Pancakes
@@ -528,8 +502,6 @@ Jimmy Dean Breakfast Casserole
 /recipe/84065/jimmy-dean-breakfast-casserole/
 Country Sunday Breakfast Casserole
 /recipe/230966/country-sunday-breakfast-casserole/
-Banana Berry Smoothie II
-/recipe/33664/banana-berry-smoothie-ii/
 Cornbread Sausage Casserole
 /recipe/31984/cornbread-sausage-casserole/
 German Potato Pancakes
@@ -550,8 +522,6 @@ Hot Breakfast Couscous
 /recipe/99855/hot-breakfast-couscous/
 Cinnamon-Peach Cottage Cheese Pancakes
 /recipe/203314/cinnamon-peach-cottage-cheese-pancakes/
-Pancakes II
-/recipe/21480/pancakes-ii/
 Chili Relleno Casserole
 /recipe/217018/chili-relleno-casserole/
 Chocolate Hazelnut Fruit Crepes
@@ -566,6 +536,8 @@ Vanilla Crepes
 /recipe/95817/vanilla-crepes/
 Shirred Eggs
 /recipe/140333/shirred-eggs/
+Make-Ahead Baked Egg Sandwiches
+/recipe/167134/make-ahead-baked-egg-sandwiches/
 Bacon Pie
 /recipe/12479/bacon-pie/
 Green Smoothie
@@ -596,10 +568,6 @@ Zucchini Walnut Bread
 /recipe/6709/zucchini-walnut-bread/
 Kolaches From the Bread Machine
 /recipe/23045/kolaches-from-the-bread-machine/
-French Toast II
-/recipe/16719/french-toast-ii/
-Breakfast Casserole III
-/recipe/34763/breakfast-casserole-iii/
 Moist Date Nut Bread
 /recipe/51446/moist-date-nut-bread/
 Pumpkin Coconut Bread
@@ -624,8 +592,6 @@ Extreme Veggie Scrambled Eggs
 /recipe/24579/extreme-veggie-scrambled-eggs/
 Honey Nut Granola
 /recipe/21208/honey-nut-granola/
-Banana Nut Bread III
-/recipe/9460/banana-nut-bread-iii/
 French Egg and Bacon Sandwich
 /recipe/23757/french-egg-and-bacon-sandwich/
 Good Old Fashioned Pancakes
@@ -636,8 +602,6 @@ Blueberry Waffles with Fast Blueberry Sauce
 /recipe/35756/blueberry-waffles-with-fast-blueberry-sauce/
 Whole Wheat, Oatmeal, and Banana Pancakes
 /recipe/166601/whole-wheat-oatmeal-and-banana-pancakes/
-Chocolate Pancakes
-/recipe/183002/chocolate-pancakes/
 Bananas Foster Belgian Waffles
 /recipe/165384/bananas-foster-belgian-waffles/
 Oatmeal and Wheat Flour Blueberry Pancakes
@@ -684,8 +648,6 @@ Brunch Potato Casserole
 /recipe/86231/brunch-potato-casserole/
 Cinnamon Belgian Waffles
 /recipe/86538/cinnamon-belgian-waffles/
-Banana Nut Bread II
-/recipe/7141/banana-nut-bread-ii/
 Norwegian Waffles
 /recipe/55065/norwegian-waffles/
 Sausage Crescent Rolls
@@ -722,22 +684,16 @@ Uglies
 /recipe/22162/uglies/
 Strawberry Cream Cheese French Toast
 /recipe/230460/strawberry-cream-cheese-french-toast/
-Pumpkin Bread II
-/recipe/6795/pumpkin-bread-ii/
 Salmon and Swiss Chard Quiche
 /recipe/103877/salmon-and-swiss-chard-quiche/
 Southern Grits Casserole
 /recipe/46968/southern-grits-casserole/
 Cream of Wheat Griddlecakes
 /recipe/141081/cream-of-wheat-griddlecakes/
-Persimmon Bread II
-/recipe/6964/persimmon-bread-ii/
 Quick Lemon Poppy Seed Bread
 /recipe/6728/quick-lemon-poppy-seed-bread/
 Whole Grain Pancakes
 /recipe/186802/whole-grain-pancakes/
-Breakfast Casserole II
-/recipe/20701/breakfast-casserole-ii/
 Steve's Famous Garlic Home Fries
 /recipe/147539/steves-famous-garlic-home-fries/
 Vegan Pancakes
@@ -766,8 +722,6 @@ Overnight Asparagus Mushroom Strata
 /recipe/213651/overnight-asparagus-mushroom-strata/
 Janet's Famous Banana Nut Bread
 /recipe/23082/janets-famous-banana-nut-bread/
-Stuffed French Toast II
-/recipe/33092/stuffed-french-toast-ii/
 Blueberry Strata
 /recipe/148505/blueberry-strata/
 Ham Breakfast Braid
@@ -798,8 +752,6 @@ Banana Nut Bread I
 /recipe/6777/banana-nut-bread-i/
 Banana Chocolate Chip Bread
 /recipe/230482/banana-chocolate-chip-bread/
-Dutch Babies II
-/recipe/23898/dutch-babies-ii/
 Baked Omelet Squares
 /recipe/77237/baked-omelet-squares/
 Grandpa Hubbard's Oatmeal
@@ -850,8 +802,6 @@ Amy's Healthy Fruity
 /recipe/20521/amys-healthy-fruity/
 Christmas Morning Oatmeal
 /recipe/155891/christmas-morning-oatmeal/
-German Pancakes II
-/recipe/36900/german-pancakes-ii/
 Chinky's Mango Bread
 /recipe/6843/chinkys-mango-bread/
 Mascarpone Stuffed French Toast with Peaches
@@ -864,12 +814,8 @@ Cheesy Ham and Hash Brown Casserole
 /recipe/20096/cheesy-ham-and-hash-brown-casserole/
 Easy French Toast
 /recipe/20901/easy-french-toast/
-Migas II
-/recipe/70749/migas-ii/
 French Crepes
 /recipe/20931/french-crepes/
-Waffles II
-/recipe/22183/waffles-ii/
 Potato Pancakes
 /recipe/21487/potato-pancakes/
 Easy Sausage Strata
@@ -898,14 +844,10 @@ Brennan's Irish Soda Bread
 /recipe/213830/brennans-irish-soda-bread/
 Cinnamon Pancakes in a Jar
 /recipe/23357/cinnamon-pancakes-in-a-jar/
-Cinnamon Bread II
-/recipe/7091/cinnamon-bread-ii/
 Feta Eggs
 /recipe/50648/feta-eggs/
 Whole Wheat Blueberry Pancakes
 /recipe/104894/whole-wheat-blueberry-pancakes/
-Zucchini Bread II
-/recipe/6735/zucchini-bread-ii/
 Pumpkin Pancakes
 /recipe/17036/pumpkin-pancakes/
 Oven-Baked Caramel French Toast
@@ -922,8 +864,6 @@ Simply Pumpkin Pancakes
 /recipe/235535/simply-pumpkin-pancakes/
 Whole Grain Breakfast Cookies
 /recipe/218671/whole-grain-breakfast-cookies/
-Pumpkin Bread III
-/recipe/6840/pumpkin-bread-iii/
 Homefried Potatoes with Garlic and Bacon
 /recipe/86575/homefried-potatoes-with-garlic-and-bacon/
 Asparagus and Mushroom Frittata
@@ -956,8 +896,6 @@ Mom's Buttermilk Pancakes
 /recipe/203229/moms-buttermilk-pancakes/
 Ham and Hash Brown Quiche
 /recipe/229284/ham-and-hash-brown-quiche/
-Lower Fat Banana Bread II
-/recipe/24930/lower-fat-banana-bread-ii/
 Clone of a Cinnabon
 /recipe/20156/clone-of-a-cinnabon/
 Shredded Potato Quiche
@@ -968,6 +906,8 @@ Uncle Jesse's French Toast
 /recipe/84454/uncle-jesses-french-toast/
 Joy's Easy Banana Bread
 /recipe/241707/joys-easy-banana-bread/
+Caramelized Bacon
+/recipe/38554/caramelized-bacon/
 Big Germans
 /recipe/20520/big-germans/
 French Toast I
@@ -1136,8 +1076,6 @@ Irish Soda Bread I
 /recipe/6750/irish-soda-bread-i/
 Pancakes I
 /recipe/20461/pancakes-i/
-Banana Pancakes II
-/recipe/24152/banana-pancakes-ii/
 Easy Bacon and Cheese Quiche
 /recipe/24474/easy-bacon-and-cheese-quiche/
 Egg and Cheese Puffs
@@ -1148,8 +1086,6 @@ Spanish Potato Omelet
 /recipe/20198/spanish-potato-omelet/
 Chorizo Breakfast Burritos
 /recipe/76464/chorizo-breakfast-burritos/
-Sausage Gravy III
-/recipe/17919/sausage-gravy-iii/
 Banana Frittata
 /recipe/24210/banana-frittata/
 Apple Raisin French Toast Strata

@@ -6,8 +6,6 @@ Oatmeal Chocolate Coconut Chewy
 /recipe/10245/oatmeal-chocolate-coconut-chewy/
 Rhubarb Crunch
 /recipe/15643/rhubarb-crunch/
-Green Grape Salad
-/recipe/24378/green-grape-salad/
 Molasses Cookies
 /recipe/9311/molasses-cookies/
 Maple Apple Crisp
@@ -16,12 +14,8 @@ Cracked Sugar Cookies I
 /recipe/9864/cracked-sugar-cookies-i/
 Creamy Chocolate Frosting
 /recipe/26019/creamy-chocolate-frosting/
-Fluffy White Frosting
-/recipe/15265/fluffy-white-frosting/
 Blueberry Sour Cream Coffee Cake
 /recipe/70828/blueberry-sour-cream-coffee-cake/
-Vanilla - Chocolate Powdered Sugar Frosting
-/recipe/10842/vanilla---chocolate-powdered-sugar-frosting/
 Satiny Chocolate Glaze
 /recipe/8236/satiny-chocolate-glaze/
 Chocolate Oatmeal Cookies
@@ -32,8 +26,6 @@ White Chip Chocolate Cookies
 /recipe/25128/white-chip-chocolate-cookies/
 Caroline's Chocolate Fudge Frosting
 /recipe/8486/carolines-chocolate-fudge-frosting/
-Cherry Pie III
-/recipe/12701/cherry-pie-iii/
 Double Chocolate Brownie Cake
 /recipe/25572/double-chocolate-brownie-cake/
 Bev's Chocolate Pie
@@ -44,16 +36,12 @@ Pumpkin Ginger Cupcakes
 /recipe/152120/pumpkin-ginger-cupcakes/
 Peach Pie
 /recipe/12347/peach-pie/
-Buttermilk Pound Cake II
-/recipe/7722/buttermilk-pound-cake-ii/
 Cindy's Pumpkin Pie
 /recipe/24097/cindys-pumpkin-pie/
 Babe Ruth Bars
 /recipe/10884/babe-ruth-bars/
 Joy's Prizewinning Trifle
 /recipe/19832/joys-prizewinning-trifle/
-Ultimate Maple Snickerdoodles
-/recipe/11466/ultimate-maple-snickerdoodles/
 Chocolate Eclair Cake
 /recipe/17172/chocolate-eclair-cake/
 Bobbie's Oatmeal Cookies
@@ -64,16 +52,12 @@ Oatmeal Raisin Cookies IV
 /recipe/11620/oatmeal-raisin-cookies-iv/
 Self-Filled Cupcakes I
 /recipe/7717/self-filled-cupcakes-i/
-New York Cheesecake III
-/recipe/8229/new-york-cheesecake-iii/
 Candy Cane Fudge
 /recipe/67789/candy-cane-fudge/
 Chocolate Peanut Butter Cup Cookies
 /recipe/9986/chocolate-peanut-butter-cup-cookies/
 Chococonut Chip Cookies
 /recipe/19205/chococonut-chip-cookies/
-Texas Sheet Cake V
-/recipe/23056/texas-sheet-cake-v/
 Chocolate Eclair Dessert
 /recipe/19009/chocolate-eclair-dessert/
 Chocolate Covered Cherries
@@ -98,40 +82,28 @@ Apple Enchiladas
 /recipe/21597/apple-enchiladas/
 Mrs. Sigg's Peanut Butter Cookies
 /recipe/10721/mrs-siggs-peanut-butter-cookies/
-Chocolate Cream Pie II
-/recipe/15756/chocolate-cream-pie-ii/
 Easy Pavlova
 /recipe/12126/easy-pavlova/
 Tiramisu Layer Cake
 /recipe/25639/tiramisu-layer-cake/
 Irresistible Pecan Pie
 /recipe/18433/irresistible-pecan-pie/
-Peanut Butter Frosting
-/recipe/7496/peanut-butter-frosting/
 Chocolate Ganache
 /recipe/33647/chocolate-ganache/
 Chocolate Chocolate Chip Cookies I
 /recipe/9827/chocolate-chocolate-chip-cookies-i/
 Pumpkin Brownies
 /recipe/211165/pumpkin-brownies/
-Flourless Chocolate Cake II
-/recipe/52718/flourless-chocolate-cake-ii/
 Crackle Top Molasses Cookies
 /recipe/10074/crackle-top-molasses-cookies/
 Apple Turnovers
 /recipe/59124/apple-turnovers/
-Old Fashioned Peach Cobbler
-/recipe/19897/old-fashioned-peach-cobbler/
-Peach Cobbler II
-/recipe/22993/peach-cobbler-ii/
 Blueberry Cream Cheese Pound Cake I
 /recipe/25967/blueberry-cream-cheese-pound-cake-i/
 Chocolate Bourbon Pecan Pie
 /recipe/15994/chocolate-bourbon-pecan-pie/
 Pecan Sandies
 /recipe/26206/pecan-sandies/
-Apple Cinnamon White Cake
-/recipe/232922/apple-cinnamon-white-cake/
 Marshmallow Treats
 /recipe/9959/marshmallow-treats/
 Delicious Raspberry Oatmeal Cookie Bars
@@ -156,10 +128,6 @@ Apple Pie by Grandma Ople
 /recipe/12682/apple-pie-by-grandma-ople/
 Applesauce Bars
 /recipe/46395/applesauce-bars/
-Black Forest Cake I
-/recipe/8095/black-forest-cake-i/
-Pumpkin Cheesecake II
-/recipe/7866/pumpkin-cheesecake-ii/
 Chocolate Trifle
 /recipe/19017/chocolate-trifle/
 Creamy Caramel Flan
@@ -168,8 +136,6 @@ Pecan Pie IV
 /recipe/18471/pecan-pie-iv/
 Ruth's Grandma's Pie Crust
 /recipe/15995/ruths-grandmas-pie-crust/
-Dark Chocolate Cake II
-/recipe/22953/dark-chocolate-cake-ii/
 The Best Rolled Sugar Cookies
 /recipe/10402/the-best-rolled-sugar-cookies/
 Chocolate Bar Fondue
@@ -184,10 +150,6 @@ Quick Peanut Butter Cookies
 /recipe/10419/quick-peanut-butter-cookies/
 Strawberry Cake from Scratch
 /recipe/60564/strawberry-cake-from-scratch/
-Oatmeal Chocolate Chip Cookies III
-/recipe/10628/oatmeal-chocolate-chip-cookies-iii/
-Cinnamon Coffee Cake II
-/recipe/15399/cinnamon-coffee-cake-ii/
 Eileen's Spicy Gingerbread Men
 /recipe/56673/eileens-spicy-gingerbread-men/
 Cinnamon Swirl Bundt Coffee Cake
@@ -212,16 +174,10 @@ Crazy Cake
 /recipe/7475/crazy-cake/
 Pastry Cream
 /recipe/76043/pastry-cream/
-Peanut Butter Balls III
-/recipe/10670/peanut-butter-balls-iii/
 Spring Lime Tea Cookies
 /recipe/16404/spring-lime-tea-cookies/
-Tiramisu II
-/recipe/21412/tiramisu-ii/
 One Bowl Brownies
 /recipe/9910/one-bowl-brownies/
-Strawberry Pie II
-/recipe/15836/strawberry-pie-ii/
 My Amish Friend's Caramel Corn
 /recipe/74950/my-amish-friends-caramel-corn/
 Whipped Cream Cream Cheese Frosting
@@ -232,14 +188,10 @@ Gramma's Apple Bread Pudding
 /recipe/27138/grammas-apple-bread-pudding/
 Chocolate Cappuccino Cheesecake
 /recipe/7384/chocolate-cappuccino-cheesecake/
-Chocolate Crinkles II
-/recipe/9861/chocolate-crinkles-ii/
 Fudge
 /recipe/9368/fudge/
 Chocolate Cavity Maker Cake
 /recipe/8446/chocolate-cavity-maker-cake/
-Apple Crisp II
-/recipe/22338/apple-crisp-ii/
 Brooke's Best Bombshell Brownies
 /recipe/143667/brookes-best-bombshell-brownies/
 Fresh Cherry Cobbler
@@ -252,8 +204,6 @@ Chocolate Mousse Cake IV
 /recipe/17539/chocolate-mousse-cake-iv/
 Best Peach Cobbler Ever
 /recipe/12320/best-peach-cobbler-ever/
-Caramel Apple Pie II
-/recipe/15908/caramel-apple-pie-ii/
 Grandma's Gingersnap Cookies
 /recipe/10365/grandmas-gingersnap-cookies/
 Chocolate Caramel Brownies
@@ -274,18 +224,10 @@ Creamiest Rice Pudding
 /recipe/27131/creamiest-rice-pudding/
 Kentucky Butter Cake
 /recipe/7479/kentucky-butter-cake/
-Eggnog Cheesecake III
-/recipe/24308/eggnog-cheesecake-iii/
 Strawberry Pretzel Salad
 /recipe/20338/strawberry-pretzel-salad/
-Lemon Meringue Pie III
-/recipe/15173/lemon-meringue-pie-iii/
-Banana Cream Pie III
-/recipe/15603/banana-cream-pie-iii/
 Pumpkin Roll Cake
 /recipe/8126/pumpkin-roll-cake/
-Grandmother's Pound Cake II
-/recipe/21702/grandmothers-pound-cake-ii/
 Soft Sugar Cookies IV
 /recipe/15295/soft-sugar-cookies-iv/
 Easy Key Lime Pie I
@@ -300,8 +242,6 @@ Chocolate Turtles® Cheesecake I
 /recipe/7714/chocolate-turtles-cheesecake-i/
 Joey's Peanut Butter Cookies
 /recipe/11024/joeys-peanut-butter-cookies/
-Chocolate Covered Cherry Cookies II
-/recipe/9979/chocolate-covered-cherry-cookies-ii/
 Chocolate Cookie Buttercream Frosting
 /recipe/9994/chocolate-cookie-buttercream-frosting/
 Chewy Sugar Cookies
@@ -320,26 +260,16 @@ Chocolate Peanut Butter Squares
 /recipe/10804/chocolate-peanut-butter-squares/
 Old Fashioned Pineapple Upside-Down Cake
 /recipe/7622/old-fashioned-pineapple-upside-down-cake/
-The Best Banana Pudding
-/recipe/22749/the-best-banana-pudding/
 Pumpkin Cookies V
 /recipe/10949/pumpkin-cookies-v/
 Absolutely the Best Chocolate Chip Cookies
 /recipe/17209/absolutely-the-best-chocolate-chip-cookies/
-Apple Crisp III
-/recipe/23081/apple-crisp-iii/
 Apple Brownies
 /recipe/68348/apple-brownies/
-Magic Cookie Bars II
-/recipe/10555/magic-cookie-bars-ii/
 Chocolate Pudding Fudge Cake
 /recipe/17775/chocolate-pudding-fudge-cake/
-One Bowl Chocolate Cake III
-/recipe/17981/one-bowl-chocolate-cake-iii/
 Chewy Caramel
 /recipe/95294/chewy-caramel/
-Chocolate Zucchini Cake III
-/recipe/17643/chocolate-zucchini-cake-iii/
 Coconut Cream Cake I
 /recipe/17354/coconut-cream-cake-i/
 Michelle's Soft Sugar Cookies
@@ -350,24 +280,14 @@ Banana Pudding IV
 /recipe/21398/banana-pudding-iv/
 Spanish Flan
 /recipe/20979/spanish-flan/
-Sour Cream Coffee Cake III
-/recipe/8130/sour-cream-coffee-cake-iii/
 Classic Peanut Butter Cookies
 /recipe/10275/classic-peanut-butter-cookies/
 Delilah's Frosted Cut-Out Sugar Cookies
 /recipe/25065/delilahs-frosted-cut-out-sugar-cookies/
 GA Peach Pound Cake
 /recipe/17635/ga-peach-pound-cake/
-Peanut Butter Cupcakes
-/recipe/83814/peanut-butter-cupcakes/
-Ashley's Chocolate Chip Cookies
-/recipe/22848/ashleys-chocolate-chip-cookies/
 Chewy Chocolate Chip Oatmeal Cookies
 /recipe/24445/chewy-chocolate-chip-oatmeal-cookies/
-Five Minute Ice Cream
-/recipe/50050/five-minute-ice-cream/
-Snickerdoodles III
-/recipe/10576/snickerdoodles-iii/
 Rich Chocolate Truffle Pie
 /recipe/12643/rich-chocolate-truffle-pie/
 Lemon Bars I
@@ -390,16 +310,12 @@ Easy Decadent Truffles
 /recipe/41236/easy-decadent-truffles/
 Snickerdoodles I
 /recipe/11624/snickerdoodles-i/
-Coconut Cream Pie
-/recipe/19715/coconut-cream-pie/
 Molten Chocolate Cakes With Sugar-Coated Raspberries
 /recipe/76935/molten-chocolate-cakes-with-sugar-coated-raspberries/
 Pumpkin Whoopie Pies
 /recipe/11331/pumpkin-whoopie-pies/
 Blueberry Buckle
 /recipe/7985/blueberry-buckle/
-Aunt Cora's World's Greatest Cookies
-/recipe/10380/aunt-coras-worlds-greatest-cookies/
 Chantal's New York Cheesecake
 /recipe/8350/chantals-new-york-cheesecake/
 Bake Sale Lemon Bars
@@ -410,14 +326,10 @@ Big Soft Ginger Cookies
 /recipe/17165/big-soft-ginger-cookies/
 Chocolate Covered Strawberries
 /recipe/21712/chocolate-covered-strawberries/
-Chocolate Fudge Buttercream Frosting
-/recipe/7350/chocolate-fudge-buttercream-frosting/
 Best Moist Chocolate Cake
 /recipe/25960/best-moist-chocolate-cake/
 Oma's Rhubarb Cake
 /recipe/161436/omas-rhubarb-cake/
-Chocolate Cakes with Liquid Centers
-/recipe/8145/chocolate-cakes-with-liquid-centers/
 Panna Cotta
 /recipe/72567/panna-cotta/
 Raspberry Almond Coffeecake
@@ -454,18 +366,12 @@ Stephen's Chocolate Chip Cookies
 /recipe/15475/stephens-chocolate-chip-cookies/
 Cream Cheese Squares
 /recipe/25832/cream-cheese-squares/
-Pumpkin Roll II
-/recipe/8459/pumpkin-roll-ii/
-Coconut Macaroons III
-/recipe/25787/coconut-macaroons-iii/
 Creamy Peanut Butter Fudge
 /recipe/22645/creamy-peanut-butter-fudge/
 Amazing Pecan Coffee Cake
 /recipe/49001/amazing-pecan-coffee-cake/
 Apple Pie Filling
 /recipe/12681/apple-pie-filling/
-Strawberry Cake II
-/recipe/7926/strawberry-cake-ii/
 Sugar Cookie Cutouts
 /recipe/15149/sugar-cookie-cutouts/
 Russian Tea Cakes I
@@ -486,10 +392,6 @@ Healthy Banana Cookies
 /recipe/9615/healthy-banana-cookies/
 A-Number-1 Banana Cake
 /recipe/7754/a-number-1-banana-cake/
-Bread Pudding III
-/recipe/15328/bread-pudding-iii/
-Tina's Shortbread Chocolate Chip Cookies
-/recipe/15300/tinas-shortbread-chocolate-chip-cookies/
 Grandma's Lemon Meringue Pie
 /recipe/15093/grandmas-lemon-meringue-pie/
 Blueberry Crumb Bars
@@ -498,14 +400,10 @@ Four Egg Yellow Cake
 /recipe/8051/four-egg-yellow-cake/
 Hot Fudge Ice Cream Bar Dessert
 /recipe/22728/hot-fudge-ice-cream-bar-dessert/
-No Bake Cookies III
-/recipe/10745/no-bake-cookies-iii/
 Chewy Peanut Butter Brownies
 /recipe/11504/chewy-peanut-butter-brownies/
 Very Chocolate Ice Cream
 /recipe/56803/very-chocolate-ice-cream/
-Fudge Brownies I
-/recipe/9566/fudge-brownies-i/
 Urban Legend Chocolate Chip Cookies
 /recipe/9804/urban-legend-chocolate-chip-cookies/
 Spooky Witches' Fingers
@@ -526,18 +424,10 @@ Easy Chocolate Chip Cookies
 /recipe/24423/easy-chocolate-chip-cookies/
 Lemon Square Bars
 /recipe/25091/lemon-square-bars/
-Mini Cheesecakes III
-/recipe/21530/mini-cheesecakes-iii/
 Cherry Cheesecake
 /recipe/8173/cherry-cheesecake/
 Homemade Fresh Pumpkin Pie
 /recipe/13711/homemade-fresh-pumpkin-pie/
-Buckeye Balls II
-/recipe/15171/buckeye-balls-ii/
-Simple Baked Apples
-/recipe/45397/simple-baked-apples/
-Whipped Shortbread Cookies
-/recipe/9516/whipped-shortbread-cookies/
 Grandma's Gingersnaps
 /recipe/25068/grandmas-gingersnaps/
 Rhubarb Cake I
@@ -556,8 +446,6 @@ Mmm-Mmm Better Brownies
 /recipe/10707/mmm-mmm-better-brownies/
 Easy Chocolate Chip Pound Cake
 /recipe/17572/easy-chocolate-chip-pound-cake/
-Lisa's Chocolate Chocolate Chip Cake
-/recipe/8030/lisas-chocolate-chocolate-chip-cake/
 White Chocolate and Cranberry Cookies
 /recipe/10917/white-chocolate-and-cranberry-cookies/
 Cheesecake Brownies
@@ -574,28 +462,16 @@ Red Velvet Cake
 /recipe/9295/red-velvet-cake/
 Ultimate Double Chocolate Cookies
 /recipe/15097/ultimate-double-chocolate-cookies/
-German Chocolate Cake Frosting II
-/recipe/19118/german-chocolate-cake-frosting-ii/
 Cream Cheese Sugar Cookies
 /recipe/11116/cream-cheese-sugar-cookies/
 Sopapilla Cheesecake Dessert
 /recipe/125352/sopapilla-cheesecake-dessert/
-Snickerdoodles II
-/recipe/9883/snickerdoodles-ii/
-Banana Chocolate Chip Cake
-/recipe/8302/banana-chocolate-chip-cake/
 Blueberry Pie
 /recipe/12196/blueberry-pie/
-White Chocolate Macadamia Nut Cookies III
-/recipe/10025/white-chocolate-macadamia-nut-cookies-iii/
-Cream Cheese Pound Cake III
-/recipe/8384/cream-cheese-pound-cake-iii/
 Rick's Special Buttercream Frosting
 /recipe/7443/ricks-special-buttercream-frosting/
 Incredibly Delicious Italian Cream Cake
 /recipe/7871/incredibly-delicious-italian-cream-cake/
-Chocolate Applesauce Cake III
-/recipe/17678/chocolate-applesauce-cake-iii/
 Golden Rum Cake
 /recipe/17456/golden-rum-cake/
 Easy Sugar Cookies
@@ -608,8 +484,6 @@ Chewiest Brownies
 /recipe/11306/chewiest-brownies/
 Chef John's Lemon Bars
 /recipe/232799/chef-johns-lemon-bars/
-Cookie Balls
-/recipe/24043/cookie-balls/
 Saltine Toffee Cookies
 /recipe/11376/saltine-toffee-cookies/
 Banana Cream Pie I
@@ -618,10 +492,6 @@ Orange Cream Fruit Salad
 /recipe/14148/orange-cream-fruit-salad/
 Vegan Brownies
 /recipe/68436/vegan-brownies/
-Chocolate Truffle Cookies
-/recipe/25808/chocolate-truffle-cookies/
-Fruit Pizza II
-/recipe/12618/fruit-pizza-ii/
 Apple Betty
 /recipe/15800/apple-betty/
 Cranberry Pistachio Biscotti
@@ -630,10 +500,6 @@ Mini Cheesecakes I
 /recipe/7307/mini-cheesecakes-i/
 Chocolate Lovers' Favorite Cake
 /recipe/7612/chocolate-lovers-favorite-cake/
-All American Apple Pie
-/recipe/18353/all-american-apple-pie/
-Apple Cake III
-/recipe/8211/apple-cake-iii/
 Pumpkin Crumb Cake
 /recipe/13804/pumpkin-crumb-cake/
 Salted Caramel Custard
@@ -650,8 +516,6 @@ No Bakes
 /recipe/10338/no-bakes/
 Easy Batter Fruit Cobbler
 /recipe/88354/easy-batter-fruit-cobbler/
-Pineapple Upside-Down Cake VII
-/recipe/17691/pineapple-upside-down-cake-vii/
 Paul's Pumpkin Bars
 /recipe/11646/pauls-pumpkin-bars/
 No Bake Cookies I
@@ -688,14 +552,10 @@ Rhubarb and Strawberry Pie
 /recipe/12612/rhubarb-and-strawberry-pie/
 Scrumptious Strawberry Shortcake
 /recipe/22988/scrumptious-strawberry-shortcake/
-Soft Chocolate Chip Cookies II
-/recipe/10711/soft-chocolate-chip-cookies-ii/
 Marbled Pumpkin Cheesecake
 /recipe/23046/marbled-pumpkin-cheesecake/
 Best Chocolate Chip Cookies
 /recipe/10813/best-chocolate-chip-cookies/
-Lemon Bundt Cake
-/recipe/23433/lemon-bundt-cake/
 Fresh Pear Pie
 /recipe/12275/fresh-pear-pie/
 Butter Snow Flakes
@@ -704,36 +564,22 @@ German Apple Cake I
 /recipe/7915/german-apple-cake-i/
 Easy Mint Chocolate Chip Ice Cream
 /recipe/51869/easy-mint-chocolate-chip-ice-cream/
-Better Than Sex Cake II
-/recipe/7515/better-than-sex-cake-ii/
-Peanut Butter Cake II
-/recipe/7495/peanut-butter-cake-ii/
 Peach Cobbler Dump Cake I
 /recipe/7987/peach-cobbler-dump-cake-i/
-Fudgy Brownies I
-/recipe/16722/fudgy-brownies-i/
 Easy Peach Cobbler
 /recipe/19044/easy-peach-cobbler/
 Peach Pie the Old Fashioned Two Crust Way
 /recipe/87979/peach-pie-the-old-fashioned-two-crust-way/
 Cowboy Oatmeal Cookies
 /recipe/10874/cowboy-oatmeal-cookies/
-Shortbread Cookies II
-/recipe/10269/shortbread-cookies-ii/
 Golden Yam Brownies
 /recipe/78528/golden-yam-brownies/
 Disappearing Marshmallow Brownies
 /recipe/11574/disappearing-marshmallow-brownies/
-Carrot Cake III
-/recipe/7402/carrot-cake-iii/
 Carrot Cupcakes with White Chocolate Cream Cheese Icing
 /recipe/79313/carrot-cupcakes-with-white-chocolate-cream-cheese-icing/
-Blackberry Cobbler II
-/recipe/65155/blackberry-cobbler-ii/
 Monster Cookies VI
 /recipe/10684/monster-cookies-vi/
-Blueberry Crisp II
-/recipe/74967/blueberry-crisp-ii/
 Pumpkin Spice Cupcakes
 /recipe/153245/pumpkin-spice-cupcakes/
 Chocolate Cupcakes
@@ -746,8 +592,6 @@ Strawberry Trifle
 /recipe/21773/strawberry-trifle/
 Pecan Pie V
 /recipe/22544/pecan-pie-v/
-Cowboy Cookie Mix in a Jar
-/recipe/15161/cowboy-cookie-mix-in-a-jar/
 Three Ingredient Peanut Butter Cookies
 /recipe/11352/three-ingredient-peanut-butter-cookies/
 Gingerbread Men
@@ -756,8 +600,6 @@ The Whole Jar of Peanut Butter Cookies
 /recipe/11520/the-whole-jar-of-peanut-butter-cookies/
 Great Pumpkin Dessert
 /recipe/8404/great-pumpkin-dessert/
-Cream Cheese Pound Cake I
-/recipe/7326/cream-cheese-pound-cake-i/
 Apple Banana Cupcakes
 /recipe/25552/apple-banana-cupcakes/
 Cookies 'n' Creme Fudge
@@ -792,8 +634,6 @@ Best Big, Fat, Chewy Chocolate Chip Cookie
 /recipe/25037/best-big-fat-chewy-chocolate-chip-cookie/
 Carrot Cake
 /recipe/15760/carrot-cake/
-Gooey Butter Cake III
-/recipe/8088/gooey-butter-cake-iii/
 Banana Cake VI
 /recipe/8333/banana-cake-vi/
 Fruit Pizza I
@@ -822,8 +662,6 @@ Cheesecake Supreme
 /recipe/7546/cheesecake-supreme/
 Rhubarb Strawberry Crunch
 /recipe/12177/rhubarb-strawberry-crunch/
-Chocolate Chip Cookie Ice Cream Cake
-/recipe/19005/chocolate-chip-cookie-ice-cream-cake/
 Best No-Bake Cheesecake
 /recipe/17410/best-no-bake-cheesecake/
 Refreshing Limoncello Cake
@@ -852,8 +690,6 @@ Cheesecake Topped Brownies
 /recipe/15424/cheesecake-topped-brownies/
 Extreme Chocolate Cake
 /recipe/17528/extreme-chocolate-cake/
-Pumpkin Chocolate Chip Cookies III
-/recipe/10740/pumpkin-chocolate-chip-cookies-iii/
 Chocolate Scotcheroos
 /recipe/9860/chocolate-scotcheroos/
 Peanut Butter Chip Chocolate Cookies
@@ -876,30 +712,18 @@ Beth's Chocolate Chip Cookies
 /recipe/10337/beths-chocolate-chip-cookies/
 New Orleans Corn Bisque with Smoked Sausage
 /recipe/204343/new-orleans-corn-bisque-with-smoked-sausage/
-Sweet Potato Pie II
-/recipe/19556/sweet-potato-pie-ii/
 Award Winning Peaches and Cream Pie
 /recipe/15142/award-winning-peaches-and-cream-pie/
-Oatmeal Butterscotch Cookies
-/recipe/11303/oatmeal-butterscotch-cookies/
-Strawberry Dream Cake I
-/recipe/7793/strawberry-dream-cake-i/
 No Bake Chocolate Oat Bars
 /recipe/10602/no-bake-chocolate-oat-bars/
-Bread Pudding II
-/recipe/7177/bread-pudding-ii/
 Caramels
 /recipe/16018/caramels/
 Peach Cobbler VI
 /recipe/18469/peach-cobbler-vi/
-Bananas Foster II
-/recipe/24705/bananas-foster-ii/
 Mrs. Sigg's Snickerdoodles
 /recipe/10687/mrs-siggs-snickerdoodles/
 Thin Mint Crackers
 /recipe/10112/thin-mint-crackers/
-Never Fail Chocolate Chip Cookies
-/recipe/10356/never-fail-chocolate-chip-cookies/
 Chocolate Mice
 /recipe/10753/chocolate-mice/
 Butter Rich Spritz Butter Cookies
@@ -912,8 +736,6 @@ Soft Peanut Butter Cookies
 /recipe/10978/soft-peanut-butter-cookies/
 Mom's Ginger Snaps
 /recipe/10757/moms-ginger-snaps/
-Banana Cake II
-/recipe/7360/banana-cake-ii/
 Gingerbread Boys
 /recipe/11165/gingerbread-boys/
 Brownie Batter + Cupcake = The SECOND BEST Cupcake. Ever
@@ -928,8 +750,6 @@ Apple Pie I
 /recipe/12324/apple-pie-i/
 Plum Blueberry Upside Down Cake
 /recipe/23730/plum-blueberry-upside-down-cake/
-Angel Food Cake III
-/recipe/15432/angel-food-cake-iii/
 Oatmeal Raisin Cookies I
 /recipe/10264/oatmeal-raisin-cookies-i/
 Iced Pumpkin Cookies
@@ -940,8 +760,6 @@ Cream Puff Cake
 /recipe/8430/cream-puff-cake/
 Brigadeiro
 /recipe/24052/brigadeiro/
-Pumpkin Cake III
-/recipe/19079/pumpkin-cake-iii/
 Cream Puffs
 /recipe/15869/cream-puffs/
 Jam Filled Butter Cookies
@@ -956,8 +774,6 @@ Coconut Poke Cake
 /recipe/7994/coconut-poke-cake/
 Jo-Ann's Power Bars
 /recipe/64649/jo-anns-power-bars/
-Peanut Blossoms II
-/recipe/9920/peanut-blossoms-ii/
 Pineapple Upside-Down Cake V
 /recipe/8429/pineapple-upside-down-cake-v/
 Melt - In - Your - Mouth Shortbread
@@ -972,8 +788,6 @@ Fresh Southern Peach Cobbler
 /recipe/51535/fresh-southern-peach-cobbler/
 Garbanzo Bean Chocolate Cake (Gluten Free!)
 /recipe/149550/garbanzo-bean-chocolate-cake-gluten-free/
-Chocolate Peanut Butter Cups
-/recipe/44715/chocolate-peanut-butter-cups/
 Easy OREO Truffles
 /recipe/127491/easy-oreo-truffles/
 Autumn Cheesecake
@@ -984,8 +798,6 @@ Too Much Chocolate Cake
 /recipe/7565/too-much-chocolate-cake/
 Michelle's Peanut Butter Marbled Brownies
 /recipe/11266/michelles-peanut-butter-marbled-brownies/
-Chocolate Pound Cake III
-/recipe/25999/chocolate-pound-cake-iii/
 Brownie Chocolate Chip Cheesecake
 /recipe/94068/brownie-chocolate-chip-cheesecake/
 Basic Cream Cheese Frosting
@@ -998,8 +810,6 @@ Mandarin Orange Cake I
 /recipe/8101/mandarin-orange-cake-i/
 Uncooked Banana Pudding
 /recipe/18992/uncooked-banana-pudding/
-Cowboy Cookies III
-/recipe/19213/cowboy-cookies-iii/
 Very Best Blueberry Cobbler!
 /recipe/87170/very-best-blueberry-cobbler/
 Chocolate Mint Cookies I
@@ -1028,8 +838,6 @@ Brownie Biscotti
 /recipe/10595/brownie-biscotti/
 Chocolate Chip Cookie Dough + Cupcake = The BEST Cupcake. Ever.
 /recipe/190739/chocolate-chip-cookie-dough-cupcake-the-best-cupcake-ever/
-Cake Mix Cookies VIII
-/recipe/23337/cake-mix-cookies-viii/
 Heavenly White Cake
 /recipe/7703/heavenly-white-cake/
 Libby's® Famous Pumpkin Pie
@@ -1052,22 +860,16 @@ Creamy Rice Pudding
 /recipe/24059/creamy-rice-pudding/
 Oatmeal Chocolate Chip Cookies I
 /recipe/9907/oatmeal-chocolate-chip-cookies-i/
-Snowballs II
-/recipe/11171/snowballs-ii/
 Strawberry Rhubarb Custard Pie
 /recipe/223069/strawberry-rhubarb-custard-pie/
 Sopapilla Cheesecake Pie
 /recipe/169305/sopapilla-cheesecake-pie/
-Key Lime Pie VII
-/recipe/15880/key-lime-pie-vii/
 Peanut Butter Cookies IV
 /recipe/10665/peanut-butter-cookies-iv/
 Apple Bundt Cake
 /recipe/7620/apple-bundt-cake/
 Felix K.'s 'Don't even try to say these aren't the best you've ever eaten, because they are' Chocolate Chip Cookies
 /recipe/178151/felix-ks-dont-even-try-to-say-these-arent-the-best-youve-ever-eaten-because-they-are-chocolate-chip-cookies/
-Caramel Bars
-/recipe/25030/caramel-bars/
 Best Carrot Cake Ever
 /recipe/17393/best-carrot-cake-ever/
 Banana Pudding Cake
@@ -1100,8 +902,6 @@ Decorator Frosting
 /recipe/11184/decorator-frosting/
 Microwave Peanut Brittle
 /recipe/19888/microwave-peanut-brittle/
-Oatmeal Peanut Butter Cookies III
-/recipe/10759/oatmeal-peanut-butter-cookies-iii/
 Caramel Shortbread Squares
 /recipe/15347/caramel-shortbread-squares/
 Mrs. Sigg's Fresh Pumpkin Pie
@@ -1110,8 +910,6 @@ Cranberry Bars
 /recipe/56257/cranberry-bars/
 Double Layer Pumpkin Cheesecake
 /recipe/9125/double-layer-pumpkin-cheesecake/
-Chocolate Chocolate Chip Cookies II
-/recipe/10666/chocolate-chocolate-chip-cookies-ii/
 Blonde Brownies I
 /recipe/10177/blonde-brownies-i/
 Cheese Cake Cups
@@ -1132,8 +930,6 @@ Chewy Chocolate Cookies I
 /recipe/9903/chewy-chocolate-cookies-i/
 Lemon Pie Bars
 /recipe/11458/lemon-pie-bars/
-Butter Cream Frosting II
-/recipe/17335/butter-cream-frosting-ii/
 Raspberry Oatmeal Bars
 /recipe/10618/raspberry-oatmeal-bars/
 Apple Enchilada Dessert
@@ -1192,8 +988,6 @@ Beth's Spicy Oatmeal Raisin Cookies
 /recipe/10497/beths-spicy-oatmeal-raisin-cookies/
 Raspberry and Almond Shortbread Thumbprints
 /recipe/10222/raspberry-and-almond-shortbread-thumbprints/
-German Chocolate Cake III
-/recipe/17644/german-chocolate-cake-iii/
 Chewy Peanut Butter Chocolate Chip Cookies
 /recipe/9996/chewy-peanut-butter-chocolate-chip-cookies/
 Two Ingredient Pumpkin Cake
@@ -1202,5 +996,3 @@ Outrageous Chocolate Chip Cookies
 /recipe/10141/outrageous-chocolate-chip-cookies/
 White Chocolate Chip Oatmeal Cookies
 /recipe/15482/white-chocolate-chip-oatmeal-cookies/
-Dutch Apple Pie with Oatmeal Streusel
-/recipe/15683/dutch-apple-pie-with-oatmeal-streusel/
