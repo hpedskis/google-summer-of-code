@@ -7,9 +7,10 @@ class Recipe {
 	private ArrayList<Ingredient> IngredientList;
 	private ArrayList<Step> StepList;
 	
-	public Recipe(ArrayList<Ingredient> IngredientList, ArrayList<Step> StepList){
+	public Recipe(ArrayList<Ingredient> IngredientList, ArrayList<Step> StepList, String name){
 		this.IngredientList = IngredientList;
 		this.StepList = StepList;
+		this.name = name;
 	}
 
 

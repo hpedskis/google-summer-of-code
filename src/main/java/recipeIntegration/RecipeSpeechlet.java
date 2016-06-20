@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 import org.apache.commons.lang3.NotImplementedException;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,10 +23,10 @@ import com.amazon.speech.ui.Reprompt;
 
 public class RecipeSpeechlet implements Speechlet{
 	private static final Logger log = LoggerFactory.getLogger(RecipeSpeechlet.class);
-    private static final String LIST_OF_INGREDIENTS = "ingredient";//THIS NEEDS TO BE FULL OF ALL INGREDIENTS
+    private static final String LIST_OF_RECIPES = "recipe";
     private static final String AMAZON_NUMBER = "number";
+    private static final String INGREDIENT_LIST = "ingredient";
     
-    //private static final String LIST_OF_RECIPES = "recipe";
     
     @Override
     public void onSessionStarted(final SessionStartedRequest request, final Session session)
@@ -44,7 +45,7 @@ public class RecipeSpeechlet implements Speechlet{
 
         String speechOutput =
                 "Welcome to Cooking Helper. You can ask a question like, "
-                        + "what's the first step? or how much butter do I need? ... Now, what can I help you with?";
+                        + "how do I make Chicken Wraps, or What's step 2 for Lemon Square Bars ... Now, what can I help you with?";
        
 
         String repromptText = "For instructions on what you can say, please say help me.";
@@ -55,30 +56,43 @@ public class RecipeSpeechlet implements Speechlet{
 
     @Override
     public SpeechletResponse onIntent(final IntentRequest request, final Session session)
-            throws SpeechletException {
+            throws SpeechletException { //split into other methods, surround with try catch. should never return error.
         log.info("onIntent requestId={}, sessionId={}", request.getRequestId(),
                 session.getSessionId());
 
         Intent intent = request.getIntent();
         String intentName = (intent != null) ? intent.getName() : null;
-        Recipe CurrentRecipe;
-        
-        CurrentRecipe = RecipeSetup.RecipeBuilder();
        
-        /*/
+        Slot RecipeNameSlot = intent.getSlot(LIST_OF_RECIPES);
+        String recipeName =  RecipeNameSlot.getValue(); //	is this going to work?!?! TODO IGNORE CASE
+        StringUtils.lowerCase(recipeName); //change to all lower case
+        if (recipeName == null || recipeName == ""){
+        	PlainTextOutputSpeech outputSpeech = new PlainTextOutputSpeech();
+            outputSpeech.setText("Passed in recipe slot was null or blank. Please try again");
+        	
+        }
+        Recipe CurrentRecipe = null;
         try {
-			CurrentRecipe = RecipeSetup.RecipeBuilder();
-		} catch (FileNotFoundException e) {
-			 throw new SpeechletException("I didn't find that recipe");
+			CurrentRecipe = RecipeSetup.RecipeBuilder(recipeName); //if this returns null, re-prompt
+		} catch (Exception e) {
+			PlainTextOutputSpeech outputSpeech = new PlainTextOutputSpeech();
+            outputSpeech.setText("There was a problem connecting to that recipe link. Please try again.");
+            return SpeechletResponse.newTellResponse(outputSpeech);
 		}
-		/*/
-
+        if (CurrentRecipe == null){
+        	PlainTextOutputSpeech outputSpeech = new PlainTextOutputSpeech();
+        	String outputText = "I couldn't find that recipe, please ask about a different one.";
+        	outputSpeech.setText(outputText);
+        	return SpeechletResponse.newTellResponse(outputSpeech);
+        }
+        
         if ("GetIngredientOverview".equals(intentName)) { 
-
+        	System.out.println(CurrentRecipe.getName());
             return getIngredientOverview(CurrentRecipe, intent);
         } 
         else if ("GetIngredientInformation".equals(intentName)){
         	return getIngredientInformation(CurrentRecipe, intent);
+
         }
         else if ("GetStepList".equals(intentName)){
         	return getStepOverview(CurrentRecipe, intent);
@@ -119,43 +133,17 @@ public class RecipeSpeechlet implements Speechlet{
     }
 
     
-    private SpeechletResponse getIngredientInfoTEST(Recipe CurrentRecipe, String ingredient){
-    	ArrayList<String> Ingredient_Test = new ArrayList<String>(); //{"flour", "salt", "baking powder", "butter", "brown sugar", "sugar", "egg", "vanilla extract", "chocolate chips"};
-    	Ingredient_Test.add("flour");
-    	Ingredient_Test.add("salt");
-    	Ingredient_Test.add("baking powder");
-    	Ingredient_Test.add("butter");
-    	Ingredient_Test.add("brown sugar");
-    	Ingredient_Test.add("sugar");
-    	Ingredient_Test.add("egg");
-    	Ingredient_Test.add("vanilla extract");
-    	Ingredient_Test.add("chocolate chips");
-    	
-    	int IngredientLocation = Ingredient_Test.indexOf(ingredient);
-    	if (IngredientLocation == -1){
-    		System.out.println("that ingredient wasn't found");
-    	}
-    	else{
-    		String IngredientName = Ingredient_Test.get(IngredientLocation);
-    		System.out.println("ingredient found " + IngredientName);
-    		Ingredient ingredientObj = CurrentRecipe.getIngredient(IngredientName);
-    		System.out.println("ingredient OBJ found " + ingredientObj.getName());
-    		
-    	}
-    	
-        PlainTextOutputSpeech outputSpeech = new PlainTextOutputSpeech();
-        outputSpeech.setText("Yes, you need it ");
-
-        return SpeechletResponse.newTellResponse(outputSpeech);
-    }
+   
     private SpeechletResponse getIngredientInformation(Recipe CurrentRecipe, Intent intent) {
-        Slot IngredientSlot = intent.getSlot(LIST_OF_INGREDIENTS); 
+        Slot IngredientSlot = intent.getSlot(INGREDIENT_LIST); //TODO fix this. 
         
         PlainTextOutputSpeech outputSpeech = new PlainTextOutputSpeech();
     	String outputText = "";
         
         if (IngredientSlot != null && IngredientSlot.getValue() != null) { //yes, you found ingredient
-            String IngredientName = IngredientSlot.getValue(); //this should hold the ingredient VALUE
+    
+            String IngredientName = IngredientSlot.getValue();
+            StringUtils.lowerCase(IngredientName);
             
             Ingredient ingredient = CurrentRecipe.getIngredient(IngredientName); //this should hold butter Ingredient
             
@@ -168,8 +156,7 @@ public class RecipeSpeechlet implements Speechlet{
                 outputText = ("You don't need " + IngredientName);
             }
         } else {
-            // There was no item in the intent so return the help prompt.
-            return getHelp();
+            outputText = "I couldn't find that ingredient";
         }
         outputSpeech.setText(outputText);
         return SpeechletResponse.newTellResponse(outputSpeech);
@@ -177,6 +164,7 @@ public class RecipeSpeechlet implements Speechlet{
     
     private SpeechletResponse getStepOverview (Recipe CurrentRecipe, Intent intent){
     	int NumberofSteps = CurrentRecipe.getStepListSize();
+    	System.out.println(NumberofSteps);
     	ArrayList<Step> ListOfSteps = CurrentRecipe.getStepList();
     	PlainTextOutputSpeech outputSpeech = new PlainTextOutputSpeech();
     	String outputText = "";
@@ -191,7 +179,6 @@ public class RecipeSpeechlet implements Speechlet{
     }
     
     private SpeechletResponse getSpecificStep(Recipe CurrentRecipe, Intent intent){
-    	
     	Slot NumberofStep = intent.getSlot(AMAZON_NUMBER);
     	ArrayList<Step> ListofSteps = CurrentRecipe.getStepList();
     	
@@ -202,7 +189,7 @@ public class RecipeSpeechlet implements Speechlet{
     		String NumberName = NumberofStep.getValue(); //save string name
     		int StepNumber = Integer.parseInt(NumberName); //convert to number
     		if (StepNumber > CurrentRecipe.getStepListSize()){
-    			outputText = ("That step is out of range. There are only " + CurrentRecipe.getStepListSize() + " steps.");
+    			outputText = ("The last step is step " + CurrentRecipe.getStepListSize() + " Please ask for a step within that range.");
     		}
     		else{
     			Step requestedStep = ListofSteps.get(StepNumber - 1); //proper index for the requested step
@@ -232,17 +219,18 @@ public class RecipeSpeechlet implements Speechlet{
     	}
         outputSpeech.setText(outputText);
         return SpeechletResponse.newTellResponse(outputSpeech);
-    }
+    	
+}
 
     
     private SpeechletResponse getHelp() {
         String speechOutput =
-                "You can ask questions about cooking a Chocolate Chip Cookie"
-                        + "for example, ask for the steps to cook one, or "
-                        + "ask about a quantity of an ingredient";
+                "You can ask questions about cooking any recipe"
+                        + "for example, ask what step one of Spiced Pecans is or  "
+                        + "ask about an ingredient for Chicken Honey Nut Stir Fry ";
         String repromptText =
-                "You can say things like, how much butter do I need?"
-                        + " or, what's step 2?";
+                "You can say things like, how much butter do I need for Quick Peanut Butter Cookies ?"
+                        + " or, what's step 2 of Blackened Tuna?";
         return newAskResponse(speechOutput, repromptText);
     }
 

@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 
 import org.jsoup.Jsoup;
@@ -16,7 +17,7 @@ public class Multi  extends Thread{
 	
 	public String categoryLink;
 	public File OutputFile;
-	public Map<String, String> OutputMap;
+	public HashSet<String> OutputMap;
 	public BufferedWriter f;
 	
 	//each thread will do a different category, 
@@ -25,7 +26,7 @@ public class Multi  extends Thread{
 	public Multi(String link, File OutputFile){
 		this.categoryLink = link;
 		this.OutputFile = OutputFile;
-		OutputMap = new HashMap<String,String>();
+		OutputMap = new HashSet<String>();
      	try {
 			f = new BufferedWriter (new FileWriter (OutputFile));
 		} catch (IOException e) {
@@ -37,22 +38,18 @@ public class Multi  extends Thread{
 	@Override
 	public void run(){
 		Document RecipeDoc = null;
-		for (int pageNumber = 1; pageNumber< 31; pageNumber ++){
+		for (int pageNumber = 1; pageNumber< 10; pageNumber ++){
     		try{
     		 RecipeDoc = Jsoup.connect(categoryLink + pageNumber).get(); //should fetch each page number's recipes
     		 System.out.println("successfully entered category " + categoryLink);
     		} catch (Exception e){
-    			System.out.println("There was an issue connection to page " + pageNumber + " from the current category.");
+    			System.out.println("There was an issue connection to page  from the current category.");
     		}
-    		System.out.println("now inside page " + pageNumber );
+    		System.out.println("now inside page " + pageNumber);
     		for (Element RecipeResult : RecipeDoc.select("article.grid-col--fixed-tiles a")){ //each recipe on page
     			String RecipeUrl = RecipeResult.attr("href");
     			if (!(RecipeUrl.contains("/recipe/"))){
-    			//System.out.println("skipping");
     			continue;
-    			}
-    			else if (RecipeUrl.contains("ii") || RecipeUrl.contains("iii")){
-    				continue;
     			}
     			Document subDoc = null;
     			try{
@@ -62,14 +59,16 @@ public class Multi  extends Thread{
     				else{
     					subDoc = Jsoup.connect(RecipeUrl).get();
     				}
-        		//grab and print title from each recipe
-    				Elements title = subDoc.select("h1.recipe-summary__h1");
-    				String stringTitle = title.text();
-    				OutputMap.put(stringTitle, RecipeUrl);
-    				System.out.println("successfully added a recipe");
+    				for (Element IngredientResult : subDoc.select("li.checkList__line")){
+            			String ingredient = IngredientResult.text();
+            			ingredient = ingredient.replace("ADVERTISEMENT", "");
+            			ingredient = ingredient.replace("Add all ingredients to list", "");
+            			OutputMap.add(ingredient);
+            
+    				}
     				
         		}catch (Exception e){
-        				System.out.println("Unable to connect to " + RecipeUrl + " from within page " + pageNumber);
+        				System.out.println("Unable to connect to " + RecipeUrl + " from within page ");
         		}
         
 				
@@ -79,11 +78,9 @@ public class Multi  extends Thread{
     		}
 		
 		}
-		for (Map.Entry<String, String> entry : OutputMap.entrySet()) {
+		for (String s: OutputMap) {
 			try {
-				f.write(entry.getKey());
-				f.newLine();
-				f.write(entry.getValue());
+				f.write(s);
 				f.newLine();
 			} catch (IOException e) {
 				System.out.println("something went wrong when adding a recipe");

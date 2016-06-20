@@ -1,38 +1,1 @@
-{
-  "intents": [
-    {
-      "intent": "GetIngredientInformation",
-      "slots": [
-        {
-          "name": "ingredient",
-          "type": "INGREDIENT_LIST"
-        }
-      ]
-    },
-    {
-      "intent": "GetIngredientOverview"
-    },
-    {
-      "intent": "GetStepList"
-    },
-    {
-      "intent": "GetSpecificStep",
-      "slots": [
-        {
-          "name": "number",
-          "type": "AMAZON.NUMBER"
-        }
-      ]
-    },
-    
-    {
-      "intent": "AMAZON.HelpIntent"
-    },
-    {
-      "intent": "AMAZON.StopIntent"
-    },
-    {
-      "intent": "AMAZON.CancelIntent"
-    }
-  ]
-}
+{  "intents": [    {      "intent": "GetIngredientInformation",      "slots": [        {          "name": "ingredient",          "type": "INGREDIENT_LIST"        },        {          "name": "recipe",          "type": "RECIPE_LIST"        }      ]    },    {      "intent": "GetIngredientOverview",      "slots": [        {          "name": "recipe",          "type": "RECIPE_LIST"        }      ]    },    {      "intent": "GetStepList",      "slots": [        {          "name": "recipe",          "type": "RECIPE_LIST"        }      ]    },    {      "intent": "GetSpecificStep",      "slots": [        {          "name": "number",          "type": "AMAZON.NUMBER"        },        {          "name": "recipe",          "type": "RECIPE_LIST"        }      ]    },        {      "intent": "AMAZON.HelpIntent"    },    {      "intent": "AMAZON.StopIntent"    },    {      "intent": "AMAZON.CancelIntent"    }  ]}

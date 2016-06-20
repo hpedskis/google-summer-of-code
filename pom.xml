@@ -114,7 +114,7 @@
     </pluginManagement>
     <resources>
     <resource>
-    <directory>src/recipeIntegration</directory>
+    <directory>src/resources</directory>
     <includes>
     <include>**/*.txt</include>
     </includes>
