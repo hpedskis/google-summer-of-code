@@ -25,9 +25,10 @@ class RecipeSetup{
 	public static Map<String, String> MapOfRecipes = new HashMap<String,String>();
 	
 	//when a user passes in a string title, create a map from the text file, find that recipe, or return that it wasn't found.
-	public static String FindRecipe(String RecipeName){ //takes a name, searches the map, returns the URL
-		System.out.println("trying to find recipe...");
-		//Thread.currentThread().getContextClassLoader().getResourceAsStream("MASTER_RECIPE.txt");
+	@SuppressWarnings("resource")
+	public static String FindRecipe(String RecipeName){
+		
+		RecipeName = StringUtils.lowerCase(RecipeName).trim();
 		InputStream in = RecipeSetup.class.getResourceAsStream("MASTER_RECIPE.txt");
 		
 		Scanner reader = null;
@@ -40,24 +41,48 @@ class RecipeSetup{
 		while(reader.hasNextLine()){
 			String recipeTitle = reader.nextLine();
 			String recipeInfo = reader.nextLine();
-			MapOfRecipes.put(StringUtils.lowerCase(recipeTitle), StringUtils.lowerCase(recipeInfo)); //put everything in map lower case
+			MapOfRecipes.put(StringUtils.lowerCase(recipeTitle).trim(), recipeInfo);
 		}
-		System.out.println("made map. I think ;)"); 
-		reader.close();
-		
-		if (MapOfRecipes.get(RecipeName) != null){
-			System.out.println(MapOfRecipes.get(RecipeName));
-			return MapOfRecipes.get(RecipeName);
+		if (MapOfRecipes.containsKey(RecipeName)){
+			System.out.println("this recipe title IS a key inside the recipe map");
+			if (MapOfRecipes.containsValue(RecipeName)){
+				System.out.println("this value is also listed in this map and is " + MapOfRecipes.get(RecipeName));
+				return MapOfRecipes.get(RecipeName);
+			}
+		}
+		else{
+			System.out.println("this recipe title isn't a value in your map. THIS IS THE ISSUE");
+		}
+		for (Map.Entry<String, String> Entry : MapOfRecipes.entrySet()){
+			if (StringUtils.equalsIgnoreCase(Entry.getKey(), RecipeName)){
+				System.out.println("found the exact match " + Entry.getKey());
+				return Entry.getValue();
+			}
+
 		}
 		return null;
 		
+	}
+	
+	public static String FindBackupRecipe(String RecipeName){
+		RecipeName = StringUtils.lowerCase(RecipeName).trim();
+		System.out.println("inside find backup with recipe name " + RecipeName);
+		for (Map.Entry<String, String> Entry : MapOfRecipes.entrySet()){
+			if (StringUtils.containsIgnoreCase(Entry.getKey(), RecipeName)){
+				System.out.println("found something that contained search, " + Entry.getKey());
+				return Entry.getValue();
+			}
+			
+		}
+		System.out.println("this recipe name also failed out of backup Recipe, returning null");
+		return null;
 	}
 
 	public static Recipe RecipeBuilder(String RecipeName) throws FileNotFoundException {
 			String RecipeURL = FindRecipe(RecipeName);
 			if (RecipeURL == null){
-				System.out.println("couldnt find the recipe, so recipe builder failed");
-				return null;
+				System.out.println("I couldn't find that exact title you were looking for.");
+				RecipeURL = FindBackupRecipe(RecipeName);
 			}
 			
 			ArrayList<Ingredient> INGREDIENT_LIST = new ArrayList<Ingredient>();

@@ -42,6 +42,10 @@ class Recipe {
 	}
 	
 	public Ingredient getIngredient(String ingredientName){
+	String[]IngredientParts = ingredientName.split(" ");
+	for (String s: IngredientParts){
+		
+	}
 	Ingredient theCorrectIngredient = null;
 		for (int i =0; i< IngredientList.size(); i++){
 			if (IngredientList.get(i).getName().contains(ingredientName)){

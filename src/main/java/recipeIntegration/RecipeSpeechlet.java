@@ -1,9 +1,7 @@
 package recipeIntegration;
 
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
-import org.apache.commons.lang3.NotImplementedException;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,6 +21,7 @@ import com.amazon.speech.ui.Reprompt;
 
 public class RecipeSpeechlet implements Speechlet{
 	private static final Logger log = LoggerFactory.getLogger(RecipeSpeechlet.class);
+	//ties slots to variables. To test locally, each must be hardcoded, as it can't search slot values.
     private static final String LIST_OF_RECIPES = "recipe";
     private static final String AMAZON_NUMBER = "number";
     private static final String INGREDIENT_LIST = "ingredient";
@@ -45,7 +44,7 @@ public class RecipeSpeechlet implements Speechlet{
 
         String speechOutput =
                 "Welcome to Cooking Helper. You can ask a question like, "
-                        + "how do I make Chicken Wraps, or What's step 2 for Lemon Square Bars ... Now, what can I help you with?";
+                        + "how do I make Chicken Wraps, or What's step 2 for Rosemary-Ginger Cocktail ... Now, what can I help you with?";
        
 
         String repromptText = "For instructions on what you can say, please say help me.";
@@ -55,8 +54,7 @@ public class RecipeSpeechlet implements Speechlet{
     }
 
     @Override
-    public SpeechletResponse onIntent(final IntentRequest request, final Session session)
-            throws SpeechletException { //split into other methods, surround with try catch. should never return error.
+    public SpeechletResponse onIntent(final IntentRequest request, final Session session) throws SpeechletException { 
         log.info("onIntent requestId={}, sessionId={}", request.getRequestId(),
                 session.getSessionId());
 
@@ -65,6 +63,7 @@ public class RecipeSpeechlet implements Speechlet{
        
         Slot RecipeNameSlot = intent.getSlot(LIST_OF_RECIPES);
         String recipeName =  RecipeNameSlot.getValue(); //	is this going to work?!?! TODO IGNORE CASE
+        //String recipeName = "chinese style baby bok choy with mushroom sauce"; //for manual testing
         StringUtils.lowerCase(recipeName); //change to all lower case
         if (recipeName == null || recipeName == ""){
         	PlainTextOutputSpeech outputSpeech = new PlainTextOutputSpeech();
