@@ -25,6 +25,7 @@ class RecipeSetup{
 	public static Map<String, String> MapOfRecipes = new HashMap<String,String>();
 	
 	//when a user passes in a string title, create a map from the text file, find that recipe, or return that it wasn't found.
+	
 	@SuppressWarnings("resource")
 	public static String FindRecipe(String RecipeName){
 		
@@ -131,7 +132,7 @@ class RecipeSetup{
 			}	
 			public static void formatDirections(String Directions, ArrayList<Step> StepList){
 				////if it isn't empty or just blank with a period
-				System.out.println("inside firomat Directions");
+				System.out.println("inside format Directions");
 					int CurrentStep = 0;
 					String[] parts = Directions.split(Pattern.quote(".").trim());;
 					for (int i =0; i< parts.length; i++){

@@ -21,13 +21,14 @@ import com.amazon.speech.ui.Reprompt;
 
 public class RecipeSpeechlet implements Speechlet{
 	private static final Logger log = LoggerFactory.getLogger(RecipeSpeechlet.class);
-	//ties slots to variables. To test locally, each must be hardcoded, as it can't search slot values.
+	//ties slots to variables. To test locally, each must be hard-coded, as it can't search slot values without AWS.
     private static final String LIST_OF_RECIPES = "recipe";
     private static final String AMAZON_NUMBER = "number";
     private static final String INGREDIENT_LIST = "ingredient";
     
     
     @Override
+    //Once session starts, request and session ID are created
     public void onSessionStarted(final SessionStartedRequest request, final Session session)
             throws SpeechletException {
         log.info("onSessionStarted requestId={}, sessionId={}", request.getRequestId(),
@@ -36,6 +37,7 @@ public class RecipeSpeechlet implements Speechlet{
     }
 
     @Override
+    //message which plays if recipeHelper isn't started with a specific intent.
     public SpeechletResponse onLaunch(final LaunchRequest request, final Session session)
             throws SpeechletException {
         log.info("onLaunch requestId={}, sessionId={}", request.getRequestId(),
@@ -46,31 +48,29 @@ public class RecipeSpeechlet implements Speechlet{
                 "Welcome to Cooking Helper. You can ask a question like, "
                         + "how do I make Chicken Wraps, or What's step 2 for Rosemary-Ginger Cocktail ... Now, what can I help you with?";
        
+        String repromptText = "For instructions on what you can say, help me.";
 
-        String repromptText = "For instructions on what you can say, please say help me.";
-
-  
         return newAskResponse(speechOutput, repromptText);
     }
 
     @Override
+    //handles any specific intent request
     public SpeechletResponse onIntent(final IntentRequest request, final Session session) throws SpeechletException { 
-        log.info("onIntent requestId={}, sessionId={}", request.getRequestId(),
-                session.getSessionId());
+        log.info("onIntent requestId={}, sessionId={}", request.getRequestId(), session.getSessionId());
 
         Intent intent = request.getIntent();
-        String intentName = (intent != null) ? intent.getName() : null;
+        String intentName = (intent != null) ? intent.getName() : null; //if the intent name isn't null
        
-        Slot RecipeNameSlot = intent.getSlot(LIST_OF_RECIPES);
-        String recipeName =  RecipeNameSlot.getValue(); //	is this going to work?!?! TODO IGNORE CASE
+        Slot RecipeNameSlot = intent.getSlot(LIST_OF_RECIPES); //grab recipe slot attached to intent
+        String recipeName =  RecipeNameSlot.getValue(); 
         //String recipeName = "chinese style baby bok choy with mushroom sauce"; //for manual testing
         StringUtils.lowerCase(recipeName); //change to all lower case
         if (recipeName == null || recipeName == ""){
         	PlainTextOutputSpeech outputSpeech = new PlainTextOutputSpeech();
-            outputSpeech.setText("Passed in recipe slot was null or blank. Please try again");
+            outputSpeech.setText("Please try again. Make sure you ask about a recipe.");
         	
         }
-        Recipe CurrentRecipe = null;
+        Recipe CurrentRecipe = null; //initialize
         try {
 			CurrentRecipe = RecipeSetup.RecipeBuilder(recipeName); //if this returns null, re-prompt
 		} catch (Exception e) {
@@ -80,13 +80,12 @@ public class RecipeSpeechlet implements Speechlet{
 		}
         if (CurrentRecipe == null){
         	PlainTextOutputSpeech outputSpeech = new PlainTextOutputSpeech();
-        	String outputText = "I couldn't find that recipe, please ask about a different one.";
+        	String outputText = "I couldn't find that recipe, and I couldn't find a recipe that was similar. Please ask about a different recipe.";
         	outputSpeech.setText(outputText);
         	return SpeechletResponse.newTellResponse(outputSpeech);
         }
         
         if ("GetIngredientOverview".equals(intentName)) { 
-        	System.out.println(CurrentRecipe.getName());
             return getIngredientOverview(CurrentRecipe, intent);
         } 
         else if ("GetIngredientInformation".equals(intentName)){
@@ -97,12 +96,10 @@ public class RecipeSpeechlet implements Speechlet{
         	return getStepOverview(CurrentRecipe, intent);
         	
         }
-       
         else if ("GetSpecificStep".equals(intentName)){
         	return getSpecificStep(CurrentRecipe, intent);
         	
         }
-        
         else if ("AMAZON.HelpIntent".equals(intentName)) {
             return getHelp();
         } 
@@ -132,19 +129,19 @@ public class RecipeSpeechlet implements Speechlet{
     }
 
     
-   
+   //handles questions about ingredient information (quantity, presence, etc) 
     private SpeechletResponse getIngredientInformation(Recipe CurrentRecipe, Intent intent) {
-        Slot IngredientSlot = intent.getSlot(INGREDIENT_LIST); //TODO fix this. 
+        Slot IngredientSlot = intent.getSlot(INGREDIENT_LIST); //get ingredient being asked about 
         
         PlainTextOutputSpeech outputSpeech = new PlainTextOutputSpeech();
-    	String outputText = "";
+    	String outputText = ""; //initialize
         
-        if (IngredientSlot != null && IngredientSlot.getValue() != null) { //yes, you found ingredient
+        if (IngredientSlot != null && IngredientSlot.getValue() != null) { //yes, ingredient is listed in slot.
     
             String IngredientName = IngredientSlot.getValue();
             StringUtils.lowerCase(IngredientName);
             
-            Ingredient ingredient = CurrentRecipe.getIngredient(IngredientName); //this should hold butter Ingredient
+            Ingredient ingredient = CurrentRecipe.getIngredient(IngredientName); 
             
             if (ingredient != null) { //it found specific ingredient  
             	String IngredientQuantity = ingredient.getQuantity();
@@ -155,30 +152,30 @@ public class RecipeSpeechlet implements Speechlet{
                 outputText = ("You don't need " + IngredientName);
             }
         } else {
-            outputText = "I couldn't find that ingredient";
+            outputText = "I couldn't find that ingredient.";
         }
         outputSpeech.setText(outputText);
         return SpeechletResponse.newTellResponse(outputSpeech);
     }
     
+    //handles all steps being read.
     private SpeechletResponse getStepOverview (Recipe CurrentRecipe, Intent intent){
-    	int NumberofSteps = CurrentRecipe.getStepListSize();
-    	System.out.println(NumberofSteps);
+    	int NumberofSteps = CurrentRecipe.getStepListSize(); //keeps track of number of steps 
     	ArrayList<Step> ListOfSteps = CurrentRecipe.getStepList();
     	PlainTextOutputSpeech outputSpeech = new PlainTextOutputSpeech();
     	String outputText = "";
     	for (int i =0; i < NumberofSteps; i++){
     		Step CurrentStepObject = ListOfSteps.get(i);
     		outputText += ("Step " + (i + 1) + " is " + CurrentStepObject.getInstruction() + ". ");
-    		System.out.println("Step " + (i + 1) + " is " + CurrentStepObject.getInstruction() + ". ");
     		
     	}
         outputSpeech.setText(outputText);
         return SpeechletResponse.newTellResponse(outputSpeech);
     }
     
+    //handles finding a specific step
     private SpeechletResponse getSpecificStep(Recipe CurrentRecipe, Intent intent){
-    	Slot NumberofStep = intent.getSlot(AMAZON_NUMBER);
+    	Slot NumberofStep = intent.getSlot(AMAZON_NUMBER); //find number they're asking for
     	ArrayList<Step> ListofSteps = CurrentRecipe.getStepList();
     	
     	PlainTextOutputSpeech outputSpeech = new PlainTextOutputSpeech();
@@ -203,7 +200,7 @@ public class RecipeSpeechlet implements Speechlet{
         return SpeechletResponse.newTellResponse(outputSpeech);
     }
     
-    
+    //handles reading all the ingredients
     private SpeechletResponse getIngredientOverview(Recipe CurrentRecipe, Intent intent){
     	int NumberofIngredients = CurrentRecipe.getIngredientListSize();
     	ArrayList<Ingredient> ListofIngredients = CurrentRecipe.getIngredientList();
