@@ -78,6 +78,14 @@
           <configuration>
             <source>1.7</source>
             <target>1.7</target>
+            <resources>
+    	<resource>
+    		<directory>src/main/resources</directory>
+    		<includes>
+    		<include>**/*.txt</include>
+    		</includes>
+    	</resource>
+    </resources>
           </configuration>
         </plugin>
 
@@ -112,13 +120,5 @@
         </plugin>
       </plugins>
     </pluginManagement>
-    <resources>
-    <resource>
-    <directory>src/main/resources</directory>
-    <includes>
-    <include>**/*.txt</include>
-    </includes>
-    </resource>
-    </resources>
   </build>
 </project>

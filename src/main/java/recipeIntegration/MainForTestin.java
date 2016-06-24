@@ -3,6 +3,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -29,6 +30,7 @@ class MainForTestin{
 	public static void notmain(String[] args) throws SpeechletException, IOException {
 		
 		//this section of code allows for testing locally. Different intents can be entered
+		
 		
 		
 		Session newSession = Session.builder().withSessionId("123").build(); 

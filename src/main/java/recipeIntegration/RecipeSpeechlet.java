@@ -20,6 +20,7 @@ import com.amazon.speech.ui.PlainTextOutputSpeech;
 import com.amazon.speech.ui.Reprompt;
 
 public class RecipeSpeechlet implements Speechlet{
+	
 	private static final Logger log = LoggerFactory.getLogger(RecipeSpeechlet.class);
 	//ties slots to variables. To test locally, each must be hard-coded, as it can't search slot values without AWS.
     private static final String LIST_OF_RECIPES = "recipe";

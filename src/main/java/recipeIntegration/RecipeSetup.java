@@ -3,11 +3,15 @@ package recipeIntegration;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -27,18 +31,17 @@ class RecipeSetup{
 	//when a user passes in a string title, create a map from the text file, find that recipe, or return that it wasn't found.
 	
 	@SuppressWarnings("resource")
-	public static String FindRecipe(String RecipeName){
+	public static String FindRecipe(String RecipeName) throws FileNotFoundException, UnsupportedEncodingException{
 		
 		RecipeName = StringUtils.lowerCase(RecipeName).trim();
-		InputStream in = RecipeSetup.class.getResourceAsStream("MASTER_RECIPE.txt");
+		//InputStream is = RecipeSetup.class.getResourceAsStream("/MASTER_RECIPE.txt");
+		//File testf = new File( RecipeSetup.class.getResource( "/MASTER_RECIPE.txt" ).toURI() );
+		//InputStream is = RecipeSetup.class.getResourceAsStream("/MASTER_RECIPE.txt");
+		ClassLoader loader = Thread.currentThread().getContextClassLoader();
+		InputStream is = loader.getResourceAsStream("MASTER_RECIPE.txt");
+		Scanner reader = new Scanner(new InputStreamReader(is, "UTF-8"));
+		//reader = new Scanner (testf);
 		
-		Scanner reader = null;
-		try {
-			reader = new Scanner(new InputStreamReader(in, "UTF-8"));
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		while(reader.hasNextLine()){
 			String recipeTitle = reader.nextLine();
 			String recipeInfo = reader.nextLine();
@@ -79,8 +82,9 @@ class RecipeSetup{
 		return null;
 	}
 
-	public static Recipe RecipeBuilder(String RecipeName) throws FileNotFoundException {
-			String RecipeURL = FindRecipe(RecipeName);
+	public static Recipe RecipeBuilder(String RecipeName) throws FileNotFoundException, UnsupportedEncodingException {
+			String RecipeURL = null;
+			RecipeURL = FindRecipe(RecipeName);
 			if (RecipeURL == null){
 				System.out.println("I couldn't find that exact title you were looking for.");
 				RecipeURL = FindBackupRecipe(RecipeName);
