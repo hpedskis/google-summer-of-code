@@ -57,25 +57,25 @@ public class RecipeHelperRecipeDataItem {
 
 	@Override
 	public RecipeHelperRecipeData unmarshall(Class<RecipeHelperRecipeData> clazz, String value) {
+		RecipeHelperRecipeData recipe = RecipeHelperRecipeData.newInstance();
+		recipe.setRecipeName(value);
 		
-		//RecipeHelperRecipeData recipe = RecipeHelperRecipeData.newInstance();
-		//recipe.setRecipeName(value);
-		//System.out.println("recipe data is " + recipe.getRecipeName() + recipe.getRecipeURL());
-		/*/
 		String[] recipeParts = value.split(":");
 		recipe.setRecipeName(recipeParts[0]);
 		recipe.setRecipeURL(recipeParts[1]);
 		recipe.setIngredients(Arrays.asList(recipeParts[2]));
+		System.out.println("INSIDE UNMARSHALL AND PRINTING STEPS. " + Arrays.asList(recipeParts[3]));
 		recipe.setSteps(Arrays.asList(recipeParts[3]));
-		/*/
-		//return recipe;
 		
+		return recipe;
+		/*/
 		try {
             return OBJECT_MAPPER.readValue(value, new TypeReference<RecipeHelper>() {
             });
         } catch (Exception e) {
             throw new IllegalStateException("Unable to unmarshall game data value", e);
         }
+        /*/
 	}
 }
 

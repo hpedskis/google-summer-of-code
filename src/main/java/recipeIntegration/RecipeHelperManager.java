@@ -41,7 +41,7 @@ public class RecipeHelperManager {
     	Slot RecipeNameSlot = intent.getSlot(LIST_OF_RECIPES);
         String recipeName =  RecipeNameSlot.getValue();
     	System.out.println("inside set up new recipe line 40 of manager");
-        //String recipeName = "bok choy";
+        //String recipeName = "pancakes"; //TODO REMOVE BEFORE REAL TESTING
         if (recipeName == null || recipeName == ""){
         	String speechText = "I didn't hear that reicpe name. What do you want me to help you cook?";
             return getAskSpeechletResponse(speechText, speechText);
@@ -94,7 +94,6 @@ public class RecipeHelperManager {
     }
     
     public SpeechletResponse getIngredientInformation(Session session, Intent intent){
-    	
     	RecipeHelper recipe = recipeHelperDao.getCurrentSession(session);
     	if (recipe == null || recipe.hasURL() == false) {
     		System.out.println("SUCCESS...name is flagged as null. creating new instance and setting up.");
@@ -115,7 +114,7 @@ public class RecipeHelperManager {
             String ingredient = recipe.getSpecificIngredient(IngredientName);
             
             if (ingredient != null) { //it found specific ingredient  
-                outputText = ("You need " + ingredient);
+                outputText = ("You need " + StringUtils.replace(ingredient, "[", ""));
                 System.out.println("you need " + ingredient);
                 
             } 
@@ -144,7 +143,7 @@ public class RecipeHelperManager {
     	List<String> ingredients = recipe.getAllIngredients();
     	int i = 1;
     	for (String ingredient: ingredients){
-    		System.out.println("Ingredient " + (Integer.toString(i)) + " is " + ingredient);
+    		System.out.println("Ingredient " + (Integer.toString(i)) + " is " + ingredient.trim());
     		outputText += "Ingredient " + (Integer.toString(i++)) + " is " + ingredient;
     		
     	}
@@ -171,7 +170,7 @@ public class RecipeHelperManager {
     	List<String> steps = recipe.getAllSteps();
     	int i = 1;
     	for (String step: steps){
-    		System.out.println("Step " + (Integer.toString(i)) + " is " + step);
+    		System.out.println("Step " + (Integer.toString(i)) + " is " + step + ".");
     		outputText += "Step " + (Integer.toString(i++)) + " is " + step;
     		
     	}

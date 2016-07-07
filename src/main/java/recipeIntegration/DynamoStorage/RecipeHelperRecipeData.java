@@ -1,6 +1,7 @@
 package recipeIntegration.DynamoStorage;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
@@ -35,13 +36,23 @@ public class RecipeHelperRecipeData {
     	this.RecipeName = RecipeName;
     }
     public List<String> getIngredients(){ //gets list of ingredients 
-    	return Ingredients;
+    	System.out.println("inside getIngredients.");
+    	System.out.println("before: " + Ingredients);
+    	List<String> REALIngredients = new ArrayList<String>();
+    	String[] IngredientParts = Ingredients.toString().split(",");
+    	for (String Ingredient: IngredientParts){
+    		REALIngredients.add(Ingredient);
+    	}
+    	System.out.println("after :" + REALIngredients);
+    	System.out.println(REALIngredients.get(0));
+    	return REALIngredients;
     }
     public String fetchIngredient(String Ingredient) { //get ONE ingredient
+    	List<String> REALIngredients = getIngredients();
     	String theCorrectIngredient = null;
-		for (int i =0; i< Ingredients.size(); i++){
-			if (Ingredients.get(i).contains(Ingredient) || StringUtils.containsIgnoreCase(Ingredients.get(i), Ingredient) ){
-				theCorrectIngredient = Ingredients.get(i);
+		for (int i =0; i< REALIngredients.size(); i++){
+			if (REALIngredients.get(i).contains(Ingredient) || StringUtils.containsIgnoreCase(REALIngredients.get(i), Ingredient) ){
+				theCorrectIngredient = REALIngredients.get(i);
 				return theCorrectIngredient;
 			}
 		}
@@ -60,8 +71,23 @@ public class RecipeHelperRecipeData {
     }
 
     public List<String> getSteps() {
-        return Steps;
+    	
+    	System.out.println("inside getSteps.");
+    	System.out.println("before: " + Steps);
+    	List<String> REALSteps = new ArrayList<String>();
+    	String[] StepParts = Steps.toString().split("\\.");
+    	System.out.println("did the split work? " + StepParts[0]);
+    	for (String Ingredient: StepParts){
+    		REALSteps.add(Ingredient + ".");
+    	}
+    	System.out.println("after :" + REALSteps);
+    	//System.out.println("TEST 1: testing. testing. this is the first step only" + Steps.get(0));
+    	System.out.println("testing. testing. this is the first step only" + REALSteps.get(0));
+ 
+    	return REALSteps;
+    	
     }
+    
 
     public void setSteps(List<String> Steps) {
         this.Steps = Steps;
@@ -69,7 +95,7 @@ public class RecipeHelperRecipeData {
 
     @Override
     public String toString() {
-        return "Recipe Name: " + RecipeName + " Recipe Url: " + RecipeURL + " [RecipeHelperRecipeData " + Ingredients + "] Steps: " + Steps + "]";
+        return "Recipe Name: " + RecipeName + " Recipe Url: " + RecipeURL + " Ingredients: " + Ingredients + " Directions: " + Steps;
     }
 
 

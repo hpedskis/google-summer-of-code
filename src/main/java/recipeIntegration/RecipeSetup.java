@@ -96,20 +96,22 @@ class RecipeSetup{
         			INGREDIENT_LIST = formatIngredients(ingredient, INGREDIENT_LIST);
         		}
 				
+				
         		for (Element DirectionResult : InRecipe.select("div.directions--section__steps ol")){
         			String direction = DirectionResult.text();
         			direction = direction.replace("ADVERTISEMENT", "");
-
+        			System.out.println("printing current direction " + direction);
         			STEP_LIST = formatDirections(direction.trim(), STEP_LIST);
-
        
         		}
+        		
+        		
         		recipe.setRecipeName(RecipeTitle);
         		recipe.setIngredients(INGREDIENT_LIST);
         		recipe.setSteps(STEP_LIST);
         		System.out.println("testing if ingredient list properly saved " + recipe.getAllIngredients());
         		recipe.setRecipeURL(RecipeURL);
-        		System.out.println("testing ingr-list... ingredient 2 is " + INGREDIENT_LIST.get(1));
+        		//System.out.println("testing ingr-list... ingredient 2 is " + INGREDIENT_LIST.get(1));
         		
         		recipeHelperDao.saveCurrentRecipe(recipe);
 
@@ -118,9 +120,9 @@ class RecipeSetup{
 		
 			
 			public static List<String> formatIngredients(String Ingredients, List<String> IngredientList){
-				System.out.println("inside formatIngredients");
+				//System.out.println("inside formatIngredients");
 				if (!Ingredients.isEmpty()){//if it isn't empty white space 
-					System.out.println("adding an ingredient " + Ingredients);
+					//System.out.println("adding an ingredient " + Ingredients);
 					IngredientList.add(Ingredients);
 					
 				}
@@ -128,19 +130,22 @@ class RecipeSetup{
 				
 			}	
 			public static List<String> formatDirections(String Directions, List<String> StepList){
-				////if it isn't empty or just blank with a period
-				System.out.println("inside format Directions");
-					String[] parts = Directions.split(Pattern.quote(".").trim());;
+				System.out.println("FORMATING DIRECTIONS. BELOW IS WHAT IS GOING WRONG");
+					String[] parts = Directions.split("\\.");
+					System.out.println(parts.toString());
 					for (int i =0; i< parts.length; i++){
-						//System.out.println("added a new step at 'current step' " + i + " which was " + parts[i]);
-						if (!(parts[i].length() < 2)){//create a new step object 
-						StepList.add(i, parts[i] + ".");
-						
-					}
+						System.out.println("CURRENT PART: " + parts[i]);
+						System.out.println("CURRENT PART LENGTH: " + parts[i].length());
+						if (parts[i].length() > 3){
+							System.out.println(parts[i] + ".");
+							StepList.add(i, parts[i].trim() + ".");
+						}
+						else{
+							System.out.println("just skipped a step, "+ parts[i]);
+						}
 				
-			}
-			return StepList;
-		
+					}
+					return StepList;
 			}
 }
 				

@@ -17,10 +17,9 @@ public class RecipeHelperDao {
         item = dynamoDbClient.loadItem(item);
         }
         catch (Exception e){
-        	System.out.println("momenterily failing. going to create recipe");
-        	return null;
+        	System.out.println("dynamo failed to load");
         }
-        if (item.getRecipeData() == null) {
+        if (item == null) {
         	System.out.println("item is null. failed to load from table");
             return null;
         }
