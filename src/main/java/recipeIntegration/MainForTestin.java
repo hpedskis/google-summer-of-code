@@ -17,6 +17,7 @@ import com.amazon.speech.speechlet.LaunchRequest;
 import com.amazon.speech.speechlet.Session;
 import com.amazon.speech.speechlet.SpeechletException;
 import com.amazon.speech.speechlet.SpeechletResponse;
+import com.amazon.speech.speechlet.User;
 
 import org.apache.commons.lang3.StringUtils;
 import org.jsoup.Jsoup;
@@ -32,15 +33,14 @@ class MainForTestin{
 		//this section of code allows for testing locally. Different intents can be entered
 		
 		
-		
-		Session newSession = Session.builder().withSessionId("123").build(); 
+		User newUser = User.builder().withUserId("dfs98989998").build();
+		Session newSession = Session.builder().withUser(newUser).withSessionId("123").build(); 
 		LaunchRequest newLaunchRequest = LaunchRequest.builder().withRequestId("321").build();
 		
-		Intent realIntent = Intent.builder().withName("GetStepList").build();
+		Intent realIntent = Intent.builder().withName("GetIngredientOverview").build();
 		IntentRequest newIntent = IntentRequest.builder().withIntent(realIntent).withRequestId("345").build();
 		RecipeSpeechlet newRecipe = new RecipeSpeechlet();
 		SpeechletResponse LaunchOutput = newRecipe.onLaunch(newLaunchRequest, newSession);
-		
 		SpeechletResponse LaunchOnIntent = newRecipe.onIntent(newIntent, newSession);
 		
 		
