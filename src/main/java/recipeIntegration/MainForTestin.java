@@ -37,7 +37,7 @@ class MainForTestin{
 		Session newSession = Session.builder().withUser(newUser).withSessionId("123").build(); 
 		LaunchRequest newLaunchRequest = LaunchRequest.builder().withRequestId("321").build();
 		
-		Intent realIntent = Intent.builder().withName("GetStepList").build();
+		Intent realIntent = Intent.builder().withName("GetIngredientOverview").build();
 		IntentRequest newIntent = IntentRequest.builder().withIntent(realIntent).withRequestId("345").build();
 		RecipeSpeechlet newRecipe = new RecipeSpeechlet();
 		SpeechletResponse LaunchOutput = newRecipe.onLaunch(newLaunchRequest, newSession);

@@ -1,1 +1,45 @@
-GetIngredientOverview what are the ingredients for {recipe}GetIngredientOverview read me the ingredients for {recipe}GetIngredientOverview what do I need to make {recipe}GetIngredientOverview what do I need to make {recipe}GetIngredientInformation do I need {ingredient} for {recipe}GetIngredientInformation does {recipe} need {ingredient}GetIngredientInformation how much {ingredient} do I need for {recipe}GetIngredientInformation what quantity of {ingredient} do I need for {recipe}GetStepList how do I make {recipe}GetStepList how do I make {recipe}GetStepList what are the steps to make {recipe}GetStepList what are the steps to make {recipe}GetStepList what are the directions for {recipe}GetStepList what are the directions to make {recipe}GetSpecificStep what is step {number} for {recipe}
+GetIngredientOverview what are the ingredients for {recipe}
+GetIngredientOverview what are the ingredients
+GetIngredientOverview ingredients
+GetIngredientOverview ingredients for {recipe}
+GetIngredientOverview list ingredients
+GetIngredientOverview list ingredients for {recipe}
+GetIngredientOverview read me the ingredientsGetIngredientOverview read me the ingredients for {recipe}GetIngredientOverview what do I need to make {recipe}GetIngredientOverview what do I need to make this
+GetIngredientOverview what do I need to cook {recipe}
+GetIngredientOverview what do I need to cook this
+GetIngredientOverview what ingredients do I need
+GetIngredientOverview what ingredients does this need
+
+GetNextIngredient next ingredient
+GetNextIngredient next
+GetNextIngredient next ingredients
+GetNextIngredient tell me the next ingredient 
+GetNextIngredient next pleaseGetIngredientInformation do I need {ingredient} for {recipe}
+GetIngredientInformation do I need {ingredient}
+GetIngredientInformation does this need {ingredient}GetIngredientInformation does {recipe} need {ingredient}GetIngredientInformation how much {ingredient} do I need for {recipe}
+GetIngredientInformation how much {ingredient} do I need
+GetIngredientInformation how many {ingredient} do I need
+GetIngredientInformation whats the amount of {ingredient} for this
+GetIngredientInformation list quantity for {ingredient}
+GetIngredientInformation how many tablespoons of {ingredient} do I need
+GetIngredientInformation how many teaspoons of {ingredient} do I needGetIngredientInformation how many cups of {ingredient} do I needGetIngredientInformation how many pounds of {ingredient} do I needGetIngredientInformation what quantity of {ingredient} do I need for {recipe}GetStepList how do I make {recipe}GetStepList how do I cook {recipe}
+GetStepList help me make {recipe}GetStepList what are the steps to make {recipe}GetStepList what is the steps to make {recipe}GetStepList what are the directions for {recipe}GetStepList what are the directions to make {recipe}
+GetStepList what are the steps
+GetStepList how do I make it
+GetStepList {recipe}GetSpecificStep what is step {number} for {recipe}
+GetSpecificStep step {number}
+GetSpecificStep what is step {number}
+
+ResetRecipe new recipe
+ResetRecipe new
+ResetRecipe reset recipe
+ResetRecipe reset
+ResetRecipe cook something else
+ResetRecipe cook something new
+ResetRecipe other
+ResetRecipe cook other recipe
+ResetRecipe other recipe
+ResetRecipe another recipe
+ResetRecipe help me cook something else
+ResetRecipe help me cook something new
+ResetRecipe I want to cook something new
