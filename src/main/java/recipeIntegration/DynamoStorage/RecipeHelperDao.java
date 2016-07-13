@@ -12,8 +12,6 @@ public class RecipeHelperDao {
 	public RecipeHelper getCurrentSession(Session session) {
 		RecipeHelperRecipeDataItem item = new RecipeHelperRecipeDataItem();
 		item.setCustomerId(session.getUser().getUserId());
-		System.out
-				.println("step 3: trying to get current session inside recipe helper dao.");
 		try {
 			item = dynamoDbClient.loadItem(item);
 		} catch (Exception e) {
@@ -25,12 +23,15 @@ public class RecipeHelperDao {
 		}
 		System.out
 				.println("step 6: item wasn't flagged as null. creating new instance");
+		int currentStep = item.getRecipeData().getCurrentIngredient();
+		item.setIngredientIndex(currentStep);
 		return RecipeHelper.newInstance(session, item.getRecipeData());
 	}
 
 	public void saveCurrentRecipe(RecipeHelper recipe) {
 		RecipeHelperRecipeDataItem item = new RecipeHelperRecipeDataItem();
 		item.setCustomerId(recipe.getSession().getUser().getUserId());
+		item.setIngredientIndex(recipe.getCurrentIngredient());
 		item.setRecipeData(recipe.getRecipeData());
 
 		dynamoDbClient.saveItem(item);

@@ -58,16 +58,11 @@ public class RecipeHelper {
 	}
 
 	public String getRecipeName() {
-		return recipeData.getRecipeName();
+		String recipeName = recipeData.getRecipeName();
+		recipeName = recipeName.replaceAll("\\p{Punct}+", "");
+		return recipeName;
 	}
 
-	public int getIngredientSize() {
-		return recipeData.getIngredientListSize();
-	}
-
-	public int getStepSize() {
-		return recipeData.getStepListSize();
-	}
 
 	public List<String> getAllSteps() {
 		return recipeData.getSteps();
@@ -98,8 +93,6 @@ public class RecipeHelper {
 	}
 
 	public void setRecipeName(String RecipeName) {
-		RecipeName.replace("\"", "");
-		RecipeName.replace("\\", "");
 		recipeData.setRecipeName(RecipeName);
 	}
 	

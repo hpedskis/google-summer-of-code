@@ -22,9 +22,9 @@ public class RecipeHelperRecipeData {
 		RecipeHelperRecipeData newInstance = new RecipeHelperRecipeData();
 		newInstance.setIngredients(new ArrayList<String>());
 		newInstance.setSteps(new ArrayList<String>());
-		newInstance.RecipeName = null;
-		newInstance.RecipeURL = null;
-		newInstance.CurrentIngredient = 0; //first ingredient hasn't been heard
+		newInstance.setRecipeName(null);
+		newInstance.setRecipeURL(null);
+		newInstance.setCurrentIngredient(0);
 		return newInstance;
 	}
 	
@@ -55,7 +55,7 @@ public class RecipeHelperRecipeData {
 			Ingredient = Ingredient.replaceAll("\\]", "");
 			if(!(Ingredient.length() < 4)){
 				System.out.println("adding an ingredinet " + Ingredient);
-				REALIngredients.add(Ingredient + ".");
+				REALIngredients.add(Ingredient.trim() + ".");
 			}
 		
 		}
@@ -70,7 +70,7 @@ public class RecipeHelperRecipeData {
 			Step = Step.replace("\\]", "");
 			Step = Step.replaceAll(",", "");
 			if(!(Step.length() < 4)){
-				REALSteps.add(Step + ".");
+				REALSteps.add(Step.trim() + ".");
 			}
 		}
 		return REALSteps;
@@ -89,14 +89,6 @@ public class RecipeHelperRecipeData {
 		return theCorrectIngredient;
 	}
 
-	@JsonIgnoreProperties
-	public int getIngredientListSize() {
-		return Ingredients.size();
-	}
-
-	public int getStepListSize() {
-		return Steps.size();
-	}
 
 	public void setIngredients(List<String> Ingredients) {
 		this.Ingredients = Ingredients;

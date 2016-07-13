@@ -36,8 +36,6 @@ public class RecipeHelperManager {
 	public RecipeHelperManager(final AmazonDynamoDBClient amazonDynamoDbClient) {
 		RecipeHelperDynamoDbClient dynamoDbClient = new RecipeHelperDynamoDbClient(
 				amazonDynamoDbClient);
-		System.out
-				.println("step 2: inside recipe helper manager with the dynamo client");
 
 		recipeHelperDao = new RecipeHelperDao(dynamoDbClient);
 	}
@@ -56,7 +54,7 @@ public class RecipeHelperManager {
 		Slot RecipeNameSlot = intent.getSlot(LIST_OF_RECIPES);
 		String recipeName = RecipeNameSlot.getValue();
 		System.out.println("inside set up new recipe line 40 of manager");
-		//String recipeName = "banana bread"; //TODO REMOVE BEFORE REAL TESTING
+		//String recipeName = "chocolate chip cookies"; //TODO REMOVE BEFORE REAL TESTING
 		if (recipeName == null || recipeName == "") {
 			String speechText = "I didn't hear that reicpe name. What do you want me to help you cook?";
 			return getAskSpeechletResponse(speechText, speechText);
@@ -155,16 +153,14 @@ public class RecipeHelperManager {
 			String ingredient = recipe.getSpecificIngredient(IngredientName);
 
 			if (ingredient != null) { // it found specific ingredient
-				outputText = ("You need " + StringUtils.replace(ingredient,
-						"[", ""));
-				System.out.println("you need " + ingredient);
+				outputText = ("You need " + ingredient);
+				//System.out.println("you need " + ingredient);
 
 			} else {
 				outputText = ("You don't need " + IngredientName);
-				System.out.println("you don't need " + ingredient);
+				//System.out.println("you don't need " + ingredient);
 			}
 		} else {
-			System.out.println("I couldn't find that ingredient!!!!!!!!!");
 			return getAskSpeechletResponse("I couldn't find that ingredient.",
 					"How about you ask about a different ingredient");
 		}
@@ -181,7 +177,6 @@ public class RecipeHelperManager {
      */
 	public SpeechletResponse getIngredientOverview(Session session,
 			Intent intent) {
-		System.out.println("inside get ingredient overview... hooray");
 		RecipeHelper recipe = recipeHelperDao.getCurrentSession(session);
 		if (recipe == null || recipe.hasURL() == false) {
 			recipe = RecipeHelper.newInstance(session,
@@ -218,22 +213,24 @@ public class RecipeHelperManager {
 		List<String> ingredients = recipe.getAllIngredients();
 		int IngrSize = ingredients.size();
 		int IngredientIndex = recipe.getCurrentIngredient();
-		if (recipe.getCurrentIngredient() >= IngrSize){
-			outputText += "You've now reached the end of the ingredient list. I'll reset that for you";
-			recipe.setCurrentIngredient(0);
-		}
 		String Ingredient = ingredients.get(IngredientIndex);
+		if (IngredientIndex >= IngrSize){
+			
+		}
 		if (IngredientIndex == 0){
 			System.out.println("first ingredient is " + Ingredient);
-			outputText += "the first ingredient is "
-					+ Ingredient;
+			outputText = "the first ingredient is "
+					+ Ingredient.trim();
 		}
 		else{
-			System.out.println("the next ingredient is " + Ingredient);
-		outputText += "The next ingredient is "
-				+ Ingredient;
+			System.out.println("the next ingredient is " + Ingredient.trim());
+		outputText = "The next ingredient is " + Ingredient.trim();
 		}
 		IngredientIndex++;
+		if(recipe.getCurrentIngredient() >= IngrSize){
+			outputText += "You've now reached the end of the ingredient list. I'll reset that for you";
+			IngredientIndex = 0;
+		}
 		recipe.setCurrentIngredient(IngredientIndex);
 		recipeHelperDao.saveCurrentRecipe(recipe);
 		System.out.println("just tried to save the recipe");
@@ -241,32 +238,6 @@ public class RecipeHelperManager {
 		outputSpeech.setText(outputText);
 		return SpeechletResponse.newTellResponse(outputSpeech);
 	}
-	/*/
-	public SpeechletResponse getNextStep(Session session, Intent intent){
-		RecipeHelper recipe = recipeHelperDao.getCurrentSession(session);
-		if (recipe == null || recipe.hasURL() == false) {
-			recipe = RecipeHelper.newInstance(session,
-					RecipeHelperRecipeData.newInstance());
-			setUpNewRecipe(session, intent, recipe);
-		}
-		PlainTextOutputSpeech outputSpeech = new PlainTextOutputSpeech();
-		String outputText = "";
-		List<String> steps = recipe.getAllSteps();
-		int CurrentStep = recipe.getCurrentIngredient(); //TODO
-		String Ingredient = steps.get(CurrentStep);
-		
-		if (CurrentStep == 0){
-			outputText += "the first step is "
-					+ Ingredient;
-		}
-		else{
-		outputText += "The next step is "
-				+ Ingredient;
-		}
-		outputSpeech.setText(outputText);
-		return SpeechletResponse.newTellResponse(outputSpeech);
-	}
-	/*/
 	
 	/**
      * Creates and returns response for the getStepOverview intent
@@ -295,6 +266,7 @@ public class RecipeHelperManager {
 		List<String> steps = recipe.getAllSteps();
 		int i = 1;
 		for (String step : steps) {
+			step = step.replaceAll("\\[", "");
 			System.out.println("Step " + (Integer.toString(i)) + " is " + step
 					+ ".");
 			outputText += "Step " + (Integer.toString(i++)) + " is " + step;

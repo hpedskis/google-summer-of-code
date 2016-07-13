@@ -64,7 +64,6 @@ public class RecipeSpeechlet implements Speechlet {
 				session.getSessionId());
 
 		initializeComponents(); // TODO needed for real testing!!!!!
-		System.out.println("inside onIntent at the very top. step # ??");
 
 		Intent intent = request.getIntent();
 
@@ -73,11 +72,11 @@ public class RecipeSpeechlet implements Speechlet {
 		if ("GetIngredientOverview".equals(intentName)) {
 			System.out.println("inside on intent. GETTING INGREDIENT OVERVIEW");
 			return recipeHelperManager.getIngredientOverview(session, intent);
+			
 		} else if ("ResetRecipe".equals(intentName)) {
 			return recipeHelperManager.getNewRecipeIntent(session);
+			
 		} else if ("GetIngredientInformation".equals(intentName)) {
-			System.out
-					.println("inside on intent. GETTING INGREDIENT INFORMATION");
 			return recipeHelperManager
 					.getIngredientInformation(session, intent);
 		

@@ -16,6 +16,7 @@ public class RecipeHelperRecipeDataItem {
 	private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
 	private String customerId;
+	private int IngredientIndex;
 
 	private RecipeHelperRecipeData recipeData; // recipe information
 
@@ -27,6 +28,15 @@ public class RecipeHelperRecipeDataItem {
 
 	public void setCustomerId(String customerId) {
 		this.customerId = customerId;
+	}
+	
+	@DynamoDBAttribute(attributeName = "IngredientIndex")
+	public int getIngredientIndex(){
+		return IngredientIndex;
+	}
+	
+	public void setIngredientIndex(int index){
+		this.IngredientIndex = index;
 	}
 
 	@DynamoDBAttribute(attributeName = "Data")
