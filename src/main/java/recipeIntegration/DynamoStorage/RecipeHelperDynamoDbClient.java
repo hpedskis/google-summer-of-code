@@ -17,16 +17,15 @@ public class RecipeHelperDynamoDbClient {
 			final RecipeHelperRecipeDataItem tableItem) {
 		DynamoDBMapper mapper = createDynamoDBMapper();
 		RecipeHelperRecipeDataItem item = mapper.load(tableItem);
-		System.out
-				.println("step 5: claiming to return the recipe helper data item "
+		System.out.println("step 5: claiming to return the recipe helper data item "
 						+ item.getRecipeData());
 		if (StringUtils
 				.containsIgnoreCase(
 						item.getRecipeData().toString(),
-						("Recipe Name: \"null Recipe Url: null Ingredients: [[]] Directions: [[]] Current Ingredient Index 0"))
+						("Recipe Name: \"null Recipe Url: null Ingredients: [[]] Directions: [[]]"))
 				|| StringUtils
 						.containsIgnoreCase(item.getRecipeData().toString(),
-								"Recipe Name: \"null Recipe Url: null Ingredients: [[.]] Directions: [[.]] Current Ingredient Index 0")) {
+								"Recipe Name: \"null Recipe Url: null Ingredients: [[.]] Directions: [[.]]")) {
 			return null;
 		}
 		return item;

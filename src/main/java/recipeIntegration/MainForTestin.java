@@ -30,7 +30,7 @@ class MainForTestin{
 
 	public static void notmain(String[] args) throws SpeechletException, IOException {
 		
-		//this section of code allows for testing locally. Different intents can be entered
+		//TODO this section of code allows for testing locally. Different intents can be entered
 		
 		
 		User newUser = User.builder().withUserId("dfs98989998").build();
@@ -47,7 +47,7 @@ class MainForTestin{
 		
 		
 		/*/
-		//This section allows for re-writing to the output files using multithreading  
+		//TODO This section allows for re-writing to the output files using multithreading  
 	 	File T1 = new File("src/Recipe_Outputs/Breakfast.txt");
 	 	File T2 = new File("src/Recipe_Outputs/Chicken.txt");
 	 	File T3 = new File("src/Recipe_Outputs/Dessert.txt");
@@ -89,7 +89,7 @@ class MainForTestin{
 	    t12.start();
 		/*/
 		
-		//any manipulation to the ingredient files can be done in this section
+		// TODO any manipulation to the ingredient files can be done in this section
 	
 		/*/
 		File FixedIngredientsNODUP = new File("/Users/hpedskis/Desktop/GoogleSummerofCode/FIXED_INGREDIENTS_NO_DUP.txt");

@@ -4,24 +4,27 @@ import java.util.List;
 
 import com.amazon.speech.speechlet.Session;
 
+//creates the whole recipe object, including sesssion information, all the recipeData, 
+//and the index for ingredients and steps
 public class RecipeHelper {
 
 	private Session session;
 	private RecipeHelperRecipeData recipeData;
-
+	private int IngredientIndex;
+	private int StepIndex;
+	
 	private RecipeHelper() {
 
 	}
 
 	public static RecipeHelper newInstance(Session session,
-			RecipeHelperRecipeData recipeData) {
-		System.out
-				.println("step 7: inside RecipeHelper line 19 and creating a new instance.");
+			RecipeHelperRecipeData recipeData, int Index, int StepIndex) {
 		RecipeHelper recipe = new RecipeHelper();
 		recipe.setSession(session);
 		recipe.setRecipeData(recipeData);
-		System.out.println("just created a new recipeHelper object with data "
-				+ recipe.getRecipeData());
+		recipe.setIngredientIndex(Index); //new instance, index in ingredients will be 0
+		recipe.setStepIndex(StepIndex);
+		System.out.println("just created a new recipeHelper object with data " + recipe.getRecipeData());
 		return recipe;
 	}
 
@@ -46,7 +49,9 @@ public class RecipeHelper {
 		recipeData.getSteps().clear();
 		recipeData.setRecipeURL(null);
 		recipeData.setRecipeName(null);
-		recipeData.setCurrentIngredient(0);
+		//recipeData.setCurrentIngredient(0);
+		IngredientIndex = 0;
+		StepIndex = 0;
 
 	}
 
@@ -96,10 +101,17 @@ public class RecipeHelper {
 		recipeData.setRecipeName(RecipeName);
 	}
 	
-	public void setCurrentIngredient(int index){
-		recipeData.setCurrentIngredient(index);
+	public void setIngredientIndex(int index){
+		this.IngredientIndex = index;
 	}
-	public int getCurrentIngredient(){
-		return recipeData.getCurrentIngredient();
+	public int getIngredientIndex(){
+		return IngredientIndex;
+	}
+	
+	public void setStepIndex(int index){
+		this.StepIndex = index;
+	}
+	public int getStepIndex(){
+		return StepIndex;
 	}
 }

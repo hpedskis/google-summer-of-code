@@ -7,6 +7,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMarshaller;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMarshalling;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -17,6 +18,7 @@ public class RecipeHelperRecipeDataItem {
 
 	private String customerId;
 	private int IngredientIndex;
+	private int StepIndex;
 
 	private RecipeHelperRecipeData recipeData; // recipe information
 
@@ -25,7 +27,7 @@ public class RecipeHelperRecipeDataItem {
 
 		return customerId;
 	}
-
+	
 	public void setCustomerId(String customerId) {
 		this.customerId = customerId;
 	}
@@ -38,10 +40,19 @@ public class RecipeHelperRecipeDataItem {
 	public void setIngredientIndex(int index){
 		this.IngredientIndex = index;
 	}
+	
+	@DynamoDBAttribute(attributeName = "StepIndex")
+	public int getStepIndex(){
+		return StepIndex;
+	}
+	
+	public void setStepIndex(int index){
+		this.StepIndex = index;
+	}
 
 	@DynamoDBAttribute(attributeName = "Data")
 	@DynamoDBMarshalling(marshallerClass = RecipeHelperRecipeDataMarshaller.class)
-	public RecipeHelperRecipeData getRecipeData() { // returns recipeURL
+	public RecipeHelperRecipeData getRecipeData() { 
 		return recipeData;
 	}
 
@@ -55,17 +66,15 @@ public class RecipeHelperRecipeDataItem {
 		@Override
 		public String marshall(RecipeHelperRecipeData recipeData) {
 			try {
-				// System.out.println(OBJECT_MAPPER.writeValueAsString(recipeData));
-				return OBJECT_MAPPER.writeValueAsString(recipeData
-						.getRecipeName()
+				System.out.println("THIS IS WHAT'S THE NAME DURING MARSHALLING " + recipeData.getRecipeName());
+				return OBJECT_MAPPER.writeValueAsString(recipeData.getRecipeName()
 						+ ":"
 						+ recipeData.getRecipeURL()
 						+ ":"
 						+ recipeData.getIngredients()
 						+ ":"
 						+ recipeData.getSteps() 
-						+ ":"
-						+ Integer.toString(recipeData.getCurrentIngredient()) + ":");
+						+ ":");
 			} catch (JsonProcessingException e) {
 				throw new IllegalStateException(
 						"Unable to marshall recipe data", e);
@@ -81,21 +90,13 @@ public class RecipeHelperRecipeDataItem {
 
 			String[] recipeParts = value.split(":");
 			recipe.setRecipeName(recipeParts[0]);
-			System.out.println(recipe.getRecipeName());
+			System.out.println("THIS IS THE NAME IT'S UNMARSHALLING " + recipe.getRecipeName());
 			recipe.setRecipeURL(recipeParts[1]);
 			System.out.println(recipe.getRecipeURL());
 			recipe.setIngredients(Arrays.asList(recipeParts[2]));
 			recipe.setSteps(Arrays.asList(recipeParts[3]));
-			recipe.setCurrentIngredient(Integer.parseInt(recipeParts[4].trim()));
-			System.out.println("unmarshalled index is " + Integer.parseInt(recipeParts[4].trim()));
 
 			return recipe;
-			/*
-			 * / try { return OBJECT_MAPPER.readValue(value, new
-			 * TypeReference<RecipeHelper>() { }); } catch (Exception e) { throw
-			 * new IllegalStateException("Unable to unmarshall game data value",
-			 * e); } /
-			 */
 		}
 	}
 

@@ -12,7 +12,6 @@ public class RecipeHelperRecipeData {
 	private List<String> Steps;
 	private String RecipeName;
 	private String RecipeURL;
-	private int CurrentIngredient;
 
 	public RecipeHelperRecipeData() {
 		// public no-arg constructor required for DynamoDBMapper marshalling
@@ -24,23 +23,14 @@ public class RecipeHelperRecipeData {
 		newInstance.setSteps(new ArrayList<String>());
 		newInstance.setRecipeName(null);
 		newInstance.setRecipeURL(null);
-		newInstance.setCurrentIngredient(0);
 		return newInstance;
 	}
-	
-	public int getCurrentIngredient(){
-		return CurrentIngredient;
-	}
-	public void setCurrentIngredient(int index){
-			this.CurrentIngredient = index;
-		
-	}
-
 	public String getRecipeName() {
 		return RecipeName;
 	}
 
 	public void setRecipeName(String RecipeName) {
+		//RecipeName = RecipeName.replace("\"", "");
 		this.RecipeName = RecipeName;
 	}
 
@@ -102,7 +92,7 @@ public class RecipeHelperRecipeData {
 	@Override
 	public String toString() {
 		return "Recipe Name: " + RecipeName + " Recipe Url: " + RecipeURL
-				+ " Ingredients: " + Ingredients + " Directions: " + Steps + " Current Ingredient Index " + CurrentIngredient;
+				+ " Ingredients: " + Ingredients + " Directions: " + Steps;
 	}
 
 	public String getRecipeURL() {

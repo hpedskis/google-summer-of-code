@@ -76,6 +76,9 @@ public class RecipeSpeechlet implements Speechlet {
 		} else if ("ResetRecipe".equals(intentName)) {
 			return recipeHelperManager.getNewRecipeIntent(session);
 			
+		} else if ("SecondMenu".equals(intentName)) {
+		return recipeHelperManager.getSecondaryLaunchRequest(session, intent);
+		
 		} else if ("GetIngredientInformation".equals(intentName)) {
 			return recipeHelperManager
 					.getIngredientInformation(session, intent);
@@ -83,7 +86,13 @@ public class RecipeSpeechlet implements Speechlet {
 		} else if("GetNextIngredient".equals(intentName)){
 			return recipeHelperManager.getNextIngredient(session, intent);
 					
-		}else if ("GetStepList".equals(intentName)) {
+		} else if("GetNextStep".equals(intentName)){
+			return recipeHelperManager.getNextStep(session, intent);
+			
+		} else if ("WhatNext".equals(intentName)){
+			return recipeHelperManager.getWhatNext(session, intent);
+			
+		} else if ("GetStepList".equals(intentName)) {
 			System.out.println("inside on intent. getting step list intent.");
 			return recipeHelperManager.getStepOverview(session, intent);
 

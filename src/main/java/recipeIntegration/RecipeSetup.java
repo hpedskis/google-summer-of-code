@@ -56,7 +56,6 @@ class RecipeSetup {
 
 	public static String FindBackupRecipe(String RecipeName) {
 		RecipeName = StringUtils.lowerCase(RecipeName).trim();
-		System.out.println("inside find backup with recipe name " + RecipeName);
 		for (Map.Entry<String, String> Entry : MapOfRecipes.entrySet()) {
 			if (StringUtils.containsIgnoreCase(Entry.getKey(), RecipeName)) {
 				return Entry.getValue();
@@ -70,7 +69,6 @@ class RecipeSetup {
 	public static void RecipeBuilder(Session session, String RecipeName,
 			RecipeHelper recipe, RecipeHelperDao recipeHelperDao)
 			throws FileNotFoundException, UnsupportedEncodingException {
-		System.out.println("INSIDE RECIPE BUILDER");
 		String RecipeURL = null;
 		RecipeURL = FindRecipe(RecipeName);
 		if (RecipeURL == null) {
@@ -81,7 +79,6 @@ class RecipeSetup {
 		List<String> INGREDIENT_LIST = new ArrayList<String>();
 		List<String> STEP_LIST = new ArrayList<String>();
 
-		String RecipeTitle = RecipeName;
 		Document InRecipe = null;
 		try {
 			InRecipe = Jsoup.connect("http://allrecipes.com/" + RecipeURL)
@@ -89,6 +86,7 @@ class RecipeSetup {
 		} catch (IOException e) {
 			System.out.println("Cannot connect to recipe");
 		}
+		String RecipeTitle = InRecipe.select("h1.recipe-summary__h1").text();
 		for (Element IngredientResult : InRecipe.select("li.checkList__line")) {
 			String ingredient = IngredientResult.text();
 
