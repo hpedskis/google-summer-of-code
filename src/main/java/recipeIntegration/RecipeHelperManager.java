@@ -352,7 +352,7 @@ public class RecipeHelperManager {
 		int i = 1;
 		for (String step : steps) {
 			step = step.replaceAll("\\.", "");
-			step = step.replaceAll("[", "");
+			step = step.replaceAll("\\[", "");
 			System.out.println("Step " + (Integer.toString(i)) + " is " + step
 					+ ".");
 			outputText += "Step " + (Integer.toString(i++)) + " is " + step.trim() + "   ";
