@@ -43,10 +43,10 @@ Alexa Skill Setup
 9. You are now able to start testing your sample skill! In the Service Simulator area, you can type in utterances. Do not copy the utterances exactly. There cannot be any punctuation or real numbers. Anything in curly brackets should be replaced with a string.
 
 Some examples: 
-        what are the ingredients
-	what is the next step
-        do I need butter
-        what is step three
-        what are the steps to make banana bread
+        what are the ingredients,
+	what is the next step,
+        do I need butter,
+        what is step three,
+        what are the steps to make banana bread,
         
 
