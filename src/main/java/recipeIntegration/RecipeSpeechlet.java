@@ -53,7 +53,7 @@ public class RecipeSpeechlet implements Speechlet {
 		log.info("onLaunch requestId={}, sessionId={}", request.getRequestId(),
 				session.getSessionId());
 
-		//initializeComponents(); //TODO REMOVE BEFORE REAL TESTING
+		//initializeComponents(); //TODO REMOVE BEFORE TESTING THROUGH AWS
 		return recipeHelperManager.getLaunchResponse(request, session);
 	}
 
@@ -63,14 +63,13 @@ public class RecipeSpeechlet implements Speechlet {
 		log.info("onIntent requestId={}, sessionId={}", request.getRequestId(),
 				session.getSessionId());
 
-		initializeComponents(); // TODO needed for real testing!!!!!
+		initializeComponents(); // TODO needed for testing through AWS but remove for local testing
 
 		Intent intent = request.getIntent();
 
 		String intentName = (intent != null) ? intent.getName() : null;
 
 		if ("GetIngredientOverview".equals(intentName)) {
-			System.out.println("inside on intent. GETTING INGREDIENT OVERVIEW");
 			return recipeHelperManager.getIngredientOverview(session, intent);
 			
 		} else if ("ResetRecipe".equals(intentName)) {
@@ -93,7 +92,6 @@ public class RecipeSpeechlet implements Speechlet {
 			return recipeHelperManager.getWhatNext(session, intent);
 			
 		} else if ("GetStepList".equals(intentName)) {
-			System.out.println("inside on intent. getting step list intent.");
 			return recipeHelperManager.getStepOverview(session, intent);
 
 		} else if ("GetSpecificStep".equals(intentName)) {

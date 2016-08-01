@@ -18,11 +18,8 @@ public class RecipeHelperDao {
 			System.out.println("dynamo failed to load");
 		}
 		if (item == null) {
-			System.out.println("item is null. failed to load from table");
 			return null;
 		}
-		System.out
-				.println("step 6: item wasn't flagged as null. creating new instance");
 		int currentStep = item.getIngredientIndex();
 		item.setIngredientIndex(currentStep);
 		return RecipeHelper.newInstance(session, item.getRecipeData(), item.getIngredientIndex(), item.getStepIndex());

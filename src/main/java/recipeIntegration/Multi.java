@@ -4,15 +4,18 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 
+/**
+ * The class was used to create the recipe outputs, from allrecipes.com
+ * 
+ * THIS CLASS IS NOT NECCESARY FOR RUNNING THE SKILL THROUGH LAMBDA OR AWS.
+ *
+ */
 public class Multi  extends Thread{
 	
 	public String categoryLink;

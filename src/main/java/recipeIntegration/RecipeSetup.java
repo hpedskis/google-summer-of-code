@@ -20,6 +20,13 @@ import com.amazon.speech.speechlet.Session;
 import recipeIntegration.DynamoStorage.RecipeHelper;
 import recipeIntegration.DynamoStorage.RecipeHelperDao;
 
+/**
+ * The class is used to set up all recipes
+ * It first matches the recipe to one in the database,
+ * then connects to the Internet to grab all information.
+ * 
+ *
+ */
 class RecipeSetup {
 
 	public static Map<String, String> MapOfRecipes = new HashMap<String, String>();
@@ -27,6 +34,16 @@ class RecipeSetup {
 	// when a user passes in a string title, create a map from the text file,
 	// find that recipe, or return that it wasn't found.
 
+	
+	 /**
+     * attemps to find the recipe from the title passed in 
+     * creates a map of all the names and URLs for easy searching.
+     * passes the URL or null back to RecipeBuilder
+     *
+     * @param RecipeName, the string of the desired recipe 
+     * 
+     * @return the URL of the recipe, or null if the recipe was not found.
+     */
 	@SuppressWarnings("resource")
 	public static String FindRecipe(String RecipeName)
 			throws FileNotFoundException, UnsupportedEncodingException {
@@ -37,16 +54,16 @@ class RecipeSetup {
 		InputStream is = loader.getResourceAsStream("MASTER_RECIPE.txt");
 		Scanner reader = new Scanner(new InputStreamReader(is, "UTF-8"));
 
+		//create a map
 		while (reader.hasNextLine()) {
 			String recipeTitle = reader.nextLine();
 			String recipeInfo = reader.nextLine();
 			MapOfRecipes.put(StringUtils.lowerCase(recipeTitle).trim(),
 					recipeInfo);
 		}
-
+		//searches the map for the title and corresponding URL
 		for (Map.Entry<String, String> Entry : MapOfRecipes.entrySet()) {
 			if (StringUtils.equalsIgnoreCase(Entry.getKey(), RecipeName)) {
-				System.out.println("found the exact match " + Entry.getKey());
 				return Entry.getValue();
 			}
 		}
@@ -54,26 +71,44 @@ class RecipeSetup {
 
 	}
 
+	 /**
+     * attempts to find a recipe with a similar name if the exact match couldn't be found
+     * returns the URL to ReicpeBuilder
+     *
+     * @param RecipeName, the title of the desired recipe
+     * 
+     * @return the URL for the recipe that matched the input
+     */
 	public static String FindBackupRecipe(String RecipeName) {
 		RecipeName = StringUtils.lowerCase(RecipeName).trim();
 		for (Map.Entry<String, String> Entry : MapOfRecipes.entrySet()) {
 			if (StringUtils.containsIgnoreCase(Entry.getKey(), RecipeName)) {
 				return Entry.getValue();
 			}
-
 		}
 
 		return null;
 	}
 
+	 /**
+     * creates a recipe object by connecting to the URL and then sets
+     * all information inside Dynamo and in recipeIngegration.DynamoStorage classes
+     * Makes calls to FindRecipe and FindBackupRecipe
+     *
+     * @param session for this request
+     * @param RecipeName for the recipe
+     * @param recipe, the RecipeHelepr object
+     * @param recipeHelperDao, so the information can be saved in Dynamo.
+     * 
+     * @return nothing, but saves all information for the session.
+     */
 	public static void RecipeBuilder(Session session, String RecipeName,
 			RecipeHelper recipe, RecipeHelperDao recipeHelperDao)
 			throws FileNotFoundException, UnsupportedEncodingException {
 		String RecipeURL = null;
 		RecipeURL = FindRecipe(RecipeName);
 		if (RecipeURL == null) {
-			RecipeURL = FindBackupRecipe(RecipeName); // what about if this
-														// returns null?
+			RecipeURL = FindBackupRecipe(RecipeName); //exact match could not be found
 		}
 
 		List<String> INGREDIENT_LIST = new ArrayList<String>();
@@ -108,8 +143,6 @@ class RecipeSetup {
 		recipe.setRecipeName(RecipeTitle);
 		recipe.setIngredients(INGREDIENT_LIST);
 		recipe.setSteps(STEP_LIST);
-		//System.out.println("testing if ingredient list properly saved "
-				//+ recipe.getAllIngredients());
 		recipe.setRecipeURL(RecipeURL);
 		
 
@@ -119,18 +152,9 @@ class RecipeSetup {
 
 	public static List<String> formatIngredients(String Ingredients,
 			List<String> IngredientList) {
-		System.out.println("inside formatIngredients");
-		System.out.println("the string being passed in is " + Ingredients);
 		if (!Ingredients.isEmpty()) {// if it isn't empty white space
-			System.out.println("not empty");
-			System.out.println("adding an ingredient " + Ingredients);
 			Ingredients = Ingredients.replace(",", "");
 			IngredientList.add(Ingredients + ".");
-			System.out.println("formated to be " + Ingredients);
-
-		}
-		for (String ingredient: IngredientList){
-			System.out.println(ingredient);
 		}
 		return IngredientList;
 
@@ -139,12 +163,11 @@ class RecipeSetup {
 	public static List<String> formatDirections(String Directions,
 			List<String> StepList) {
 		String[] parts = Directions.split("\\.");
-		//System.out.println(parts.toString());
 		for (int i = 0; i < parts.length; i++) {
 			if (parts[i].length() > 3) {
 				StepList.add(i, parts[i].trim() + ".");
 			} else {
-				//System.out.println("just skipped a step, " + parts[i]);
+				//skip it
 			}
 
 		}

@@ -17,18 +17,20 @@ import com.amazon.speech.ui.SimpleCard;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 
 /**
- * Manages all intents from the speechlet
+ * Manages all intents passed in from RecipeSpeechlet
  * 
  */
 public class RecipeHelperManager {
 
-	private final RecipeHelperDao recipeHelperDao;
+	private final RecipeHelperDao RECIPE_HELPER_DAO;
+	
+	//These final strings are matched to the Custom Slot Types, set up in Amazon Developer Portal
 	private static final String LIST_OF_RECIPES = "recipe";
 	private static final String AMAZON_NUMBER = "number";
 	private static final String INGREDIENT_LIST = "ingredient";
 	
 	 /**
-     * Creates and returns a new Manager session to run the speechlet
+     * Creates and returns a new Manager session to run RecipeSpeechlet
      *
      * @param AmazonDynamoDBClient
      * @return a new RecipeHelperManager session
@@ -36,13 +38,15 @@ public class RecipeHelperManager {
 	public RecipeHelperManager(final AmazonDynamoDBClient amazonDynamoDbClient) {
 		RecipeHelperDynamoDbClient dynamoDbClient = new RecipeHelperDynamoDbClient(
 				amazonDynamoDbClient);
-
-		recipeHelperDao = new RecipeHelperDao(dynamoDbClient);
+		RECIPE_HELPER_DAO = new RecipeHelperDao(dynamoDbClient);
 	}
+	
+	
 	 /**
-     * Sets up a new recipe. Passes to RecipeSetup and attempts to connect to reicpe link
-     * 	Also handles wrong recipe title input, errors in connection, etc.
-     *
+     * Sets up a new recipe. This method calls the RecipeSetup class to connect to the recipe and
+     * gather all recipe information (ingredients, name, steps).
+     * 
+     * Also handles wrong recipe title input, errors in connection, etc.
      * @param intent for this request
      * @param session for this request
      * @param recipeHelper recipe object, which may or may not be attached to customerID
@@ -53,51 +57,58 @@ public class RecipeHelperManager {
 			RecipeHelper recipe) {
 		Slot RecipeNameSlot = intent.getSlot(LIST_OF_RECIPES);
 		String recipeName = RecipeNameSlot.getValue();
-	
-		//String recipeName = "chocolate chip cookies"; //TODO REMOVE BEFORE REAL TESTING
+		//String recipeName = "chocolate chip cookies"; //TODO USED FOR LOCAL TESTING. CHANGE VALUE HERE.
+		
 		if (recipeName == null || recipeName == "") {
-			String speechText = "What do you want me to help you cook?";
+			String speechText = "Say 'Help me cook' and then a recipe you want to cook";
 			return getAskSpeechletResponse(speechText, speechText);
-
 		}
 		try {
 			RecipeSetup.RecipeBuilder(session, recipeName, recipe,
-					recipeHelperDao); // if this returns null, re-prompt
+					RECIPE_HELPER_DAO); // if this returns null, re-prompt
 		} catch (Exception e) {
-			String speechText = "Sorry, I couldnt' connect to that recipe. Ask about a different recipe?";
-			return getAskSpeechletResponse(speechText, speechText);
-		}
-		if (recipe.getAllSteps() == null) { //TODO does this ever get triggered?
-			String speechText = "Sorry, I couldnt' find anything similar to that recipe. Ask about a different recipe?";
+			String speechText = "Sorry, I couldn't find that recipe or there was a problem connecting to it. Ask me to help you cook a different recipe?";
 			return getAskSpeechletResponse(speechText, speechText);
 		}
 		
-		recipeHelperDao.saveCurrentRecipe(recipe);
-		String speechText = "Now cooking" + recipe.getRecipeName();
+		if (recipe.getAllSteps() == null) { //one more back up check to make sure recipe correctly transfered.
+			String speechText = "Sorry, I couldnt' find anything similar to that recipe. Ask me to help you cook a different recipe?";
+			return getAskSpeechletResponse(speechText, speechText);
+		}
+		
+		RECIPE_HELPER_DAO.saveCurrentRecipe(recipe);
+		String speechText = "Now cooking" + recipe.getRecipeName(); //TODO is this triggered?
 		return getTellSpeechletResponse(speechText);
 	}
+	
+	
 	 /**
-     * Creates and returns response for the launch of the app
+     * Creates and returns response for the launch of the skill
      *
      * @param LaunchRequest request for session
      * @param session for this request
      * 
-     * @return response for launch
+     * @return Either a welcome menu, or a reminder of what recipe was being cooked if a session wasn't reset.
      */
 	public SpeechletResponse getLaunchResponse(LaunchRequest request,
 			Session session) {
 		String speechText, repromptText;
-		RecipeHelper recipe = recipeHelperDao.getCurrentSession(session);
-		String recipeName = recipe.getRecipeName().replaceAll("\\p{Punct}+", "");
+		RecipeHelper recipe = RECIPE_HELPER_DAO.getCurrentSession(session);
 		
-		if (recipe == null || !(recipe.hasURL())) { // no previous recipe
-			speechText = "Welcome to Cooking Helper. Please ask about a recipe you would like to cook.";
-			repromptText = "You can say How do I cook pancakes? or what is step 3 for quick and easy pizza crust";
+		try{
+		if (recipe.getRecipeName() == null || recipe == null) { // no previous recipe
+			speechText = "Welcome to Recipe Helper. Say Help me cook and then a recipe name. Then, you can ask about ingredients or steps.";
+			repromptText = "You can say what are the ingredients for pancakes, or, what is the first step for quick and easy pizza crust";
 		} else {
+			String recipeName = recipe.getRecipeName().replaceAll("\\p{Punct}+", "");
 			speechText = "I see that we previously were cooking "
 					+ recipeName; // recipe saved in Dynamo
-			repromptText = "to start a new recipe, say New Reicpe. Otherwise, you can ask about "
+			repromptText = "to start a new recipe, say new recipe. Otherwise, you can ask about "
 					+ recipeName;
+		}
+		}catch(Exception e){ //if something went wrong (with getting the name, etc)
+			speechText = "Welcome to Cooking Helper. Please ask about a recipe you would like to cook.";
+			repromptText = "You can say help me cook pancakes. or what is the first step for quick and easy pizza crust";
 		}
 		return getAskSpeechletResponse(speechText, repromptText);
 	}
@@ -108,37 +119,45 @@ public class RecipeHelperManager {
      *
      * @param session for this request
      * 
-     * 
-     * @return response for reseting the recipe
+     * @return a prompt to start cooking something new if the recipe was reset.
      */
 	public SpeechletResponse getNewRecipeIntent(Session session) {
 		RecipeHelper recipe = RecipeHelper.newInstance(session,
 				RecipeHelperRecipeData.newInstance(), 0, 0);
-		recipeHelperDao.saveCurrentRecipe(recipe);
+		RECIPE_HELPER_DAO.saveCurrentRecipe(recipe);
 
 		return getAskSpeechletResponse("What would you like me to help you cook?", "ask about a recipe I can help you cook");
 
 	}
 	
+	/**
+	 * Handles the issues of a user saying "next" (which could apply to ingredient pagination
+	 * or step pagination)
+	 *
+	 * @param session for this request
+	 * @param the intent from the user
+	 */
 	public SpeechletResponse getWhatNext (Session session, Intent intent){
 		String outputSpeech = "Did you mean Next Step or Next Ingredient?";
 		String repromptSpeech = "Please say Next Step or Next Ingredient";
-		return getAskSpeechletResponse(outputSpeech, repromptSpeech );
+		return getAskSpeechletResponse(outputSpeech, repromptSpeech ); 
 	}
 	
 	
 	 /**
      * Creates and returns response for the getIngredientInformation intent
-     * Creates a new recipe if necessary
+     * Creates a new recipe if none has been set up
      *
      * @param intent for this request
      * @param session for this request
      * 
-     * @return response for getting ingredient information 
+     * @return response about the ingredient the user asked about. Will respond that the user
+     * needs the ingredient, doesn't need the ingredient, or that the ingredient wasn't found. 
      */
 	public SpeechletResponse getIngredientInformation(Session session,
 			Intent intent) {
-		RecipeHelper recipe = recipeHelperDao.getCurrentSession(session);
+		RecipeHelper recipe = RECIPE_HELPER_DAO.getCurrentSession(session);
+		
 		if (recipe == null || recipe.hasURL() == false) {
 			recipe = RecipeHelper.newInstance(session,
 					RecipeHelperRecipeData.newInstance(), 0, 0);
@@ -150,12 +169,9 @@ public class RecipeHelperManager {
 		PlainTextOutputSpeech outputSpeech = new PlainTextOutputSpeech();
 		String outputText = ""; // initialize
 
-		if (IngredientSlot != null && IngredientSlot.getValue() != null) { 
-
+		if (IngredientSlot != null && IngredientSlot.getValue() != null) {
 			String IngredientName = StringUtils.lowerCase(IngredientSlot.getValue());
-
 			String TrueIngredient = recipe.getSpecificIngredient(IngredientName);
-
 			if (TrueIngredient != null) { // it found specific ingredient
 				outputText = ("You need " + TrueIngredient);
 
@@ -172,16 +188,17 @@ public class RecipeHelperManager {
 	
 	
 	/**
-     * Creates and returns response for the getIngredientOverview intent
+     * Creates and returns response for the getIngredientOverview intent.
+     * Creates a new recipe if one hasn't been set up yet.
      *
      * @param intent for this request
      * @param session for this request
      * 
-     * @return response for getting ingredient overview
+     * @return Creates an output which reads all of the ingredients from the current recipe
      */
 	public SpeechletResponse getIngredientOverview(Session session,
 			Intent intent) {
-		RecipeHelper recipe = recipeHelperDao.getCurrentSession(session);
+		RecipeHelper recipe = RECIPE_HELPER_DAO.getCurrentSession(session);
 		if (recipe == null || recipe.hasURL() == false) {
 			recipe = RecipeHelper.newInstance(session,
 					RecipeHelperRecipeData.newInstance(), 0, 0);
@@ -192,11 +209,9 @@ public class RecipeHelperManager {
 		List<String> ingredients = recipe.getAllIngredients();
 		int i = 1;
 		for (String ingredient : ingredients) {
-			ingredient = ingredient.replaceAll("\\.", " ");
-			System.out.println("Ingredient " + (Integer.toString(i)) + " is "
-					+ ingredient.trim());
+			ingredient = ingredient.replaceAll("\\.", " "); //remove all extra periods.
 			outputText += "Ingredient " + (Integer.toString(i++)) + " is "
-					+ ingredient + ".";	
+					+ ingredient + ".     ";	
 
 		}
 		outputSpeech.setText(outputText);
@@ -205,7 +220,10 @@ public class RecipeHelperManager {
 	}
 	
 	/**
-     * Checks what ingredients have been heard and then returns the next 
+     * Checks what ingredients have been heard and then returns the next ingredient.
+     * Creates a new recipe if one hasn't been set up yet.
+     * 
+     * This method makes calls to different methods depending on what ingredient they need.
      *
      * @param intent for this request
      * @param session for this request
@@ -213,7 +231,7 @@ public class RecipeHelperManager {
      * @return the correct ingredient to be listed
      */
 	public SpeechletResponse getNextIngredient(Session session, Intent intent){
-		RecipeHelper recipe = recipeHelperDao.getCurrentSession(session);
+		RecipeHelper recipe = RECIPE_HELPER_DAO.getCurrentSession(session);
 		if (recipe == null || recipe.hasURL() == false) {
 			recipe = RecipeHelper.newInstance(session,
 					RecipeHelperRecipeData.newInstance(), 0, 0);
@@ -225,50 +243,52 @@ public class RecipeHelperManager {
 		String CurrentIngredient = ingredients.get(IngredientIndex);
 		if (IngredientIndex == 0){
 			String outputSpeech = FirstIngredientResponse(CurrentIngredient, IngredientIndex, recipe);
-			return getAskSpeechletResponse(outputSpeech, "you can ask for the next ingredient or any other questions");
+			return getTellSpeechletResponse(outputSpeech);
 		}
-		if (IngredientIndex == (IngrSize - 1)){
+		if (IngredientIndex == (IngrSize - 1)){ //last ingredient 
 			String outputSpeech = lastIngredientResponse(CurrentIngredient, IngredientIndex, recipe);
-			return getAskSpeechletResponse(outputSpeech, "you can ask for the next ingredient or any other questions");
+			return getTellSpeechletResponse(outputSpeech);
 		}
 		else{
 			String outputSpeech = otherIngredientResponse(CurrentIngredient, IngredientIndex, recipe);
-			return getAskSpeechletResponse(outputSpeech, "you can ask for the next ingredient or any other questions");
+			return getTellSpeechletResponse(outputSpeech);
 			
 		}
 	}
 	
 	/**
-     * A series of methods to handle the different ingredient indexes and incraments as necessary.
+     * A series of methods to handle the different ingredient indexes and increments as necessary.
      *
      * @param currentIngredient for this request
      * @param IngredientIndex the index of ingredients they have or haven't heard
      * @param recipe which holds the information for the session
      * 
-     * @return the correct outputSpeech
+     * @return the correct outputSpeech to be returned in getNextIngredient
      */
 	public String FirstIngredientResponse(String CurrentIngredient, int IngredientIndex, RecipeHelper recipe){
 		String outputSpeech = "the first ingredient is " + CurrentIngredient.trim();
 		recipe.setIngredientIndex(++IngredientIndex);
-		recipeHelperDao.saveCurrentRecipe(recipe);
+		RECIPE_HELPER_DAO.saveCurrentRecipe(recipe);
 		return outputSpeech;
 	}
 	public String lastIngredientResponse(String CurrentIngredient, int IngredientIndex, RecipeHelper recipe){
 		String outputSpeech = "The next ingredient is " + CurrentIngredient.trim()+ ". " + "You've reached the end of the ingredient list, I'll reset that.";
 		recipe.setIngredientIndex(0);
-		recipeHelperDao.saveCurrentRecipe(recipe);
+		RECIPE_HELPER_DAO.saveCurrentRecipe(recipe);
 		return outputSpeech;
 	}
 	public String otherIngredientResponse(String CurrentIngredient, int IngredientIndex, RecipeHelper recipe){
 		String outputSpeech = "The next ingredient is " + CurrentIngredient.trim();
 		recipe.setIngredientIndex(++IngredientIndex);
-		recipeHelperDao.saveCurrentRecipe(recipe);
+		RECIPE_HELPER_DAO.saveCurrentRecipe(recipe);
 		return outputSpeech;
 	}
 	
 	
 	/**
      * Checks what steps have been heard and then returns the next 
+     *  Creates a new recipe if one hasn't been set up yet.
+     * This method makes calls to different methods depending on what step they need.
      *
      * @param intent for this request
      * @param session for this request
@@ -276,7 +296,7 @@ public class RecipeHelperManager {
      * @return the correct step to be listed
      */
 	public SpeechletResponse getNextStep(Session session, Intent intent){
-		RecipeHelper recipe = recipeHelperDao.getCurrentSession(session);
+		RecipeHelper recipe = RECIPE_HELPER_DAO.getCurrentSession(session);
 		if (recipe == null || recipe.hasURL() == false) {
 			recipe = RecipeHelper.newInstance(session,
 					RecipeHelperRecipeData.newInstance(), 0, 0);
@@ -289,60 +309,61 @@ public class RecipeHelperManager {
 		CurrentStep = CurrentStep.replaceAll("\\[", "");
 		if (StepIndex == 0){
 			String outputSpeech = FirstStepResponse(CurrentStep, StepIndex, recipe);
-			return getAskSpeechletResponse(outputSpeech, "you can ask for the next step or any other questions");
+			return getTellSpeechletResponse(outputSpeech);
 		}
 		if (StepIndex == (StepSize - 1)){
 			String outputSpeech = LastStepResponse(CurrentStep, StepIndex, recipe);
-			return getAskSpeechletResponse(outputSpeech, "you can ask for the next step or any other questions");
+			return getTellSpeechletResponse(outputSpeech);
 		}
 		else{
 			String outputSpeech = OtherStepResponse(CurrentStep, StepIndex, recipe);
-			return getAskSpeechletResponse(outputSpeech, "you can ask for the next step or any other questions");
+			return getTellSpeechletResponse(outputSpeech);
 			
 		}
 	}
 	
 	/**
-     * A series of methods to handle the different step indexes and incraments as necessary.
+     * A series of methods to handle the different step indexes and increments as necessary.
      *
      * @param currentStep for this request
      * @param StepIndex the index of ingredients they have or haven't heard
      * @param recipe which holds the information for the session
      * 
-     * @return the correct outputSpeech
+     * @return the correct outputSpeech to be returned to getNextStep
      */
 	public String FirstStepResponse(String CurrentStep, int StepIndex, RecipeHelper recipe){
 		String outputSpeech = "the first step is " + CurrentStep.trim();
 		recipe.setStepIndex(++StepIndex);
-		recipeHelperDao.saveCurrentRecipe(recipe);
+		RECIPE_HELPER_DAO.saveCurrentRecipe(recipe);
 		return outputSpeech;
 	}
 	public String LastStepResponse(String CurrentStep, int StepIndex, RecipeHelper recipe){
 		String outputSpeech = "The next step is " + CurrentStep.trim()+ ". " + "You've reached the end of the step list, I'll reset that.";
 		recipe.setStepIndex(0);
-		recipeHelperDao.saveCurrentRecipe(recipe);
+		RECIPE_HELPER_DAO.saveCurrentRecipe(recipe);
 		return outputSpeech;
 	}
 	public String OtherStepResponse(String CurrentStep, int StepIndex, RecipeHelper recipe){
 		String outputSpeech = "The next Step is " + CurrentStep.trim();
 		recipe.setStepIndex(++StepIndex);
-		recipeHelperDao.saveCurrentRecipe(recipe);
+		RECIPE_HELPER_DAO.saveCurrentRecipe(recipe);
 		return outputSpeech;
 	}
 	
 	/**
      * Creates and returns response for the getStepOverview intent
+     * Creates a new recipe if one hasn't been set up yet.
      *
      * @param intent for this request
      * @param session for this request
      * 
-     * @return response for getting the step overview.
+     * @return reads all the steps for the current recipe.
      */
 	public SpeechletResponse getStepOverview(Session session, Intent intent) {
-		RecipeHelper recipe = recipeHelperDao.getCurrentSession(session);
+		RecipeHelper recipe = RECIPE_HELPER_DAO.getCurrentSession(session);
 		if (recipe == null || recipe.hasURL() == false) {
 			recipe = RecipeHelper.newInstance(session,
-					RecipeHelperRecipeData.newInstance(), 0 , 0); //default ingredient index
+					RecipeHelperRecipeData.newInstance(), 0 , 0); 
 			setUpNewRecipe(session, intent, recipe);
 		}
 
@@ -351,11 +372,9 @@ public class RecipeHelperManager {
 		List<String> steps = recipe.getAllSteps();
 		int i = 1;
 		for (String step : steps) {
-			step = step.replaceAll("\\.", "");
-			step = step.replaceAll("\\[", "");
-			System.out.println("Step " + (Integer.toString(i)) + " is " + step
-					+ ".");
-			outputText += "Step " + (Integer.toString(i++)) + " is " + step.trim() + "   ";
+			step = step.replaceAll("\\.", ""); //remove all periods
+			step = step.replaceAll("\\[", ""); //remove any leading brackets
+			outputText += "Step " + (Integer.toString(i++)) + " is " + step.trim() + ".    ";
 
 		}
 
@@ -364,12 +383,12 @@ public class RecipeHelperManager {
 	}
 	
 	/**
-     * Creates and returns response for a secondary menu
+     * Secondary menu. this is used if the user passes in only a recipe name without further intent
      *
      * @param intent for this request
      * @param session for this request
      * 
-     * @return affirming what recipe alexa is helping, as well as further options
+     * @return tells the user the specific recipe saved for them and lists further options.
      */
 	public SpeechletResponse getSecondaryLaunchRequest(Session session, Intent intent){
 		RecipeHelper recipe = RecipeHelper.newInstance(session, RecipeHelperRecipeData.newInstance(), 0, 0);
@@ -378,32 +397,30 @@ public class RecipeHelperManager {
 		
 		try {
 			RecipeSetup.RecipeBuilder(session, recipeName, recipe,
-					recipeHelperDao); // if this returns null, re-prompt
+					RECIPE_HELPER_DAO); // if this returns null, re-prompt
 		} catch (Exception e) {
 			String speechText = "Sorry, I couldnt' connect to that recipe. Ask about a different recipe?";
 			return getAskSpeechletResponse(speechText, speechText);
 		}
-		recipeHelperDao.saveCurrentRecipe(recipe);
-		String outputSpeech = "now cooking " + recipe.getRecipeName();
-		String repromptSpeech = "Ask me for the ingredients or the steps of this recipe";
-		return getAskSpeechletResponse(outputSpeech, repromptSpeech);
+		RECIPE_HELPER_DAO.saveCurrentRecipe(recipe);
+		String outputSpeech = "now cooking " + recipe.getRecipeName() + "You can now ask recipe helper for steps or ingredients.";
+		return getTellSpeechletResponse(outputSpeech);
 		
 	}
 	
 	
 	/**
      * Creates and returns response for the getSpecificStep intent
+     * Creates a new recipe if one hasn't been set up yet.
      *
      * @param intent for this request
      * @param session for this request
      * 
-     * @return response for getting a specific step
+     * @return response for getting a specific step asked for.
      */
 	public SpeechletResponse getSpecificStep(Session session, Intent intent) {
-		RecipeHelper recipe = recipeHelperDao.getCurrentSession(session);
+		RecipeHelper recipe = RECIPE_HELPER_DAO.getCurrentSession(session);
 		if (recipe == null || recipe.hasURL() == false) {
-			System.out
-					.println("SUCCESS...name is flagged as null. creating new instance and setting up.");
 			recipe = RecipeHelper.newInstance(session,
 					RecipeHelperRecipeData.newInstance(), 0, 0);
 			setUpNewRecipe(session, intent, recipe);
@@ -411,27 +428,28 @@ public class RecipeHelperManager {
 		Slot RequestedStep = intent.getSlot(AMAZON_NUMBER); 
 		List<String> ListofSteps = recipe.getAllSteps();
 
-		PlainTextOutputSpeech outputSpeech = new PlainTextOutputSpeech();
-		String outputText = "";
-
 		if (RequestedStep != null && RequestedStep.getValue() != null) { 
 			String NumberName = RequestedStep.getValue(); 
 			int StepNumber = Integer.parseInt(NumberName); 
 			if (StepNumber > ListofSteps.size()) {
-				outputText = ("The last step is step "
+				String outputText = ("The last step is step "
 						+ Integer.toString(ListofSteps.size()) + " Please ask for a step within that range.");
+				return getAskSpeechletResponse(outputText, "You can ask about another step or an ingredient");
 			} else {
 				String Direction = ListofSteps.get(StepNumber - 1); 
 				Direction = Direction.replaceAll("\\[", "");
-				outputText = ("Step " + StepNumber + " is " + Direction);
+				String outputText = ("Step " + StepNumber + " is " + Direction);
+				recipe.setStepIndex(StepNumber); //set index to match step asked for TODO test
+				RECIPE_HELPER_DAO.saveCurrentRecipe(recipe);
+				return getTellSpeechletResponse(outputText);
 
 			}
 		} else {
-			outputText = ("I'm sorry, I couldn't find that step number. There are only "
+			String outputText = ("I'm sorry, I couldn't find that step number. There are only "
 					+ Integer.toString(ListofSteps.size()) + " steps.");
+			return getAskSpeechletResponse(outputText, "you can ask about another step or an ingredient");
 		}
-		outputSpeech.setText(outputText);
-		return SpeechletResponse.newTellResponse(outputSpeech);
+		
 	}
 
 	

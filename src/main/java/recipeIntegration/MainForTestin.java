@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -25,14 +26,27 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+@SuppressWarnings("unused")
 class MainForTestin{
 
-
+	/**
+	 * This method was used for local testing and any set-up
+	 * The first section is used to test locally by giving Dynamo and AWS false request, session, intents, etc
+	 * 
+	 * Also listed is the testing for ingredient matching (using getFuzzyDistance)
+	 * 
+	 * The bottom sections were used for building the ingredient and recipe databases
+	 * through Multi-threading and processing methods.
+	 * 
+	 * THIS CLASS IS NOT NECESSARY FOR THE RUNNING OF THE PROGRAM THROUGH LAMBDA OR AWS.
+	 *
+	 * @param args Not used
+	 */
 	public static void notmain(String[] args) throws SpeechletException, IOException {
 		
 		//TODO this section of code allows for testing locally. Different intents can be entered
 		
-		
+		/*/
 		User newUser = User.builder().withUserId("dfs98989998").build();
 		Session newSession = Session.builder().withUser(newUser).withSessionId("123").build(); 
 		LaunchRequest newLaunchRequest = LaunchRequest.builder().withRequestId("321").build();
@@ -42,6 +56,13 @@ class MainForTestin{
 		RecipeSpeechlet newRecipe = new RecipeSpeechlet();
 		SpeechletResponse LaunchOutput = newRecipe.onLaunch(newLaunchRequest, newSession);
 		SpeechletResponse LaunchOnIntent = newRecipe.onIntent(newIntent, newSession);
+		/*/
+		
+		int test = StringUtils.getFuzzyDistance("rolled oats", "oatmeal", Locale.ENGLISH);
+		System.out.println(StringUtils.contains("all purpose flou", "flou"));
+		int test2 = StringUtils.getFuzzyDistance("chocolate", "chocolate chips", Locale.ENGLISH);
+		System.out.println(test );
+		System.out.println(test2);
 		
 		
 		

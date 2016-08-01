@@ -7,8 +7,10 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
+
 import com.amazon.speech.json.SpeechletRequestEnvelope;
 import com.amazon.speech.json.SpeechletResponseEnvelope;
 import com.amazon.speech.speechlet.IntentRequest;
@@ -58,6 +60,7 @@ public class SpeechletLambda {
 		Session session = requestEnvelope.getSession();
 		String requestId = speechletRequest == null ? null : speechletRequest
 				.getRequestId();
+		@SuppressWarnings("unused")
 		String applicationId = null;
 		if (session != null && session.getApplication() != null)
 			applicationId = session.getApplication().getApplicationId();

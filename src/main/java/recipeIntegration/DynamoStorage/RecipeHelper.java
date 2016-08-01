@@ -4,8 +4,9 @@ import java.util.List;
 
 import com.amazon.speech.speechlet.Session;
 
-//creates the whole recipe object, including sesssion information, all the recipeData, 
+//creates the whole recipe object, including session information, all the recipeData, 
 //and the index for ingredients and steps
+//creates a new instance of a recipe, setting everything up and returning it.
 public class RecipeHelper {
 
 	private Session session;
@@ -24,7 +25,6 @@ public class RecipeHelper {
 		recipe.setRecipeData(recipeData);
 		recipe.setIngredientIndex(Index); //new instance, index in ingredients will be 0
 		recipe.setStepIndex(StepIndex);
-		System.out.println("just created a new recipeHelper object with data " + recipe.getRecipeData());
 		return recipe;
 	}
 
@@ -82,7 +82,7 @@ public class RecipeHelper {
 	}
 
 	public String getSpecificIngredient(String ingredient) {
-		return recipeData.fetchIngredient(ingredient);
+		return recipeData.getBestMatchingIngredient(ingredient);
 	}
 
 	public void setIngredients(List<String> Ingredients) {

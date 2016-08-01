@@ -13,13 +13,9 @@ GetIngredientOverview read me all ingredient
 GetIngredientOverview read me all the ingredients
 GetIngredientOverview what are all the ingredients for {recipe}
 
-ResetRecipe new recipe
-ResetRecipe new
 ResetRecipe reset recipe
-ResetRecipe reset
 ResetRecipe cook something else
 ResetRecipe cook something new
-ResetRecipe other
 ResetRecipe cook other recipe
 ResetRecipe other recipe
 ResetRecipe another recipe
@@ -29,7 +25,6 @@ ResetRecipe I want to cook something new
 SecondMenu how do I make {recipe}SecondMenu how do I cook {recipe}
 SecondMenu help me make {recipe}
 SecondMenu how do I make {recipe}
-SecondMenu {recipe}
 SecondMenu help me cook {recipe}
 SecondMenu I want to cook {recipe}
 
@@ -77,6 +72,5 @@ GetStepList help make this
 GetSpecificStep what is step {number} for {recipe}
 GetSpecificStep step {number}
 GetSpecificStep what is step {number}
-GetSpecificStep {number}
 
 

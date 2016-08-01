@@ -7,12 +7,18 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.amazonaws.services.lambda.runtime.Context;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
+
+/**
+ * The class is used for all the initial set up of the program.
+ * It creates a new object mapper and sets up the application ID
+ *
+ */
 public class RecipeLambda extends SpeechletLambda {
 
-	private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
+	//private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
+	@SuppressWarnings("unused")
 	private static final Set<String> supportedApplicationIds;
 	static {
 		supportedApplicationIds = new HashSet<String>();
