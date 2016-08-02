@@ -17,7 +17,15 @@ import com.amazon.speech.ui.SimpleCard;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 
 /**
- * Manages all intents passed in from RecipeSpeechlet
+ * Manages all intents (requests from the user) passed in from RecipeSpeechlet. 
+ * 
+ * All logic is done here and Alexa's outputs are created for setting up a new recipe,
+ * getting the launch request, reseting a recipe, correcting mistakes in intents of further steps/ingredients,
+ * getting ingredient quantity information, getting all ingredients, getting the next ingredient, getting the 
+ * next step, getting all the steps, getting a secondary menu, or getting any specific steps.
+ * 
+ * Methods to create either ask responses (where Alexa continues to listen) or tell responses (which end the session)
+ * are also in this class. 
  * 
  */
 public class RecipeHelperManager {

@@ -10,6 +10,18 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+
+/**
+ * The class is used to connect the Dynamo tables to the recipe information needed for the skill. The table name 
+ * is specified to be "RecipeHelperRecipeData" and the attributes that are listed in it include 
+ * customerID, IngredientIndex, StepIndex, and the recipeData (which includes the title, URL, steps, and ingredients). 
+ * Within each attribute, there are getters and setters. However, since the recipeData is more complicated than one data item, 
+ * a Marshaller class is used.
+ * 
+ * The marshaller class tells Dynamo how to read the data item (this is the setter/ marshaller) and how to relay
+ * the information back to the program (this is the getter/unmarshaller)
+ *
+ */
 @DynamoDBTable(tableName = "RecipeHelperRecipeData")
 public class RecipeHelperRecipeDataItem {
 
@@ -65,7 +77,6 @@ public class RecipeHelperRecipeDataItem {
 		@Override
 		public String marshall(RecipeHelperRecipeData recipeData) {
 			try {
-				System.out.println("THIS IS WHAT'S THE NAME DURING MARSHALLING " + recipeData.getRecipeName());
 				return OBJECT_MAPPER.writeValueAsString(recipeData.getRecipeName()
 						+ ":"
 						+ recipeData.getRecipeURL()
@@ -89,9 +100,7 @@ public class RecipeHelperRecipeDataItem {
 
 			String[] recipeParts = value.split(":");
 			recipe.setRecipeName(recipeParts[0]);
-			System.out.println("THIS IS THE NAME IT'S UNMARSHALLING " + recipe.getRecipeName());
 			recipe.setRecipeURL(recipeParts[1]);
-			System.out.println(recipe.getRecipeURL());
 			recipe.setIngredients(Arrays.asList(recipeParts[2]));
 			recipe.setSteps(Arrays.asList(recipeParts[3]));
 

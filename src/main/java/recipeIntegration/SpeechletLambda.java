@@ -26,6 +26,19 @@ import com.amazon.speech.ui.SimpleCard;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.LambdaLogger;
 
+
+/**
+ * This class launches the program, setting up the application ID that's passed in, setting up the loggers,
+ * setting up the max speech input to be heard, the max speech output to be listed, and the max output in app.
+ * 
+ * In the AWS examples (https://github.com/amzn/alexa-skills-kit-java/tree/master/samples/src/main/java) this 
+ * logic can be found in Launcher.java although it was adapted to be more in depth, instead of simply making a 
+ * proxy server, like they did.
+ * 
+ * To make my program run while avoiding the proxy server (which I couldn't get to run through my code), I used
+ * a github tutorial by jjaquinta (https://github.com/jjaquinta/EchoProofOfConcepts/blob/master/jo.echo.lambda/jo/echo/lambda/utils/SpeechletLambda.java)
+ * 
+ */
 public class SpeechletLambda {
 
 	private static final int MAX_CARD_SIZE = 8000;

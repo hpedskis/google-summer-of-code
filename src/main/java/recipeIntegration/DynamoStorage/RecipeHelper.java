@@ -4,9 +4,17 @@ import java.util.List;
 
 import com.amazon.speech.speechlet.Session;
 
-//creates the whole recipe object, including session information, all the recipeData, 
-//and the index for ingredients and steps
-//creates a new instance of a recipe, setting everything up and returning it.
+
+/**
+ * This class brings together all of the information that is stored in the DynamoDB table. The current session, 
+ * the RecipeHelperRecipeData item (which includes the name, URL, steps, and ingredients), the IngredientIndex
+ * (the number of ingredients the user has heard) and the StepIndex (the number of steps the user has heard). 
+ * The method to reset the recipe is also listed in here.
+ * 
+ * A large amount of getters and setters are here. For all of the information in the REcipeHelperRecipeData,
+ * recipeData is used to get/set those items through the class RecipeHelperRecipeData. 
+ *
+ */
 public class RecipeHelper {
 
 	private Session session;
@@ -49,7 +57,6 @@ public class RecipeHelper {
 		recipeData.getSteps().clear();
 		recipeData.setRecipeURL(null);
 		recipeData.setRecipeName(null);
-		//recipeData.setCurrentIngredient(0);
 		IngredientIndex = 0;
 		StepIndex = 0;
 

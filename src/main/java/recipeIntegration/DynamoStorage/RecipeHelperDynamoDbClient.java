@@ -5,6 +5,13 @@ import org.apache.commons.lang3.StringUtils;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 
+
+/**
+ * The class creates a DynamoDBClient using the CustomerID. Then it checks if the recipe is null or not
+ * when an item is trying to be loaded. This check is done at the beginning of each intent or launch. If it is null,
+ * a new recipe will be set up. Otherwise, it will return the RecipeHelperDataItem (and the current recipe).
+ *
+ */
 public class RecipeHelperDynamoDbClient {
 
 	private final AmazonDynamoDBClient dynamoDBClient;
@@ -17,8 +24,6 @@ public class RecipeHelperDynamoDbClient {
 			final RecipeHelperRecipeDataItem tableItem) {
 		DynamoDBMapper mapper = createDynamoDBMapper();
 		RecipeHelperRecipeDataItem item = mapper.load(tableItem);
-		System.out.println("step 5: claiming to return the recipe helper data item "
-						+ item.getRecipeData());
 		if (StringUtils
 				.containsIgnoreCase(
 						item.getRecipeData().toString(),
@@ -37,7 +42,6 @@ public class RecipeHelperDynamoDbClient {
 	}
 
 	private DynamoDBMapper createDynamoDBMapper() {
-		System.out.println("step 4: trying to create the dynamo mapper");
 		return new DynamoDBMapper(dynamoDBClient);
 	}
 

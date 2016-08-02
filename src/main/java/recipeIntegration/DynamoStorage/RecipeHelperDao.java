@@ -2,6 +2,15 @@ package recipeIntegration.DynamoStorage;
 
 import com.amazon.speech.speechlet.Session;
 
+
+/**
+ * Gets the current session (table information) for the customerID being used. If RecipeHelperDynamoDbClient
+ * returns null, a new recipe will be setup else where. If it isn't null, a new instance of RecipeHelper
+ *  will be created for reference, and the recipeData, ingredientIndex, StepIndex, etc. will be recalled.
+ *  
+ *  The method to save the current recipe is also in this class. It simply sets the attributes and saves.
+ *
+ */
 public class RecipeHelperDao {
 	private final RecipeHelperDynamoDbClient dynamoDbClient;
 

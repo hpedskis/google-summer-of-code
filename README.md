@@ -1,7 +1,31 @@
 # google-summer-of-code
-My summer project for Google Summer of Code
 
-This summer, I’ve created a skill for the Amazon Echo which will assist in cooking any of the recipes listed in MASTER_RECIPES.txt (All are open source and scraped from allrecipes.com using Jsoup and multithreading). I used DynamoDB to save state, so even if Alexa times out while you’re cooking, she can easily recall the recipe you were cooking, along with what step and ingredient you were on. 
+Concept/ Overview
+
+This summer, for Google Summer of Code, I’ve created a skill for the Amazon Echo which will assist a user in cooking any of the recipes listed in MASTER_RECIPES.txt (All are open source and scraped from allrecipes.com using Jsoup and multi-threading). Within src/main, there are two folders, java/recipeIntegration and resources. resources has all of the .txt files needed for setting up the skill through AWS, including the intent schema, the slot types for ingredients and recipes, and the sample utterances. 
+
+The file java/recipeIntegration houses all the code needed to run the program, including all of the file DynamoStorage, containing files for saving state. A brief overview of the files in java/recipeIntegration is below:
+	-MainForTestin: not necessary for running the program, but left in to show some of the background work in creating the recipe file, the recipe slot file, the ingredient slot file, and any setup required for local testing.  
+	-Multi: Also not needed for running the program, but shows how multi-threading was used to grab all of the recipes from allrecipes.com
+	-RecipeHelperManager: Includes all of the logic for answering any intents (questions or commands) from the user. This includes getting start and end responses, setting up a new recipe, and answering any questions about steps or ingredients of the current recipe.
+	-RecipeLamda: A necessary override function for the Lambda to properly work. Sets up the application ID, and sets up everything needed to handle further requests. 
+	-RecipeSetup: Called when the user hasn't set up a recipe yet or wants a new recipe. Searches for the recipe in the list, connects to the URL, and writes the ingredients and steps to DynamoDB.
+	-RecipeSpeechlet: The first file to be called when any session is started. Sets the RequestID and SessionID, recognizes which intent the user would like, and passes that intent to the matching method inside RecipeHelperManager
+	-SpeechletLamda: This is the launcher for the Lambda and AWS. Checks for any issues in launching, creating output to the app, or logging the information.
+
+In order to save state, I used DynamoDB, a feature accessible through Amazon Developer Portal. A table is created
+based on each customerID and the current recipe is saved, along with the ingredients, steps, etc. This way, even after the Echo times out, the recipe that the user is cooking will always be held until they reset it. 
+A brief overview of the files in DynamoStorage is below:
+	-RecipeHelper: Sets up a new session, saving the customerID and the recipeData (which is all held in a different class). Most importantly, has all the getters and setters from the RecipeDataRecipeData
+	-RecipeHelperDao: gets the current session based on the customerID at each start and sets up a new instance
+	to be referenced. Also contains the saveCurrentRecipe method, referenced throughout RecipeHelperManager
+	-RecipeHelperDynamoDbClient: loads items and saves items to the table. Also checks if the recipe is null/ if a new recipe needs to be set up.
+	-RecipeHelperRecipeData: a class to hold all the data of the recipe. This includes the title, url, steps, and ingredients
+	-RecipeHelperRecipeDataItem: has all the attributes which are listed in the table. The customerID, current step, current ingredient, and the RecipeHelperRecipeData are each different attributes (the RecipeHelperRecipeData has all the class information clumped together in one block). This class also has the DynamoDbMarshaller, which allows for the information to be written to the read from the table. 
+	 
+	
+
+Setup
 
 To run this code, you must have Apache Maven and an AWS account (the AWS account is free and easy to set up). These steps are taken from Amazon's sample java skills, but I have adapted them to work for my skill.
 

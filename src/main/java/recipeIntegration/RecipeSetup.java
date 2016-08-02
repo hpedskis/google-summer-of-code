@@ -21,9 +21,13 @@ import recipeIntegration.DynamoStorage.RecipeHelper;
 import recipeIntegration.DynamoStorage.RecipeHelperDao;
 
 /**
- * The class is used to set up all recipes
- * It first matches the recipe to one in the database,
- * then connects to the Internet to grab all information.
+ * The class is used to set up all recipes. This could be when the user uses the application for the very first time,
+ * or when they want to cook a recipe other than the one previously set up.
+ * 
+ * It first matches the recipe to one in the database, either finding an exact match, or the closest match possible,
+ * then connects to that reicipe's URL. After successfully connecting, all of the ingredients and steps are found
+ * and saved to DynamoDB (which keeps track of what recipe the user is cooking). All of the initial formatting
+ * for the ingredients, steps, and title are done here. 
  * 
  *
  */

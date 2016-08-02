@@ -11,7 +11,7 @@ import com.amazonaws.services.lambda.runtime.Context;
 
 /**
  * The class is used for all the initial set up of the program.
- * It creates a new object mapper and sets up the application ID
+ * It creates a new ReicpeSpeechlet, so intents can be heard and processed.
  *
  */
 public class RecipeLambda extends SpeechletLambda {

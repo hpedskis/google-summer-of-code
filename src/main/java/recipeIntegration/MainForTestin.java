@@ -32,11 +32,19 @@ class MainForTestin{
 	/**
 	 * This method was used for local testing and any set-up
 	 * The first section is used to test locally by giving Dynamo and AWS false request, session, intents, etc
+	 * as these are crucial for testing any code in this skill.
 	 * 
-	 * Also listed is the testing for ingredient matching (using getFuzzyDistance)
+	 * Next, there are some test lines for ingredient matching (using getFuzzyDistance)
 	 * 
 	 * The bottom sections were used for building the ingredient and recipe databases
-	 * through Multi-threading and processing methods.
+	 * through multi-threading and processing methods. Each thread wrote to a different file, then
+	 * each was processed to get rid of symbols, duplicates, or numerics. Then they were written to one file,
+	 * MASTER_RECIPE.txt which can be found in Resources.
+	 * 
+	 * Below this is all the manipulation to create the INGREDIENT_LIST, which is a custom slot type. In the custom
+	 * slot type, any ingredient that could ever be asked about should be listed. This is harder than it sounds, so only
+	 * 20 pages were gone through. All ingredients were scraped, and then processed to remove word that clearly weren't 
+	 * ingredients (such as measurements) and duplicates. 
 	 * 
 	 * THIS CLASS IS NOT NECESSARY FOR THE RUNNING OF THE PROGRAM THROUGH LAMBDA OR AWS.
 	 *

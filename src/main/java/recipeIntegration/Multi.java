@@ -11,7 +11,10 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
 /**
- * The class was used to create the recipe outputs, from allrecipes.com
+ * The class was used to create the recipe outputs, from allrecipes.com, using multi-threading.
+ * Each category on the website was traversed by a different thread. 20 pages of each category were
+ * taken and put into different text files. All the logic for running the threads and processing them
+ * can be found in MainForTestin.
  * 
  * THIS CLASS IS NOT NECCESARY FOR RUNNING THE SKILL THROUGH LAMBDA OR AWS.
  *

@@ -15,6 +15,15 @@ import com.amazon.speech.ui.PlainTextOutputSpeech;
 import com.amazon.speech.ui.Reprompt;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 
+
+/**
+ * 
+ * This class is the first called when a new session is started  by the User through AWS. The needed components,
+ * the application ID, requestID, sessionID, and intent are all saved to create a session. The intent (request from
+ * the user) is placed into one of the twelve recognized intents, which makes a call to RecipeHelperManager for 
+ * the logic and response. 
+ * 
+ */
 public class RecipeSpeechlet implements Speechlet {
 
 	private static final Logger log = LoggerFactory
@@ -38,8 +47,6 @@ public class RecipeSpeechlet implements Speechlet {
 	private void initializeComponents() {
 		if (amazonDynamoDBClient == null) {
 			amazonDynamoDBClient = new AmazonDynamoDBClient();
-			System.out
-					.println("STEP 1: initializing components. created a new Dynamo client");
 
 			recipeHelperManager = new RecipeHelperManager(amazonDynamoDBClient);
 
@@ -53,7 +60,7 @@ public class RecipeSpeechlet implements Speechlet {
 		log.info("onLaunch requestId={}, sessionId={}", request.getRequestId(),
 				session.getSessionId());
 
-		//initializeComponents(); //TODO REMOVE BEFORE TESTING THROUGH AWS
+		//initializeComponents(); //TODO REMOVE BEFORE TESTING THROUGH AWS, BUT NEEDED FOR LOCAL TESTING
 		return recipeHelperManager.getLaunchResponse(request, session);
 	}
 
