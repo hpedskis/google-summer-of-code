@@ -85,33 +85,14 @@ public class RecipeHelperRecipeData {
 		return REALSteps;
 
 	}
-	
-	
-	public String fetchIngredient(String Ingredient) { // get ONE ingredient
-		List<String> REALIngredients = getIngredients();
-		String theCorrectIngredient = null;
-		for (int i = 0; i < REALIngredients.size(); i++) {
-				if (StringUtils.equalsIgnoreCase(REALIngredients.get(i), Ingredient)){
-					theCorrectIngredient = REALIngredients.get(i);
-					return theCorrectIngredient;
-				}
-			}
-		for (int i = 0; i < REALIngredients.size(); i++) {
-			if (StringUtils.containsIgnoreCase(REALIngredients.get(i), Ingredient)){
-				theCorrectIngredient = REALIngredients.get(i);
-				return theCorrectIngredient;
-			}
-		}
-		return theCorrectIngredient; //will return null if it's not equal or isn't contained in a string.
-	}
-	
 
-	
+
 	public String getBestMatchingIngredient(String Ingredient){
-		List<String> IngredientList = getIngredients();
+		List<String> IngredientList = getIngredients(); //get ingredients from current recipe
 		int BestMatch = 0;
 		int BestMatchIndex = 0;
 		String BestIngredientMatch = null;
+		StringUtils.removeEnd(Ingredient, "s"); //get rid of plurals.
 		for (int i = 0; i < IngredientList.size(); i++) {
 			if (StringUtils.equalsIgnoreCase(IngredientList.get(i), Ingredient)){
 				BestIngredientMatch = IngredientList.get(i);

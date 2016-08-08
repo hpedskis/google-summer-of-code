@@ -50,7 +50,7 @@ class MainForTestin{
 	 *
 	 * @param args Not used
 	 */
-	public static void notmain(String[] args) throws SpeechletException, IOException {
+	public static void main(String[] args) throws SpeechletException, IOException {
 		
 		//TODO this section of code allows for testing locally. Different intents can be entered
 		
@@ -64,7 +64,6 @@ class MainForTestin{
 		RecipeSpeechlet newRecipe = new RecipeSpeechlet();
 		SpeechletResponse LaunchOutput = newRecipe.onLaunch(newLaunchRequest, newSession);
 		SpeechletResponse LaunchOnIntent = newRecipe.onIntent(newIntent, newSession);
-		/*/
 		
 		int test = StringUtils.getFuzzyDistance("rolled oats", "oatmeal", Locale.ENGLISH);
 		System.out.println(StringUtils.contains("all purpose flou", "flou"));
@@ -75,8 +74,29 @@ class MainForTestin{
 		
 		
 		
-		/*/
 		//TODO This section allows for re-writing to the output files using multithreading  
+
+		File input1 = new File ("/Users/hpedskis/Desktop/recipes_1.txt");
+		File input2 = new File ("/Users/hpedskis/Desktop/recipes_2.txt");
+		File input3 = new File ("/Users/hpedskis/Desktop/recipes_3.txt");
+		File input4 = new File ("/Users/hpedskis/Desktop/recipes_4.txt");
+		File input5 = new File ("/Users/hpedskis/Desktop/recipes_5.txt");
+		File outputFile = new File ("/Users/hpedskis/Desktop/AllRecipes_Ingredients.txt");
+		
+		Multi T1 = new Multi(input1, outputFile);
+		Multi T2 = new Multi(input2, outputFile);
+		Multi T3 = new Multi(input3, outputFile);
+		Multi T4 = new Multi(input4, outputFile);
+		Multi T5 = new Multi(input5, outputFile);
+		
+		T1.start();
+		T2.start();
+		T3.start();
+		T4.start();
+		T5.start();
+		/*/
+		
+		/*/
 	 	File T1 = new File("src/Recipe_Outputs/Breakfast.txt");
 	 	File T2 = new File("src/Recipe_Outputs/Chicken.txt");
 	 	File T3 = new File("src/Recipe_Outputs/Dessert.txt");
@@ -116,14 +136,26 @@ class MainForTestin{
 	    t10.start();
 	    t11.start();
 	    t12.start();
-		/*/
 		
-		// TODO any manipulation to the ingredient files can be done in this section
-	
 		/*/
-		File FixedIngredientsNODUP = new File("/Users/hpedskis/Desktop/GoogleSummerofCode/FIXED_INGREDIENTS_NO_DUP.txt");
-		File FIXEDFINALINGREDIENTS = new File ("/Users/hpedskis/Desktop/GoogleSummerofCode//FIXEDFINAL.txt");
+		// TODO any manipulation to the ingredient files can be done in this section
+		
+		File FirstFixIngredients = new File ("/Users/hpedskis/Desktop/Recipes_FirstFix");
+		File SecondFix = new File ("/Users/hpedskis/Desktop/Recipes_SecondFix");
+		Scanner reader = new Scanner(FirstFixIngredients);
+		BufferedWriter writer = new BufferedWriter (new FileWriter (SecondFix));
+		HashSet<String> IngredientSet = new HashSet<String>();
+		
+		while(reader.hasNextLine()){
+			IngredientSet.add(reader.nextLine());
+		}
+		for (String s: IngredientSet){
+			writer.write(s);
+			writer.newLine();
+		}
+		writer.close();
 
+		/*/
 		File currentRecipe = new File ("/Users/hpedskis/Desktop/GoogleSummerofCode/recipe-integration-skill/src/main/resources/MASTER_RECIPE.txt");
 		File FixingRecipes = new File ("/Users/hpedskis/Desktop/GoogleSummerofCode/MASTER_RECIPE_BACKUP.txt");
 		
@@ -134,6 +166,8 @@ class MainForTestin{
 		Scanner reader = new Scanner(currentRecipe);
 		BufferedWriter writer = new BufferedWriter (new FileWriter (FixingRecipes));
 		BufferedWriter writer2 = new BufferedWriter (new FileWriter (masterTitles));
+		/*/
+		/*/
 		while(reader.hasNextLine()){
 			MapOfRecipes.put(reader.nextLine(), reader.nextLine());
 		}
@@ -178,36 +212,39 @@ class MainForTestin{
 			writer2.newLine();
 			
 		}
+		/*/
 		
 		
 	}
 	
 	
 	
-	
-	public static ArrayList<String> splitAndFix (String line){
-		//StringUtils.replaceChars(line, "\\,", "");
-		//System.out.println(line);
+	public static String splitAndFix (String line){
+		
 		ArrayList<String> BadWords = new ArrayList<String>(Arrays.asList("cups", "tablespoons", "teaspoons", "teaspoon", "cup", "tablespoon", "pound", "pounds", "ounces", "ounce", "cloves", "clove", "package", "packages", "stalks", "sprigs", "slices", "such", "or", "to", "taste", "and",
 				"room", "temperature", "cold", "hot", "medium", "for", "coating", "mix", "can", "into", "cut", "chunk", "rinsed", "portions", "wet", "dry", "fresh", "sliced", "extra", "cans", "warmed", "cooled",
-				"thinly", "chopped", "wide", "inch", "inches", "light", "pinches", "drained", "jar", "jars", "finely", "halved",  "lengthwise", "seeded"));
-		String[] parts = StringUtils.replaceChars(line, "\\,", "").split(" ");
-		ArrayList<String> ReJoined = new ArrayList<String>();
-		for(String s: parts){
-			if(BadWords.contains(s.toLowerCase())){
+				"thinly", "chopped", "wide", "inch", "inches", "light", "pinches", "drained", "jar", "jars", "finely", "halved",  "lengthwise", "seeded", "cubes", "cubed", ""));
+		
+		ArrayList<String> SecondBadWords = new ArrayList<String> (Arrays.asList("frozen", "thawed", "diced", "boneless", "minced", "uncooked", "cooked", "skinless", "long", 
+				"thick", "thin", "large", "medium", "small", "peeled", "cored", "seperated", "divided", "with", "juiced", "strips", "box", "boxed", "sifted", "seeded", "seedless",
+				"pieces", "piece", "grated", "casing", "removed", "more", "as", "needed", "to", "taste", "chunk", "chunks"));
+		String[] parts = line.split(" ");
+		StringBuilder fixed = new StringBuilder();
+		for (String s: parts){
+			if (SecondBadWords.contains(s)){
 				continue;
 			}
-			else if (!(StringUtils.isAlphaSpace(s))){
-				continue;
-			}
-			ReJoined.add(s);
+			fixed.append(s + " ");
 		}
-		return ReJoined;
+		//String fixedString = parts.toString();
+		return fixed.toString();
 		
 	}
-	/*/
-}	
-}
+	
+	}
+	
+	
+
 
 
 
