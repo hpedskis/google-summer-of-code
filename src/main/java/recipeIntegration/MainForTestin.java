@@ -50,7 +50,7 @@ class MainForTestin{
 	 *
 	 * @param args Not used
 	 */
-	public static void main(String[] args) throws SpeechletException, IOException {
+	public static void notmain(String[] args) throws SpeechletException, IOException {
 		
 		//TODO this section of code allows for testing locally. Different intents can be entered
 		
