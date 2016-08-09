@@ -407,11 +407,11 @@ public class RecipeHelperManager {
 			RecipeSetup.RecipeBuilder(session, recipeName, recipe,
 					RECIPE_HELPER_DAO); // if this returns null, re-prompt
 		} catch (Exception e) {
-			String speechText = "Sorry, I couldnt' connect to that recipe. Ask about a different recipe?";
+			String speechText = "I couldn't find that recipe. Ask about a differnt one I can help you cook";
 			return getAskSpeechletResponse(speechText, speechText);
 		}
 		RECIPE_HELPER_DAO.saveCurrentRecipe(recipe);
-		String outputSpeech = "now cooking " + recipe.getRecipeName() + "You can now ask recipe helper for steps or ingredients.";
+		String outputSpeech = "now cooking " + recipe.getRecipeName() + " You can now ask recipe helper for steps or ingredients.";
 		return getTellSpeechletResponse(outputSpeech);
 		
 	}

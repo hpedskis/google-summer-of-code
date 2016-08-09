@@ -85,8 +85,30 @@ public class RecipeHelperRecipeData {
 		return REALSteps;
 
 	}
+	//this was the first method I wrote to find a specific ingredient and is the one that is currently
+	//in use. It first searches for an equal ingredient, and then goes through looking for something similar.
+	public String fetchIngredient(String Ingredient) { // get ONE ingredient
+		 		List<String> REALIngredients = getIngredients();
+		 		String theCorrectIngredient = null;
+		 		StringUtils.removeEnd(Ingredient, "s"); //get rid of plurals.
+		 		for (int i = 0; i < REALIngredients.size(); i++) {
+		 				if (StringUtils.equalsIgnoreCase(REALIngredients.get(i), Ingredient)){
+		 					theCorrectIngredient = REALIngredients.get(i);
+		 					return theCorrectIngredient;
+		 				}
+		 			}
+		 		for (int i = 0; i < REALIngredients.size(); i++) {
+		 			if (StringUtils.containsIgnoreCase(REALIngredients.get(i), Ingredient)){
+		 				theCorrectIngredient = REALIngredients.get(i);
+		 				return theCorrectIngredient;
+		 			}
+		 		}
+		 		return theCorrectIngredient; //will return null if it's not equal or isn't contained in a string.
+		 	}
 
-
+	//this is a slightly different method than fetchIngredient, which is currently NOT IN USE.
+	//this method looked for a perfect match, and then did a fuzzy match.
+	//at the end, it would only return null if the closest match wasn't similar at all to the passed in ingr.
 	public String getBestMatchingIngredient(String Ingredient){
 		List<String> IngredientList = getIngredients(); //get ingredients from current recipe
 		int BestMatch = 0;
@@ -106,7 +128,7 @@ public class RecipeHelperRecipeData {
 				BestMatchIndex = i;
 			}
 		}
-		
+		//TODO test without this and see if it's better than fetchIngredient
 		BestIngredientMatch = IngredientList.get(BestMatchIndex);
 		if (!(StringUtils.contains(BestIngredientMatch, Ingredient))){
 			return null;

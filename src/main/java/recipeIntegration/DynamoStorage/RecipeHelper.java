@@ -89,7 +89,8 @@ public class RecipeHelper {
 	}
 
 	public String getSpecificIngredient(String ingredient) {
-		return recipeData.getBestMatchingIngredient(ingredient);
+		return recipeData.fetchIngredient(ingredient);
+		//return recipeData.getBestMatchingIngredient(ingredient);
 	}
 
 	public void setIngredients(List<String> Ingredients) {

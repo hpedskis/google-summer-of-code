@@ -10136,3 +10136,5 @@ raspberry lemonade pie
 /recipe/194340/raspberry-lemonade-pie/
 chicken with asparagus and roasted red peppers
 /recipe/90481/chicken-with-asparagus-and-roasted-red-peppers/
+zucchini chocolate chip muffins
+/recipe/222601/zucchini-chocolate-chip-muffins/

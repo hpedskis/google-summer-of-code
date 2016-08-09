@@ -139,7 +139,6 @@ class RecipeSetup {
 				.select("div.directions--section__steps ol")) {
 			String direction = DirectionResult.text();
 			direction = direction.replace("ADVERTISEMENT", "");
-			System.out.println("printing current direction " + direction);
 			STEP_LIST = formatDirections(direction.trim(), STEP_LIST);
 
 		}
