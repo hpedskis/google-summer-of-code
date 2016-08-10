@@ -83,7 +83,7 @@ public class RecipeSpeechlet implements Speechlet {
 			return recipeHelperManager.getNewRecipeIntent(session);
 			
 		} else if ("SecondMenu".equals(intentName)) {
-		return recipeHelperManager.getSecondaryLaunchRequest(session, intent);
+			return recipeHelperManager.getSecondaryLaunchRequest(session, intent);
 		
 		} else if ("GetIngredientInformation".equals(intentName)) {
 			return recipeHelperManager
@@ -92,8 +92,14 @@ public class RecipeSpeechlet implements Speechlet {
 		} else if("GetNextIngredient".equals(intentName)){
 			return recipeHelperManager.getNextIngredient(session, intent);
 					
+		} else if("GetPreviousIngredient".equals(intentName)){
+			return recipeHelperManager.getPreviousIngredient(session, intent);
+				
 		} else if("GetNextStep".equals(intentName)){
 			return recipeHelperManager.getNextStep(session, intent);
+			
+		}else if("RepeatStep".equals(intentName)){
+			return recipeHelperManager.repeatStep(session, intent);
 			
 		} else if ("WhatNext".equals(intentName)){
 			return recipeHelperManager.getWhatNext(session, intent);

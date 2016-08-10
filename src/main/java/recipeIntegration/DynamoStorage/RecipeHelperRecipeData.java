@@ -128,11 +128,12 @@ public class RecipeHelperRecipeData {
 				BestMatchIndex = i;
 			}
 		}
-		//TODO test without this and see if it's better than fetchIngredient
+		
 		BestIngredientMatch = IngredientList.get(BestMatchIndex);
 		if (!(StringUtils.contains(BestIngredientMatch, Ingredient))){
 			return null;
 		}
+		
 		return BestIngredientMatch;  
 		
 	}

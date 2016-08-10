@@ -4,7 +4,10 @@ GetIngredientOverview ingredients
 GetIngredientOverview ingredients for {recipe}
 GetIngredientOverview list ingredients
 GetIngredientOverview list ingredients for {recipe}
-GetIngredientOverview read me the ingredientsGetIngredientOverview read me the ingredients for {recipe}GetIngredientOverview what do I need to make {recipe}GetIngredientOverview what do I need to make this
+GetIngredientOverview read me the ingredients
+GetIngredientOverview read me the ingredients for {recipe}
+GetIngredientOverview what do I need to make {recipe}
+GetIngredientOverview what do I need to make this
 GetIngredientOverview what do I need to cook {recipe}
 GetIngredientOverview what do I need to cook this
 GetIngredientOverview what ingredients do I need
@@ -22,21 +25,29 @@ ResetRecipe another recipe
 ResetRecipe help me cook something else
 ResetRecipe help me cook something new
 ResetRecipe I want to cook something new
-SecondMenu how do I make {recipe}SecondMenu how do I cook {recipe}
+
+SecondMenu how do I make {recipe}
+SecondMenu how do I cook {recipe}
 SecondMenu help me make {recipe}
 SecondMenu how do I make {recipe}
+SecondMenu {recipe}
 SecondMenu help me cook {recipe}
 SecondMenu I want to cook {recipe}
 
 GetIngredientInformation do I need {ingredient} for {recipe}
 GetIngredientInformation do I need {ingredient}
-GetIngredientInformation does this need {ingredient}GetIngredientInformation does {recipe} need {ingredient}GetIngredientInformation how much {ingredient} do I need for {recipe}
+GetIngredientInformation does this need {ingredient}
+GetIngredientInformation does {recipe} need {ingredient}
+GetIngredientInformation how much {ingredient} do I need for {recipe}
 GetIngredientInformation how much {ingredient} do I need
 GetIngredientInformation how many {ingredient} do I need
 GetIngredientInformation whats the amount of {ingredient} for this
 GetIngredientInformation list quantity for {ingredient}
 GetIngredientInformation how many tablespoons of {ingredient} do I need
-GetIngredientInformation how many teaspoons of {ingredient} do I needGetIngredientInformation how many cups of {ingredient} do I needGetIngredientInformation how many pounds of {ingredient} do I needGetIngredientInformation what quantity of {ingredient} do I need for {recipe}
+GetIngredientInformation how many teaspoons of {ingredient} do I need
+GetIngredientInformation how many cups of {ingredient} do I need
+GetIngredientInformation how many pounds of {ingredient} do I need
+GetIngredientInformation what quantity of {ingredient} do I need for {recipe}
 
 GetNextIngredient next ingredient
 GetNextIngredient next ingredients
@@ -60,17 +71,39 @@ GetNextStep read me the next step
 GetNextStep first step
 GetNextStep what is the first step
 
-WhatNext nextWhatNext next please
+WhatNext next
+WhatNext next please
 WhatNext Im ready for the next
 WhatNext next thing
-GetStepList what are the steps to make {recipe}GetStepList what is the steps to make {recipe}GetStepList what are the directions for {recipe}GetStepList what are the directions to make {recipe}
+
+GetStepList what are the steps to make {recipe}
+GetStepList what is the steps to make {recipe}
+GetStepList what are the directions for {recipe}
+GetStepList what are the directions to make {recipe}
 GetStepList what are the steps
 GetStepList how do I make this
 GetStepList how do I make that
 GetStepList what are all the steps for {recipe}
 GetStepList help make this
-GetSpecificStep what is step {number} for {recipe}
+
+GetSpecificStep what is step {number} for {recipe}
 GetSpecificStep step {number}
 GetSpecificStep what is step {number}
+GetSpecificStep {number}
 
-
+GetPreviousIngredient previous ingredient
+GetPreviousIngredient what is the previous ingredient
+GetPreviousIngredient what is the last ingredient
+GetPreviousIngredient what was the last ingredient
+GetPreviousIngredient last ingredient
+GetPreviousIngredient repeat that ingredient
+GetPreviousIngredient what was the previous ingredient
+GetPreviousIngredient what was that previous ingredient again
+
+RepeatStep what was the last step
+RepeatStep what is the last step
+RepeatStep what was the previous step
+RepeatStep what was the last step
+RepeatStep repeat the step
+RepeatStep repeat that step
+RepeatStep what was that step again

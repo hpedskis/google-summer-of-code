@@ -263,6 +263,45 @@ public class RecipeHelperManager {
 			
 		}
 	}
+	/**
+     * Checks what ingredients have been heard and then returns the previous ingredient.
+     * Creates a new recipe if one hasn't been set up yet.
+     * 
+     * This method makes calls to different methods depending on what ingredient they need.
+     *
+     * @param intent for this request
+     * @param session for this request
+     * 
+     * @return the correct, PREVIOUS ingredient to be listed
+     */
+	public SpeechletResponse getPreviousIngredient(Session session, Intent intent){
+		RecipeHelper recipe = RECIPE_HELPER_DAO.getCurrentSession(session);
+		if (recipe == null || recipe.hasURL() == false) {
+			recipe = RecipeHelper.newInstance(session,
+					RecipeHelperRecipeData.newInstance(), 0, 0);
+			setUpNewRecipe(session, intent, recipe);
+		}
+		List<String> ingredients = recipe.getAllIngredients();
+		int IngrSize = ingredients.size(); //the number of ingredients there are
+		int IngredientIndex = recipe.getIngredientIndex() - 1; //get previous index
+		if (IngredientIndex < IngrSize){
+			IngredientIndex = 0;
+		}
+		String CurrentIngredient = ingredients.get(IngredientIndex);
+		if (IngredientIndex == 0){
+			String outputSpeech = FirstIngredientResponse(CurrentIngredient, IngredientIndex, recipe);
+			return getTellSpeechletResponse(outputSpeech);
+		}
+		if (IngredientIndex == (IngrSize - 1)){ //last ingredient 
+			String outputSpeech = lastIngredientResponse(CurrentIngredient, IngredientIndex, recipe);
+			return getTellSpeechletResponse(outputSpeech);
+		}
+		else{
+			String outputSpeech = otherIngredientResponse(CurrentIngredient, IngredientIndex, recipe);
+			return getTellSpeechletResponse(outputSpeech);
+			
+		}
+	}
 	
 	/**
      * A series of methods to handle the different ingredient indexes and increments as necessary.
@@ -328,6 +367,35 @@ public class RecipeHelperManager {
 			return getTellSpeechletResponse(outputSpeech);
 			
 		}
+	}
+	
+	/**
+     * Checks what steps have been heard and then returns the previous 
+     *  Creates a new recipe if one hasn't been set up yet.
+     * This method makes calls to different methods depending on what step they need.
+     *
+     * @param intent for this request
+     * @param session for this request
+     * 
+     * @return the correct, PREVIOUS step to be listed
+     */
+	public SpeechletResponse repeatStep(Session session, Intent intent){
+		RecipeHelper recipe = RECIPE_HELPER_DAO.getCurrentSession(session);
+		if (recipe == null || recipe.hasURL() == false) {
+			recipe = RecipeHelper.newInstance(session,
+					RecipeHelperRecipeData.newInstance(), 0, 0);
+			setUpNewRecipe(session, intent, recipe);
+		}
+		List<String> steps = recipe.getAllSteps();
+		int StepSize = steps.size(); //the number of ingredients there are
+		int StepIndex = recipe.getStepIndex() - 1; //index of previous ingredient you've heard
+		if (StepIndex < 0 || StepIndex > StepSize){
+			StepIndex = 0;
+		}
+		String CurrentStep = steps.get(StepIndex);
+		CurrentStep = CurrentStep.replaceAll("\\[", "");
+		String outputSpeech = CurrentStep.trim();
+		return getTellSpeechletResponse(outputSpeech);
 	}
 	
 	/**

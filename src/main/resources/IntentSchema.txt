@@ -39,6 +39,12 @@
       "intent": "GetNextStep"
     },
     {
+      "intent": "GetPreviousIngredient"
+    },
+     {
+      "intent": "RepeatStep"
+    },
+    {
       "intent": "GetStepList",
       "slots": [
         {
