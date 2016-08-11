@@ -99,6 +99,7 @@ public class RecipeHelperRecipeDataItem {
 			recipe.setRecipeName(value);
 
 			String[] recipeParts = value.split(":");
+			recipeParts[0].replaceAll("\\p{Punct}+", "");
 			recipe.setRecipeName(recipeParts[0]);
 			recipe.setRecipeURL(recipeParts[1]);
 			recipe.setIngredients(Arrays.asList(recipeParts[2]));

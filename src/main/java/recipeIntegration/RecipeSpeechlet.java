@@ -92,8 +92,8 @@ public class RecipeSpeechlet implements Speechlet {
 		} else if("GetNextIngredient".equals(intentName)){
 			return recipeHelperManager.getNextIngredient(session, intent);
 					
-		} else if("GetPreviousIngredient".equals(intentName)){
-			return recipeHelperManager.getPreviousIngredient(session, intent);
+		} else if("RepeatIngredient".equals(intentName)){
+			return recipeHelperManager.repeatIngredient(session, intent);
 				
 		} else if("GetNextStep".equals(intentName)){
 			return recipeHelperManager.getNextStep(session, intent);

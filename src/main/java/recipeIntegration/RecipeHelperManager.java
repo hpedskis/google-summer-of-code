@@ -264,17 +264,15 @@ public class RecipeHelperManager {
 		}
 	}
 	/**
-     * Checks what ingredients have been heard and then returns the previous ingredient.
-     * Creates a new recipe if one hasn't been set up yet.
-     * 
-     * This method makes calls to different methods depending on what ingredient they need.
+     * Checks what ingredients have been heard and then returns the current one (repeating it) 
+     *  Creates a new recipe if one hasn't been set up yet.
      *
      * @param intent for this request
      * @param session for this request
      * 
-     * @return the correct, PREVIOUS ingredient to be listed
+     * @return the last ingredient that was just heard, without an intro since it's a repeat.
      */
-	public SpeechletResponse getPreviousIngredient(Session session, Intent intent){
+	public SpeechletResponse repeatIngredient(Session session, Intent intent){
 		RecipeHelper recipe = RECIPE_HELPER_DAO.getCurrentSession(session);
 		if (recipe == null || recipe.hasURL() == false) {
 			recipe = RecipeHelper.newInstance(session,
@@ -283,24 +281,13 @@ public class RecipeHelperManager {
 		}
 		List<String> ingredients = recipe.getAllIngredients();
 		int IngrSize = ingredients.size(); //the number of ingredients there are
-		int IngredientIndex = recipe.getIngredientIndex() - 1; //get previous index
-		if (IngredientIndex < IngrSize){
+		int IngredientIndex = recipe.getIngredientIndex() - 1; //index of previous ingredient you've heard
+		if (IngredientIndex < 0 || IngredientIndex > IngrSize){
 			IngredientIndex = 0;
 		}
 		String CurrentIngredient = ingredients.get(IngredientIndex);
-		if (IngredientIndex == 0){
-			String outputSpeech = FirstIngredientResponse(CurrentIngredient, IngredientIndex, recipe);
-			return getTellSpeechletResponse(outputSpeech);
-		}
-		if (IngredientIndex == (IngrSize - 1)){ //last ingredient 
-			String outputSpeech = lastIngredientResponse(CurrentIngredient, IngredientIndex, recipe);
-			return getTellSpeechletResponse(outputSpeech);
-		}
-		else{
-			String outputSpeech = otherIngredientResponse(CurrentIngredient, IngredientIndex, recipe);
-			return getTellSpeechletResponse(outputSpeech);
-			
-		}
+		String outputSpeech = CurrentIngredient.trim();
+		return getTellSpeechletResponse(outputSpeech);
 	}
 	
 	/**
@@ -370,14 +357,13 @@ public class RecipeHelperManager {
 	}
 	
 	/**
-     * Checks what steps have been heard and then returns the previous 
+     * Checks what steps have been heard and then returns the current one (repeating it) 
      *  Creates a new recipe if one hasn't been set up yet.
-     * This method makes calls to different methods depending on what step they need.
      *
      * @param intent for this request
      * @param session for this request
      * 
-     * @return the correct, PREVIOUS step to be listed
+     * @return the last step that was just heard, without an intro since it's a repeat.
      */
 	public SpeechletResponse repeatStep(Session session, Intent intent){
 		RecipeHelper recipe = RECIPE_HELPER_DAO.getCurrentSession(session);

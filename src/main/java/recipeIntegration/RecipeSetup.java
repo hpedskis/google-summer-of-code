@@ -142,7 +142,9 @@ class RecipeSetup {
 			STEP_LIST = formatDirections(direction.trim(), STEP_LIST);
 
 		}
-
+		if(StringUtils.contains("\"", RecipeTitle)){
+			RecipeTitle = StringUtils.replace("\"", RecipeTitle, "");
+		}
 		recipe.setRecipeName(RecipeTitle);
 		recipe.setIngredients(INGREDIENT_LIST);
 		recipe.setSteps(STEP_LIST);
