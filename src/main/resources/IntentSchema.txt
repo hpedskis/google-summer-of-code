@@ -39,7 +39,7 @@
       "intent": "GetNextStep"
     },
     {
-      "intent": "GetPreviousIngredient"
+      "intent": "RepeatIngredient"
     },
      {
       "intent": "RepeatStep"

@@ -91,14 +91,13 @@ GetSpecificStep step {number}
 GetSpecificStep what is step {number}
 GetSpecificStep {number}
 
-GetPreviousIngredient previous ingredient
-GetPreviousIngredient what is the previous ingredient
-GetPreviousIngredient what is the last ingredient
-GetPreviousIngredient what was the last ingredient
-GetPreviousIngredient last ingredient
-GetPreviousIngredient repeat that ingredient
-GetPreviousIngredient what was the previous ingredient
-GetPreviousIngredient what was that previous ingredient again
+RepeatIngredient what was the last ingredient
+RepeatIngredient what is the last ingredient
+RepeatIngredient what was the previous ingredient
+RepeatIngredient repeat the ingredient
+RepeatIngredient repeat that ingredient
+RepeatIngredient what was the previous ingredient
+RepeatIngredient what was the last ingredient again
 
 RepeatStep what was the last step
 RepeatStep what is the last step
