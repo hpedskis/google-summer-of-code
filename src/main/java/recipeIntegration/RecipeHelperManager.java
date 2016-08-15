@@ -115,7 +115,7 @@ public class RecipeHelperManager {
 					+ recipeName;
 		}
 		}catch(Exception e){ //if something went wrong (with getting the name, etc)
-			speechText = "Welcome to Cooking Helper. Please ask about a recipe you would like to cook.";
+			speechText = "Welcome to Recipe Helper. Please ask about a recipe you would like to cook.";
 			repromptText = "You can say help me cook pancakes. or what is the first step for quick and easy pizza crust";
 		}
 		return getAskSpeechletResponse(speechText, repromptText);
@@ -306,7 +306,7 @@ public class RecipeHelperManager {
 		return outputSpeech;
 	}
 	public String lastIngredientResponse(String CurrentIngredient, int IngredientIndex, RecipeHelper recipe){
-		String outputSpeech = "The next ingredient is " + CurrentIngredient.trim()+ ". " + "You've reached the end of the ingredient list, I'll reset that.";
+		String outputSpeech = "The next ingredient is " + CurrentIngredient.trim()+ " ." + "You've reached the end of the ingredient list, I'll reset that.";
 		recipe.setIngredientIndex(0);
 		RECIPE_HELPER_DAO.saveCurrentRecipe(recipe);
 		return outputSpeech;
