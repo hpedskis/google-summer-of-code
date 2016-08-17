@@ -3,7 +3,7 @@
 
 ##Concept/ Overview
 
-This summer, for Google Summer of Code, I’ve created a skill for the Amazon Echo which will assist a user in cooking any of the recipes listed in MASTER_RECIPES.txt (All are open source and scraped from allrecipes.com using Jsoup and multi-threading). Within src/main, there are two folders, java/recipeIntegration and resources. resources has all of the .txt files needed for setting up the skill through AWS, including the intent schema, the slot types for ingredients and recipes, and the sample utterances. 
+This summer, for Google Summer of Code, I’ve created a skill for the Amazon Echo which will assist a user in cooking any of the recipes listed in MASTER_RECIPES.txt (All are open source and scraped from allrecipes.com using Jsoup and multi-threading). I wrote blog posts daily about the work I completed or the problems I was having, all of which are at this link: http://alexaintegration.blogspot.com/ . In terms of organization, within src/main, there are two folders, java/recipeIntegration and resources. resources has all of the .txt files needed for setting up the skill through AWS, including the intent schema, the slot types for ingredients and recipes, and the sample utterances. 
 
 The file java/recipeIntegration houses all the code needed to run the program, including all of the file DynamoStorage, containing files for saving state. 
 ###A brief overview of the files in java/recipeIntegration is below:
@@ -68,7 +68,7 @@ To run this code, you must have Apache Maven and an AWS account (the AWS account
 8. Go back to the skill Information tab and copy the appId. Towards the top of the SpeechletLambda.java, there is a line supportedApplicationIds.add(...); which currently is hard coded with my application ID. Replace this with the app ID you were given, then update the lambda source zip file with this change and upload to lambda again, this step makes sure the lambda function only serves request from authorized source.
 9. You are now able to start testing your sample skill! In the Service Simulator area, you can type in utterances. Do not copy the utterances exactly. There cannot be any punctuation or real numbers. Anything in curly brackets should be replaced with a string.
 
-##Some examples: 
+##Some examples: (to see all utterances, look at SampleUtterances.txt)
         -what are the ingredients
 	-what is the next step
         -do I need butter
@@ -79,6 +79,26 @@ To run this code, you must have Apache Maven and an AWS account (the AWS account
 
 The main problem in this skill arises from the specific ingredient intent. Every ingredient that could be asked about is assumed to be listed in the INGREDIENT_LIST.txt (Ingredient slot type). This obviously is impossible. In my list, there are some mistakes, since I could have spent an entire summer processing it to be simple, efficient, and full of a wider variety of ingredients. For example, if Butter Bits is listed instead of Butter and you ask about the quantity of butter needed for cookies, it will return that you do not need Butter Bits. This is because it searches for 'butter' in the list, finds butter bits, and then compares this to the recipe, which just lists butter. I played around with this a lot, but when I started relying too much on fuzzy search and similar methods, it would never return that you didn't need an ingredient, instead finding something with the closest proximity (when asking about needing pig, it would return the quantity of chocolate you needed for some recipes). I've gotten it working relativley well, but I know that in some recipes, this will be an issue. It works well for simple things such as pancakes, cookies, etc but for more advanced recipes with more advanced ingredients, there could be bugs.
 
-My code could probably be more efficient, as I'm just a beginner and often my solution clearly could be optimized. However, I'm still pretty happy with how this summer project has turned out and I hope that this skill could help someone in the future create an even better cooking skill :) 
-        
+This was my first time working with an Alexa, so there are some places for improvment. I submitted my skill for review at the end of Google Summer of Code and I got the following feedback:
 
+*1*. The invocation name you have chosen for your skill does not follow all conventions for choosing a name and is unlikely to have high accuracy for launching your skill.
+Please correct the invocation name as follows:
+recipehelper => recipe helper 
+
+*2*. The example phrases that you choose to present to users in the companion app must be included in your sample utterances. These sample utterances should not include the wake word or any relevant launch phrasing. For example, if you include “Alexa ask My Skill to open the first intent.” in your example phrases, you should include “open the first intent” in your sample utterances.
+
+*3*. When users make a request as instructed by the skill's prompts, the skill response contains an error. Please make sure that all instructions contained in the skill's prompts are supported utterances that return valid and relevant responses. Please see test case 4.3 from our Submission Checklist for guidance on intent responses.
+Example:
+User: Alexa ask recipehelper to help
+Skill: You can ask questions about cooking any recipefor example, ask for step one of Spiced Pecans or ask about an ingredient for Chicken Honey Nut Stir Fry
+User: “about an ingredient for Chicken Honey Nut Stir Fry”
+Skill: “There was a problem with requested skill response”
+
+*4*. The skill prompts users for an input then immediately closes the stream. Make sure the stream remains open anytime users are prompted for inputs. Please see test case 4.1 from our Submission Checklist for guidance on session management.
+Example:
+User: Alexa open recipehelper
+Skill: Welcome to Recipe Helper. Please ask about a recipe you would like to cook. 
+User : “help me cook zuccini chocolate chip muffins”
+Skill: “now cooking You can now zuccini chocolate chip muffins ask recipe helper for steps or ingredients”, and the stream is closed.
+
+These bugs could be fixed if I continued to work on this skill. Even though it did not pass the AWS criteria for being an available app, I'm excited to use it on my Alexa and it was a great summer of learning.
